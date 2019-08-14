@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class soda {
+class Drink {
     let uuid: String
     var name: String
     var ingredients: [String]
@@ -18,5 +18,13 @@ class soda {
         self.name = name
         self.ingredients = ingredients
         self.notes = notes
+    }
+}
+extension Drink: Equatable{
+    static func == (lhs: Drink, rhs: Drink) -> Bool {
+        if lhs.uuid == rhs.uuid{
+            return true
+        }
+        return false
     }
 }

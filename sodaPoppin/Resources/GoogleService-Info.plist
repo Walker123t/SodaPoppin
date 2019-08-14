@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>957880115993-0j5d6m5f38spoe9u245fht9oa2a6d5fb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.957880115993-0j5d6m5f38spoe9u245fht9oa2a6d5fb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-WrkqruwHW5OcqEYrJg0R02an90tc6x4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>957880115993</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.TrevorWalker.sodaPoppin</string>
+	<key>PROJECT_ID</key>
+	<string>sodapoppin-dd670</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sodapoppin-dd670.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:957880115993:ios:ec3c0404d5a0c6e4</string>
+	<key>DATABASE_URL</key>
+	<string>https://sodapoppin-dd670.firebaseio.com</string>
+</dict>
+</plist>
