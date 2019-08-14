@@ -4,17 +4,11 @@
 target 'sodaPoppin' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  
+  pod 'FireStore'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 
   # Pods for sodaPoppin
-pod 'Firebase'
-  target 'sodaPoppinTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'sodaPoppinUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+  
 end
