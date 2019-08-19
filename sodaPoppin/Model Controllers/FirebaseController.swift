@@ -10,12 +10,13 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-// Create
 let ref = Firestore.firestore()
 
 class FirebaseController {
     
     var currentUser = Auth.auth().currentUser
+    
+    static let sharedInstance = FirebaseController()
     
     static func saveData(type: String, dictionary: [String: Any], completion: @escaping (Bool) -> Void) {
         ref.collection(type).addDocument(data: dictionary)
@@ -52,19 +53,6 @@ class FirebaseController {
             self.currentUser = data?.user
             print("User authenticated successfully")
             completion(userID)
-        }
-    }
-    
-    static func getData(type: String) {
-        ref.collection(type).getDocuments() {(querySnapshot, error) in
-            if let _ = error {
-                print("error getting snaps")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    print("\(document.data().first?.key)")
-                }
-            }
         }
     }
 }
