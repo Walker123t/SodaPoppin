@@ -16,11 +16,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var ref: DocumentReference? = nil
-        ref = db.collection("Person").addDocument(data: [
-            "name" : "Big Daddy",
-            "username" : "big nate 69",
-            ])
+        class user {
+            var name: String
+            var email: String
+            var username: String
+            var userDict: [String:Any] {
+                return [
+                    "name" : self.name,
+                    "email" : self.email,
+                    "username" : self.username
+                ]
+            }
+            init(name: String, email: String, username: String) {
+                self.name = name
+                self.email = email
+                self.username = username
+            }
+        }
+        
+        var nic = user(name: "nic", email: "nic@shpangy.com", username: "nicx911")
+        
+        FirebaseController.saveData(type: "users", dictionary: nic.userDict) { (success) in
+            
+        }
+    FirebaseController.getData(type: "users")
     }
 }
 

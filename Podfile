@@ -8,7 +8,8 @@ target 'sodaPoppin' do
   pod 'FireStore'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
-
+  pod 'Firebase/Auth'
+  
   # Pods for sodaPoppin
   
 end
