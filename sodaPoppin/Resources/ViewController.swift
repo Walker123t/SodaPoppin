@@ -11,16 +11,5 @@ import Firebase
 
 class ViewController: UIViewController {
     
-    let db = Firestore.firestore()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        var ref: DocumentReference? = nil
-        ref = db.collection("Person").addDocument(data: [
-            "name" : "Big Daddy",
-            "username" : "big nate 69",
-            ])
-    }
 }
 
