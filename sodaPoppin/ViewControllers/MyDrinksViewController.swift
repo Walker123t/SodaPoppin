@@ -57,6 +57,7 @@ class MyDrinksViewController: UIViewController {
     func hideUnderlines() {
         myDrinksUnderline.isHidden = true
         myInventoryUnderline.isHidden = true
+        shoppingListUnderline.isHidden = true
     }
     
     /*
