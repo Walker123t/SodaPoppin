@@ -53,7 +53,7 @@
         <scene sceneID="xXB-To-pqA">
             <objects>
                 <viewControllerPlaceholder storyboardName="tab3" id="hV1-YY-V18" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cwW-Dk-xLj"/>
+                    <tabBarItem key="tabBarItem" title="Drinks" id="cwW-Dk-xLj"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okw-PK-GHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
