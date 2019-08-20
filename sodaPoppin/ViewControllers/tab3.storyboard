@@ -197,23 +197,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="788-OM-Scs">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="788-OM-Scs">
                                 <rect key="frame" x="20.5" y="290.5" width="373" height="80.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeB-0O-MfA">
-                                        <rect key="frame" x="0.0" y="0.0" width="77" height="18"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="34.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose ingredient..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjm-FI-RFr">
-                                        <rect key="frame" x="0.0" y="26" width="175" height="45.5"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose ingredient..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjm-FI-RFr">
+                                        <rect key="frame" x="0.0" y="34.5" width="158" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ulW-K6-yBF"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQg-zM-Eys">
-                                        <rect key="frame" x="0.0" y="79.5" width="240" height="1"/>
+                                        <rect key="frame" x="0.0" y="79.5" width="373" height="1"/>
                                         <color key="backgroundColor" red="0.02732768096" green="0.031319856639999998" blue="0.03549222648" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.02732768096" green="0.031319856639999998" blue="0.03549222648" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -236,17 +239,20 @@
                                     <color key="titleColor" red="0.02732768096" green="0.031319856639999998" blue="0.03549222648" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="od7-Gp-cOn">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="od7-Gp-cOn">
                                 <rect key="frame" x="21" y="191" width="373" height="81"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zR-ih-DBG">
-                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="18"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter drink name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xBm-cE-4q9">
-                                        <rect key="frame" x="0.0" y="26" width="165" height="46"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter drink name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xBm-cE-4q9">
+                                        <rect key="frame" x="0.0" y="35" width="148" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="mfT-iV-u1I"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -278,6 +284,7 @@
                             <constraint firstItem="7sH-5T-E4E" firstAttribute="centerY" secondItem="IsG-L9-hEy" secondAttribute="centerY" multiplier="1.4" id="RKa-Xj-ei3"/>
                             <constraint firstItem="7sH-5T-E4E" firstAttribute="trailing" secondItem="XQf-D9-3Ay" secondAttribute="trailing" id="RR9-Th-jxW"/>
                             <constraint firstItem="od7-Gp-cOn" firstAttribute="height" secondItem="hpR-gw-NdW" secondAttribute="height" multiplier="0.09" id="X88-6r-GRL"/>
+                            <constraint firstItem="BQg-zM-Eys" firstAttribute="width" secondItem="hpR-gw-NdW" secondAttribute="width" multiplier="0.9" id="ZSR-mL-ZZw"/>
                             <constraint firstItem="788-OM-Scs" firstAttribute="centerY" secondItem="IsG-L9-hEy" secondAttribute="centerY" multiplier="0.73" id="aXe-hq-rz5"/>
                             <constraint firstItem="jrl-pn-xlk" firstAttribute="centerY" secondItem="IsG-L9-hEy" secondAttribute="centerY" multiplier="0.2" id="cea-Os-fwZ"/>
                             <constraint firstItem="788-OM-Scs" firstAttribute="centerX" secondItem="IsG-L9-hEy" secondAttribute="centerX" id="d7Z-kt-CCm"/>
