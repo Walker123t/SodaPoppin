@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gsM-x2-JFq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UpY-uW-BGT">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
-        <scene sceneID="hl7-Zw-l07">
+        <!--View Controller-->
+        <scene sceneID="aRO-Lt-pOM">
             <objects>
-                <viewController id="gsM-x2-JFq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kiy-7u-NSf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <viewController id="UpY-uW-BGT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wVn-pO-edQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mse-zZ-LpZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YvH-UA-byI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="T6s-dP-hvA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="LlA-mp-LND"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="68E-Sa-7fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kmf-v4-BDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="-302"/>
+            <point key="canvasLocation" x="1110" y="-327"/>
         </scene>
     </scenes>
 </document>
