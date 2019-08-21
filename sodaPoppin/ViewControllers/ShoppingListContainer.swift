@@ -10,13 +10,19 @@ import UIKit
 
 class ShoppingListContainer: UIViewController {
 
+    @IBOutlet weak var shoppingListSearchBar: UISearchBar!
+    @IBOutlet weak var addToInventoryButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addToInventoryButton.layer.borderWidth = 1
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addToInventoryButtonTapped(_ sender: Any) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
