@@ -18,6 +18,10 @@
 		3EA204E7230B09D000E902B5 /* tab1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA204E3230B09D000E902B5 /* tab1.storyboard */; };
 		3EA204E8230B09D000E902B5 /* tab3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA204E4230B09D000E902B5 /* tab3.storyboard */; };
 		3EA2050A230B56BD00E902B5 /* fakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA20509230B56BD00E902B5 /* fakeData.swift */; };
+		3EA8034F230C5155002D99A5 /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA8034E230C5155002D99A5 /* FriendsListTableViewController.swift */; };
+		3EA80351230C5174002D99A5 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA80350230C5174002D99A5 /* FriendTableViewCell.swift */; };
+		3EA80356230CA497002D99A5 /* DrinklTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA80354230CA497002D99A5 /* DrinklTableViewCell.swift */; };
+		3EA80357230CA497002D99A5 /* DrinklTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EA80355230CA497002D99A5 /* DrinklTableViewCell.xib */; };
 		3EB0DDCF230472E000923E0D /* firebaseStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0DDCE230472E000923E0D /* firebaseStuff.swift */; };
 		3EB0DDD22304738A00923E0D /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0DDD12304738A00923E0D /* Drink.swift */; };
 		3EB0DDD42304A70E00923E0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0DDD32304A70E00923E0D /* GoogleService-Info.plist */; };
@@ -63,6 +67,10 @@
 		3EA204E3230B09D000E902B5 /* tab1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab1.storyboard; sourceTree = "<group>"; };
 		3EA204E4230B09D000E902B5 /* tab3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab3.storyboard; sourceTree = "<group>"; };
 		3EA20509230B56BD00E902B5 /* fakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fakeData.swift; sourceTree = "<group>"; };
+		3EA8034E230C5155002D99A5 /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
+		3EA80350230C5174002D99A5 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		3EA80354230CA497002D99A5 /* DrinklTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinklTableViewCell.swift; sourceTree = "<group>"; };
+		3EA80355230CA497002D99A5 /* DrinklTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrinklTableViewCell.xib; sourceTree = "<group>"; };
 		3EB0DDCE230472E000923E0D /* firebaseStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebaseStuff.swift; sourceTree = "<group>"; };
 		3EB0DDD12304738A00923E0D /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		3EB0DDD32304A70E00923E0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -149,11 +157,23 @@
 				3E9EF1F323046F8E00F4DF37 /* Main.storyboard */,
 				3EA204E2230B09D000E902B5 /* tab4.storyboard */,
 				3EA204E4230B09D000E902B5 /* tab3.storyboard */,
-				7C761274230C4E040033C1B3 /* Tab 3 View Controllers */,
 				3EA204E1230B09D000E902B5 /* tab2.storyboard */,
 				3EA204E3230B09D000E902B5 /* tab1.storyboard */,
+				7C761274230C4E040033C1B3 /* Tab 3 View Controllers */,
+				3EA8034D230C50F7002D99A5 /* Tab 2 View Controllers */,
+				3EA80354230CA497002D99A5 /* DrinklTableViewCell.swift */,
+				3EA80355230CA497002D99A5 /* DrinklTableViewCell.xib */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3EA8034D230C50F7002D99A5 /* Tab 2 View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3EA8034E230C5155002D99A5 /* FriendsListTableViewController.swift */,
+				3EA80350230C5174002D99A5 /* FriendTableViewCell.swift */,
+			);
+			path = "Tab 2 View Controllers";
 			sourceTree = "<group>";
 		};
 		3EB0DDCC230472C300923E0D /* Resources */ = {
@@ -330,6 +350,7 @@
 				3E9EF1F723046F8F00F4DF37 /* Assets.xcassets in Resources */,
 				3EA204E7230B09D000E902B5 /* tab1.storyboard in Resources */,
 				3E9EF1F523046F8E00F4DF37 /* Main.storyboard in Resources */,
+				3EA80357230CA497002D99A5 /* DrinklTableViewCell.xib in Resources */,
 				3EA204E5230B09D000E902B5 /* tab2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,14 +439,17 @@
 				3EA2050A230B56BD00E902B5 /* fakeData.swift in Sources */,
 				7C5748B523049F4500253B86 /* FirebaseController.swift in Sources */,
 				7CE926DF230B222E00BAC78E /* MyDrinksViewController.swift in Sources */,
+				3EA8034F230C5155002D99A5 /* FriendsListTableViewController.swift in Sources */,
 				3EB0DDCF230472E000923E0D /* firebaseStuff.swift in Sources */,
 				7C76126F230B44210033C1B3 /* MyInventoryContainer.swift in Sources */,
 				3E9EF1F223046F8E00F4DF37 /* ViewController.swift in Sources */,
 				3EB0DDD22304738A00923E0D /* Drink.swift in Sources */,
 				7C76126D230B440C0033C1B3 /* MyDrinksContainer.swift in Sources */,
+				3EA80356230CA497002D99A5 /* DrinklTableViewCell.swift in Sources */,
 				3E40844A230926CD009B294F /* User.swift in Sources */,
 				7C761271230B442F0033C1B3 /* ShoppingListContainer.swift in Sources */,
 				3E9EF1F023046F8E00F4DF37 /* AppDelegate.swift in Sources */,
+				3EA80351230C5174002D99A5 /* FriendTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
