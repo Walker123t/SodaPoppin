@@ -14,6 +14,7 @@ class Drink {
     var ingredients: [String]
     var notes: String
     var image: UIImage?
+    var isLiked: Bool?
     init(uuid: String?, name: String, ingredients: [String], notes: String){
         self.uuid = uuid ?? UUID().uuidString
         self.name = name
