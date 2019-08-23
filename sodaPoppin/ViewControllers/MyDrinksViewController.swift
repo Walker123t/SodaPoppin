@@ -20,10 +20,12 @@ class MyDrinksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "My Drinks"
+//        self.title = "My Drinks"
         NotificationCenter.default.addObserver(self, selector: #selector(myDrinks), name: Notification.Name(rawValue: "myDrinks"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(myInventory), name: Notification.Name(rawValue: "myInventory"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(shoppingList), name: Notification.Name(rawValue: "shoppingList"), object: nil)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
     }
     
     @objc func myDrinks() {

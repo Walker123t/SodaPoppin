@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
 
+    @IBOutlet weak var profileImageViewOnView: UIView!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var myGoToTableView: UITableView!
     

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--tab 2-->
         <scene sceneID="lbb-K9-tym">
             <objects>
                 <tableViewController id="Sa6-o1-uSl" sceneMemberID="viewController">
@@ -142,6 +142,10 @@
                             <outlet property="delegate" destination="Sa6-o1-uSl" id="kiB-2R-I71"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="tab 2" image="Dr.Pepper-1" id="444-G5-Ycj">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5e-RY-44H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,5 +154,6 @@
     </scenes>
     <resources>
         <image name="Dr.Pepper" width="112" height="112"/>
+        <image name="Dr.Pepper-1" width="25" height="25"/>
     </resources>
 </document>

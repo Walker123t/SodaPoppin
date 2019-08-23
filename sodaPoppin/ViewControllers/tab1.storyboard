@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--tab 1-->
         <scene sceneID="aRO-Lt-pOM">
             <objects>
                 <viewController id="UpY-uW-BGT" sceneMemberID="viewController">
@@ -22,10 +22,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="tab 1" image="Dr.Pepper-1" id="txr-GE-5ph"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmf-v4-BDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1110" y="-327"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dr.Pepper-1" width="25" height="25"/>
+    </resources>
 </document>
