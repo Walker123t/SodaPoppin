@@ -19,7 +19,7 @@ class MyDrinksContainer: UIViewController {
     }
     
     func setupButton() {
-        addDrinkButton.layer.cornerRadius = addDrinkButton.frame.height / 2.8
+        addDrinkButton.layer.cornerRadius = addDrinkButton.frame.height / 3.2
         addDrinkButton.clipsToBounds = true
         addDrinkButton.layer.shadowColor = UIColor.darkGray.cgColor
         addDrinkButton.layer.shadowOffset = CGSize(width: 3.0, height: 2.0)
