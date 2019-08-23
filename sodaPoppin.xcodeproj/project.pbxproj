@@ -31,6 +31,7 @@
 		3EC97D53230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D51230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift */; };
 		3EC97D54230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC97D52230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib */; };
 		3EC97D57230DF09600255F36 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D56230DF09600255F36 /* CustomSegmentedControl.swift */; };
+		7C14E4FB230DD95100A17708 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14E4FA230DD95100A17708 /* ProfileViewController.swift */; };
 		7C5748B523049F4500253B86 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5748B423049F4500253B86 /* FirebaseController.swift */; };
 		7C761265230B3E4C0033C1B3 /* DrinksPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C761264230B3E4C0033C1B3 /* DrinksPageViewController.swift */; };
 		7C76126D230B440C0033C1B3 /* MyDrinksContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76126C230B440C0033C1B3 /* MyDrinksContainer.swift */; };
@@ -90,6 +91,7 @@
 		3EC97D51230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDrinkTableViewCell.swift; sourceTree = "<group>"; };
 		3EC97D52230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedDrinkTableViewCell.xib; sourceTree = "<group>"; };
 		3EC97D56230DF09600255F36 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		7C14E4FA230DD95100A17708 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7C5748B423049F4500253B86 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		7C761264230B3E4C0033C1B3 /* DrinksPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrinksPageViewController.swift; path = ../DrinksPageViewController.swift; sourceTree = "<group>"; };
 		7C76126C230B440C0033C1B3 /* MyDrinksContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyDrinksContainer.swift; path = ../MyDrinksContainer.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				3EC97D55230DF07900255F36 /* Custom Resuable Views */,
 				3E9EF1F323046F8E00F4DF37 /* Main.storyboard */,
 				3EA204E2230B09D000E902B5 /* tab4.storyboard */,
+				7CEBEA1D230DB55700A5CEFB /* Tab 4 View Controllers */,
 				3EA204E4230B09D000E902B5 /* tab3.storyboard */,
 				3EA204E1230B09D000E902B5 /* tab2.storyboard */,
 				3EA8035B230DB043002D99A5 /* SearchDrinks */,
@@ -279,6 +282,14 @@
 				7CEBEA19230D99B900A5CEFB /* CreateIngredientViewController.swift */,
 			);
 			path = "Tab 3 View Controllers";
+			sourceTree = "<group>";
+		};
+		7CEBEA1D230DB55700A5CEFB /* Tab 4 View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C14E4FA230DD95100A17708 /* ProfileViewController.swift */,
+			);
+			path = "Tab 4 View Controllers";
 			sourceTree = "<group>";
 		};
 		C0BC8D213E6F7D11A29D7967 /* Pods */ = {
@@ -501,6 +512,7 @@
 				3EC97D57230DF09600255F36 /* CustomSegmentedControl.swift in Sources */,
 				3EB0DDCF230472E000923E0D /* firebaseStuff.swift in Sources */,
 				7C76126F230B44210033C1B3 /* MyInventoryContainer.swift in Sources */,
+				7C14E4FB230DD95100A17708 /* ProfileViewController.swift in Sources */,
 				3E9EF1F223046F8E00F4DF37 /* ViewController.swift in Sources */,
 				3EB0DDD22304738A00923E0D /* Drink.swift in Sources */,
 				7C76126D230B440C0033C1B3 /* MyDrinksContainer.swift in Sources */,

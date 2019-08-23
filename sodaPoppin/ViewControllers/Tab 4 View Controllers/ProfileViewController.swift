@@ -1,41 +1,39 @@
 //
-//  MyInventoryContainer.swift
+//  ProfileViewController.swift
 //  sodaPoppin
 //
-//  Created by Nic Gibson on 8/19/19.
+//  Created by Nic Gibson on 8/21/19.
 //  Copyright © 2019 Trevor Walker. All rights reserved.
 //
 
 import UIKit
 
-class MyInventoryContainer: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MyDrinksController.sharedInstance.inventory.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = myInventoryTableView.dequeueReusableCell(withIdentifier: "myInventoryCell", for: indexPath)
-        let inventoryItem = MyDrinksController.sharedInstance.inventory[indexPath.row]
-        cell.textLabel?.text = inventoryItem
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "myGoTo")
+        cell.textLabel?.text = "I LIKE HAM"
         return cell
     }
     
-    @IBOutlet weak var myInventoryTableView: UITableView!
-    @IBOutlet weak var mixNowButton: UIButton!
+
+    @IBOutlet weak var profileImageViewOnView: UIView!
+    @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var myGoToTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myInventoryTableView.delegate = self
-        myInventoryTableView.dataSource = self
-        mixNowButton.layer.borderWidth = 1
+        profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height / 2
+        myGoToTableView.delegate = self
+        myGoToTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func mixNowButtonTapped(_ sender: Any) {
-        
-    }
-    
+
     /*
     // MARK: - Navigation
 

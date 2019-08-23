@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Drinks Table View Controller-->
+      <!--Search Drinks Table View Controller-->
         <scene sceneID="4eH-KT-RiG">
             <objects>
                 <viewController id="rKB-tB-3X1" customClass="SearchDrinksTableViewController" customModule="sodaPoppin" customModuleProvider="target" sceneMemberID="viewController">
@@ -279,6 +279,8 @@
                             <constraint firstAttribute="trailing" secondItem="Sr0-PF-buM" secondAttribute="trailing" id="szj-Xa-MwQ"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="tab 1" image="Dr.Pepper-1" id="txr-GE-5ph"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tr2-cL-v7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
