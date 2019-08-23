@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3E40844A230926CD009B294F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E408449230926CD009B294F /* User.swift */; };
 		3E743B1A230F12F6009161F9 /* underlinedSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */; };
+		3E743B2423105D81009161F9 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B2323105D81009161F9 /* FilterViewController.swift */; };
 		3E9EF1F023046F8E00F4DF37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EF1EF23046F8E00F4DF37 /* AppDelegate.swift */; };
 		3E9EF1F223046F8E00F4DF37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EF1F123046F8E00F4DF37 /* ViewController.swift */; };
 		3E9EF1F523046F8E00F4DF37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9EF1F323046F8E00F4DF37 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		3E408449230926CD009B294F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = underlinedSegmentController.swift; sourceTree = "<group>"; };
+		3E743B2323105D81009161F9 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3E9EF1EC23046F8E00F4DF37 /* sodaPoppin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sodaPoppin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9EF1EF23046F8E00F4DF37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E9EF1F123046F8E00F4DF37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +174,7 @@
 		3EA204E0230B09BC00E902B5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3EC97D55230DF07900255F36 /* New Group */,
+				3EC97D55230DF07900255F36 /* Custom Resuable Views */,
 				3E9EF1F323046F8E00F4DF37 /* Main.storyboard */,
 				3EA204E2230B09D000E902B5 /* tab4.storyboard */,
 				3EA204E4230B09D000E902B5 /* tab3.storyboard */,
@@ -210,6 +212,7 @@
 			children = (
 				3EA204E3230B09D000E902B5 /* tab1.storyboard */,
 				3EA80358230DB015002D99A5 /* SearchDrinksTableViewController.swift */,
+				3E743B2323105D81009161F9 /* FilterViewController.swift */,
 			);
 			path = SearchDrinks;
 			sourceTree = "<group>";
@@ -244,13 +247,13 @@
 			path = Modals;
 			sourceTree = "<group>";
 		};
-		3EC97D55230DF07900255F36 /* New Group */ = {
+		3EC97D55230DF07900255F36 /* Custom Resuable Views */ = {
 			isa = PBXGroup;
 			children = (
 				3EC97D56230DF09600255F36 /* CustomSegmentedControl.swift */,
 				3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */,
 			);
-			path = "New Group";
+			path = "Custom Resuable Views";
 			sourceTree = "<group>";
 		};
 		7C5748B323049F3100253B86 /* Model Controllers */ = {
@@ -505,6 +508,7 @@
 				3E40844A230926CD009B294F /* User.swift in Sources */,
 				7CEBEA1A230D99B900A5CEFB /* CreateIngredientViewController.swift in Sources */,
 				7C76127E230C612D0033C1B3 /* MyDrinksController.swift in Sources */,
+				3E743B2423105D81009161F9 /* FilterViewController.swift in Sources */,
 				7C761271230B442F0033C1B3 /* ShoppingListContainer.swift in Sources */,
 				3E9EF1F023046F8E00F4DF37 /* AppDelegate.swift in Sources */,
 				3EA80351230C5174002D99A5 /* FriendTableViewCell.swift in Sources */,
