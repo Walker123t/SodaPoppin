@@ -1,29 +1,21 @@
 //
-//  FilterViewController.swift
+//  DiscoverFilterViewController.swift
 //  sodaPoppin
 //
-//  Created by Trevor Walker on 8/23/19.
+//  Created by Nic Gibson on 8/26/19.
 //  Copyright © 2019 Trevor Walker. All rights reserved.
 //
 
 import UIKit
 
-class FilterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
+class DiscoverFilterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
-    }
+    
 
     /*
     // MARK: - Navigation
