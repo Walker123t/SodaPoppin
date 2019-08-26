@@ -112,7 +112,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="byO-4k-np4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="tab 3" id="ad6-Lp-2To"/>
+                    <tabBarItem key="tabBarItem" title="My Drinks" id="ad6-Lp-2To"/>
                     <navigationItem key="navigationItem" title="My Drinks" id="9Rl-Wy-Km3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

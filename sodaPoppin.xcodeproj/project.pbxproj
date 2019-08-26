@@ -34,6 +34,7 @@
 		7C761276230C515D0033C1B3 /* CreateNewDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */; };
 		7C76127C230C5EB40033C1B3 /* SelectFromInventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */; };
 		7C76127E230C612D0033C1B3 /* MyDrinksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76127D230C612D0033C1B3 /* MyDrinksController.swift */; };
+		7CD07E1B23143DA200B40206 /* DiscoverPoppinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD07E1A23143DA200B40206 /* DiscoverPoppinViewController.swift */; };
 		7CE926DF230B222E00BAC78E /* MyDrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE926DE230B222E00BAC78E /* MyDrinksViewController.swift */; };
 		7CEBEA1A230D99B900A5CEFB /* CreateIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEBEA19230D99B900A5CEFB /* CreateIngredientViewController.swift */; };
 		C2A3D8972567404B47E69BD9 /* Pods_sodaPoppin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C892121BE3D3B7D7761C0DF9 /* Pods_sodaPoppin.framework */; };
@@ -88,6 +89,7 @@
 		7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewDrinkViewController.swift; sourceTree = "<group>"; };
 		7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFromInventoryViewController.swift; sourceTree = "<group>"; };
 		7C76127D230C612D0033C1B3 /* MyDrinksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrinksController.swift; sourceTree = "<group>"; };
+		7CD07E1A23143DA200B40206 /* DiscoverPoppinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPoppinViewController.swift; sourceTree = "<group>"; };
 		7CE926DE230B222E00BAC78E /* MyDrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyDrinksViewController.swift; path = ../MyDrinksViewController.swift; sourceTree = "<group>"; };
 		7CEBEA19230D99B900A5CEFB /* CreateIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIngredientViewController.swift; sourceTree = "<group>"; };
 		8DBF8D38E3CB0111E36E4FF6 /* Pods-sodaPoppin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sodaPoppin.debug.xcconfig"; path = "Target Support Files/Pods-sodaPoppin/Pods-sodaPoppin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				7CEBEA1D230DB55700A5CEFB /* Tab 4 View Controllers */,
 				3EA204E4230B09D000E902B5 /* tab3.storyboard */,
 				3EA204E1230B09D000E902B5 /* tab2.storyboard */,
+				7CD07E1923143D4800B40206 /* Tab 1 View Controllers */,
 				3EA204E3230B09D000E902B5 /* tab1.storyboard */,
 				7C761274230C4E040033C1B3 /* Tab 3 View Controllers */,
 				3EA8034D230C50F7002D99A5 /* Tab 2 View Controllers */,
@@ -240,6 +243,14 @@
 				7CEBEA19230D99B900A5CEFB /* CreateIngredientViewController.swift */,
 			);
 			path = "Tab 3 View Controllers";
+			sourceTree = "<group>";
+		};
+		7CD07E1923143D4800B40206 /* Tab 1 View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7CD07E1A23143DA200B40206 /* DiscoverPoppinViewController.swift */,
+			);
+			path = "Tab 1 View Controllers";
 			sourceTree = "<group>";
 		};
 		7CEBEA1D230DB55700A5CEFB /* Tab 4 View Controllers */ = {
@@ -460,6 +471,7 @@
 			files = (
 				7C761265230B3E4C0033C1B3 /* DrinksPageViewController.swift in Sources */,
 				3EA2050A230B56BD00E902B5 /* fakeData.swift in Sources */,
+				7CD07E1B23143DA200B40206 /* DiscoverPoppinViewController.swift in Sources */,
 				7C761276230C515D0033C1B3 /* CreateNewDrinkViewController.swift in Sources */,
 				7C5748B523049F4500253B86 /* FirebaseController.swift in Sources */,
 				7CE926DF230B222E00BAC78E /* MyDrinksViewController.swift in Sources */,
