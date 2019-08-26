@@ -8,13 +8,15 @@
 
 import Foundation
 class FakeData {
+    
     var drinks: [Drink]{
         let drink1 = Drink(uuid: "", name: "Drink 1", ingredients: ["one", "two", "three"], notes: "none")
-        let drink2 = Drink(uuid: "", name: "Drink 2", ingredients: ["one", "two", "three"], notes: "none")
-        let drink3 = Drink(uuid: "", name: "Drink 3", ingredients: ["one", "two", "three"], notes: "none")
+        let drink2 = Drink(uuid: "", name: "Drink 2", ingredients: ["one", "two", "three" , "Four", "Five", "Six"], notes: "none")
+        let drink3 = Drink(uuid: "", name: "Drink 3", ingredients: ["one", "two"], notes: "none")
         let drink4 = Drink(uuid: "", name: "Drink 4", ingredients: ["one", "two", "three"], notes: "none")
         return [drink1, drink2, drink3, drink4]
     }
+    
     var people: [User]{
         let user1 = User(name: "Person1", userName: "Username1", profilePic: nil, desc: "a good description", favDrink: drinks[0])
         let user2 = User(name: "Person2", userName: "Username2", profilePic: nil, desc: "a good description", favDrink: drinks[1])
