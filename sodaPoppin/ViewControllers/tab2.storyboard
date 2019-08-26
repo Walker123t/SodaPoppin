@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--tab 2-->
+        <!--Fountain-->
         <scene sceneID="lbb-K9-tym">
             <objects>
                 <tableViewController id="Sa6-o1-uSl" sceneMemberID="viewController">
@@ -142,7 +142,7 @@
                             <outlet property="delegate" destination="Sa6-o1-uSl" id="kiB-2R-I71"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="tab 2" image="Dr.Pepper-1" id="444-G5-Ycj">
+                    <tabBarItem key="tabBarItem" title="Fountain" image="Dr.Pepper-1" id="444-G5-Ycj">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
