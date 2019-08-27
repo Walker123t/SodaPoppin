@@ -7,6 +7,7 @@
 //
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //import UIKit
 //
 //class FilterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -38,6 +39,8 @@
 //
 //}
 =======
+=======
+>>>>>>> a1bc9255d39e17fa744d43d3fd8fb2ec58e3394e
 import UIKit
 
 class FilterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -67,5 +70,9 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     */
 
+<<<<<<< HEAD
 }
 >>>>>>> 814873f59e7b78520b8158aa4b35d77b396977a5
+=======
+}
+>>>>>>> a1bc9255d39e17fa744d43d3fd8fb2ec58e3394e
