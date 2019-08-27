@@ -142,7 +142,7 @@
                             <outlet property="delegate" destination="Sa6-o1-uSl" id="kiB-2R-I71"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Fountain" image="nounFountain2195044" id="444-G5-Ycj">
+                    <tabBarItem key="tabBarItem" title="Fountain" image="Fountain Icon" id="444-G5-Ycj">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -154,6 +154,6 @@
     </scenes>
     <resources>
         <image name="Dr.Pepper" width="112" height="112"/>
-        <image name="nounFountain2195044" width="28" height="31"/>
+        <image name="Fountain Icon" width="56" height="62"/>
     </resources>
 </document>

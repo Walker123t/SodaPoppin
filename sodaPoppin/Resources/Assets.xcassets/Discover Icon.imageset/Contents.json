@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "nounSoda337306.png",
+      "filename" : "Discover Icon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "nounSoda337306@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "nounSoda337306@3x.png",
       "scale" : "3x"
     }
   ],

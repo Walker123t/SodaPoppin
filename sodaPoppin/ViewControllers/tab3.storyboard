@@ -162,12 +162,11 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C8-jj-FfE">
                                 <rect key="frame" x="324.5" y="772.5" width="89.5" height="89.5"/>
-                                <color key="backgroundColor" red="0.42352941179999998" green="0.32549019610000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6C8-jj-FfE" secondAttribute="height" multiplier="1:1" id="xXy-mk-tIB"/>
                                 </constraints>
                                 <size key="titleShadowOffset" width="3" height="3"/>
-                                <state key="normal" image="Image-1">
+                                <state key="normal" image="Create Soda">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -638,7 +637,7 @@
         <scene sceneID="CWR-Lp-Xdd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q9s-g0-SW3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Drinks" image="nounSoda337306" id="rT2-kw-WTN">
+                    <tabBarItem key="tabBarItem" title="My Drinks" image="My Drinks Icon" id="rT2-kw-WTN">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -662,8 +661,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Create Soda" width="128" height="128"/>
         <image name="Image" width="512" height="512"/>
-        <image name="Image-1" width="128" height="128"/>
-        <image name="nounSoda337306" width="19" height="30"/>
+        <image name="My Drinks Icon" width="38" height="60"/>
     </resources>
 </document>

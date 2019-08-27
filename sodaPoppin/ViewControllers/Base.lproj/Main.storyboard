@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,12 +14,12 @@
         <scene sceneID="7Xg-E9-sjC">
             <objects>
                 <tabBarController id="ka9-Qe-b50" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="fill" id="IKt-3h-kG6">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="centered" itemSpacing="55" itemWidth="55" id="IKt-3h-kG6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.42352941179999998" green="0.32549019610000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" name="darkerPurp"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -36,7 +37,7 @@
         <scene sceneID="Dgo-CC-EMc">
             <objects>
                 <viewControllerPlaceholder storyboardName="tab1" id="d8Y-nF-M8m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sort By" image="recipeCards" selectedImage="JasonFace" id="rL0-UA-lAA">
+                    <tabBarItem key="tabBarItem" title="Sort By" image="Discover Icon" selectedImage="JasonFace" id="rL0-UA-lAA">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -48,7 +49,7 @@
         <scene sceneID="eGn-Vz-iJc">
             <objects>
                 <viewControllerPlaceholder storyboardName="tab2" id="K2H-P1-ugF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Fountain" image="nounFountain2195044" id="D63-6I-jd8"/>
+                    <tabBarItem key="tabBarItem" title="Fountain" image="Fountain Icon" id="D63-6I-jd8"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfY-kX-ADy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,7 +59,7 @@
         <scene sceneID="xXB-To-pqA">
             <objects>
                 <viewControllerPlaceholder storyboardName="tab3" id="hV1-YY-V18" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Drinks" image="nounSoda337306" selectedImage="Dr.Pepper-1" id="cwW-Dk-xLj"/>
+                    <tabBarItem key="tabBarItem" title="My Drinks" image="My Drinks Icon" selectedImage="Dr.Pepper-1" id="cwW-Dk-xLj"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okw-PK-GHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +69,7 @@
         <scene sceneID="7az-Pq-6BS">
             <objects>
                 <viewControllerPlaceholder storyboardName="tab4" id="b1W-7G-opx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="gridiconsUserCircle" id="QLB-Zl-2y3">
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile Icon" id="QLB-Zl-2y3">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -78,11 +79,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Discover Icon" width="92" height="56"/>
         <image name="Dr.Pepper-1" width="25" height="25"/>
+        <image name="Fountain Icon" width="56" height="62"/>
         <image name="JasonFace" width="2407" height="3191"/>
-        <image name="gridiconsUserCircle" width="26" height="26"/>
-        <image name="nounFountain2195044" width="28" height="31"/>
-        <image name="nounSoda337306" width="19" height="30"/>
-        <image name="recipeCards" width="46" height="28"/>
+        <image name="My Drinks Icon" width="38" height="60"/>
+        <image name="Profile Icon" width="52" height="52"/>
+        <namedColor name="darkerPurp">
+            <color red="0.41568627450980394" green="0.31764705882352939" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
