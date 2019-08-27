@@ -475,13 +475,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="URh-Lg-x1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756.521739130435" y="-327.45535714285711"/>
+            <point key="canvasLocation" x="1980" y="-327"/>
         </scene>
         <!--Discover-->
         <scene sceneID="RZs-RE-uNJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8DE-gH-jsy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Discover" image="recipeCards" id="txr-GE-5ph"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="Discover Icon" id="txr-GE-5ph"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="jxx-bh-R92">
@@ -508,7 +508,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="recipeCards" width="46" height="28"/>
+        <image name="Discover Icon" width="92" height="56"/>
         <namedColor name="darkerPurp">
             <color red="0.41568627450980394" green="0.31764705882352939" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

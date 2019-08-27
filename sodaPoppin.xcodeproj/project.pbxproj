@@ -49,6 +49,8 @@
 		7CD07E212314707300B40206 /* DiscoverFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD07E202314707300B40206 /* DiscoverFilterViewController.swift */; };
 		7CD07E242314785900B40206 /* DiscoverPoppinContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD07E232314785900B40206 /* DiscoverPoppinContainerViewController.swift */; };
 		7CD07E2623147A9200B40206 /* DiscoverContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD07E2523147A9200B40206 /* DiscoverContainerViewController.swift */; };
+		7CD07E2823159DEF00B40206 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD07E2723159DEF00B40206 /* Colors.xcassets */; };
+		7CD07E2A2315A32700B40206 /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD07E292315A32700B40206 /* ColorsExtension.swift */; };
 		7CE926DF230B222E00BAC78E /* MyDrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE926DE230B222E00BAC78E /* MyDrinksViewController.swift */; };
 		7CEBEA1A230D99B900A5CEFB /* CreateIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEBEA19230D99B900A5CEFB /* CreateIngredientViewController.swift */; };
 		C2A3D8972567404B47E69BD9 /* Pods_sodaPoppin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C892121BE3D3B7D7761C0DF9 /* Pods_sodaPoppin.framework */; };
@@ -118,6 +120,8 @@
 		7CD07E202314707300B40206 /* DiscoverFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverFilterViewController.swift; sourceTree = "<group>"; };
 		7CD07E232314785900B40206 /* DiscoverPoppinContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPoppinContainerViewController.swift; sourceTree = "<group>"; };
 		7CD07E2523147A9200B40206 /* DiscoverContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverContainerViewController.swift; sourceTree = "<group>"; };
+		7CD07E2723159DEF00B40206 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		7CD07E292315A32700B40206 /* ColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
 		7CE926DE230B222E00BAC78E /* MyDrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyDrinksViewController.swift; path = ../MyDrinksViewController.swift; sourceTree = "<group>"; };
 		7CEBEA19230D99B900A5CEFB /* CreateIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIngredientViewController.swift; sourceTree = "<group>"; };
 		8DBF8D38E3CB0111E36E4FF6 /* Pods-sodaPoppin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sodaPoppin.debug.xcconfig"; path = "Target Support Files/Pods-sodaPoppin/Pods-sodaPoppin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 				3E9EF1F823046F8F00F4DF37 /* LaunchScreen.storyboard */,
 				3EB0DDD32304A70E00923E0D /* GoogleService-Info.plist */,
 				3E9EF1FB23046F8F00F4DF37 /* Info.plist */,
+				7CD07E2723159DEF00B40206 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				3EB0DDCE230472E000923E0D /* firebaseStuff.swift */,
+				7CD07E292315A32700B40206 /* ColorsExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 			files = (
 				3EA204E8230B09D000E902B5 /* tab3.storyboard in Resources */,
 				3E9EF1FA23046F8F00F4DF37 /* LaunchScreen.storyboard in Resources */,
+				7CD07E2823159DEF00B40206 /* Colors.xcassets in Resources */,
 				3EA204E6230B09D000E902B5 /* tab4.storyboard in Resources */,
 				3EB0DDD42304A70E00923E0D /* GoogleService-Info.plist in Resources */,
 				3E9EF1F723046F8F00F4DF37 /* Assets.xcassets in Resources */,
@@ -570,6 +577,7 @@
 				3EA80351230C5174002D99A5 /* FriendTableViewCell.swift in Sources */,
 				3EC97D53230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift in Sources */,
 				7C76127C230C5EB40033C1B3 /* SelectFromInventoryViewController.swift in Sources */,
+				7CD07E2A2315A32700B40206 /* ColorsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
