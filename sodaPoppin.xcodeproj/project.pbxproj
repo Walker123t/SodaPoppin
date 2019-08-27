@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E01DA2F23159044004F4023 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E01DA2E23159044004F4023 /* UserController.swift */; };
+		3E01DA31231597E7004F4023 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E01DA30231597E7004F4023 /* CurrentUser.swift */; };
 		3E40844A230926CD009B294F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E408449230926CD009B294F /* User.swift */; };
 		3E743B1A230F12F6009161F9 /* underlinedSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */; };
 		3E743B2423105D81009161F9 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B2323105D81009161F9 /* FilterViewController.swift */; };
@@ -70,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E01DA2E23159044004F4023 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		3E01DA30231597E7004F4023 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		3E408449230926CD009B294F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = underlinedSegmentController.swift; sourceTree = "<group>"; };
 		3E743B2323105D81009161F9 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 			children = (
 				3EB0DDD12304738A00923E0D /* Drink.swift */,
 				3E408449230926CD009B294F /* User.swift */,
+				3E01DA30231597E7004F4023 /* CurrentUser.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				3EA20509230B56BD00E902B5 /* fakeData.swift */,
 				7C76127D230C612D0033C1B3 /* MyDrinksController.swift */,
 				3E743B2523108D3D009161F9 /* SearchAndFilterViewController.swift */,
+				3E01DA2E23159044004F4023 /* UserController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -533,6 +539,7 @@
 				3EA80359230DB015002D99A5 /* SearchDrinksTableViewController.swift in Sources */,
 				7C761265230B3E4C0033C1B3 /* DrinksPageViewController.swift in Sources */,
 				3E743B2623108D3D009161F9 /* SearchAndFilterViewController.swift in Sources */,
+				3E01DA2F23159044004F4023 /* UserController.swift in Sources */,
 				3E743B1A230F12F6009161F9 /* underlinedSegmentController.swift in Sources */,
 				7CD07E242314785900B40206 /* DiscoverPoppinContainerViewController.swift in Sources */,
 				3EA2050A230B56BD00E902B5 /* fakeData.swift in Sources */,
@@ -557,6 +564,7 @@
 				7CEBEA1A230D99B900A5CEFB /* CreateIngredientViewController.swift in Sources */,
 				7C76127E230C612D0033C1B3 /* MyDrinksController.swift in Sources */,
 				3E743B2423105D81009161F9 /* FilterViewController.swift in Sources */,
+				3E01DA31231597E7004F4023 /* CurrentUser.swift in Sources */,
 				7C761271230B442F0033C1B3 /* ShoppingListContainer.swift in Sources */,
 				3E9EF1F023046F8E00F4DF37 /* AppDelegate.swift in Sources */,
 				3EA80351230C5174002D99A5 /* FriendTableViewCell.swift in Sources */,
