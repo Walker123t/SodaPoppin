@@ -9,8 +9,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <!--Search Drinks Table View Controller-->
+        <scene sceneID="4eH-KT-RiG">
+=======
         <!--Discover-->
         <scene sceneID="igN-ck-Whz">
+>>>>>>> 814873f59e7b78520b8158aa4b35d77b396977a5
+=======
+        <!--Discover-->
+        <scene sceneID="igN-ck-Whz">
+>>>>>>> a1bc9255d39e17fa744d43d3fd8fb2ec58e3394e
             <objects>
                 <viewController id="4y5-qI-Ljg" customClass="DiscoverPoppinViewController" customModule="sodaPoppin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
@@ -135,8 +145,18 @@
             </objects>
             <point key="canvasLocation" x="1039.1304347826087" y="-327.45535714285711"/>
         </scene>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <!--tab 1-->
+        <scene sceneID="NZ5-UR-7Kd">
+=======
         <!--Sort By-->
         <scene sceneID="dD1-jI-yWz">
+>>>>>>> 814873f59e7b78520b8158aa4b35d77b396977a5
+=======
+        <!--Sort By-->
+        <scene sceneID="dD1-jI-yWz">
+>>>>>>> a1bc9255d39e17fa744d43d3fd8fb2ec58e3394e
             <objects>
                 <viewController title="Sort By" id="D9A-8H-WMU" customClass="DiscoverFilterViewController" customModule="sodaPoppin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
@@ -323,8 +343,18 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tagsCell" id="5tU-Rw-hBe" customClass="TagsCollectionViewCell" customModule="sodaPoppin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="48"/>
+=======
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rvg-Im-iG5">
                                         <rect key="frame" x="0.0" y="0.0" width="115" height="34"/>
+>>>>>>> 814873f59e7b78520b8158aa4b35d77b396977a5
+=======
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rvg-Im-iG5">
+                                        <rect key="frame" x="0.0" y="0.0" width="115" height="34"/>
+>>>>>>> a1bc9255d39e17fa744d43d3fd8fb2ec58e3394e
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="115" height="34"/>
@@ -364,8 +394,18 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="categoryCell" id="6UG-Ck-fBs" customClass="CategoriesCollectionViewCell" customModule="sodaPoppin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="43"/>
+=======
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hKr-DH-0Hc">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
+>>>>>>> 814873f59e7b78520b8158aa4b35d77b396977a5
+=======
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hKr-DH-0Hc">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
+>>>>>>> a1bc9255d39e17fa744d43d3fd8fb2ec58e3394e
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
@@ -476,8 +516,17 @@
     </scenes>
     <resources>
         <image name="Dr.Pepper-1" width="25" height="25"/>
+<<<<<<< HEAD
+<<<<<<< HEAD
         <namedColor name="Purps">
             <color name="ibMissingResourceColor" catalog="#$assets-com.apple.dt.DVTKit" colorSpace="catalog"/>
         </namedColor>
+=======
+>>>>>>> 814873f59e7b78520b8158aa4b35d77b396977a5
+=======
+        <namedColor name="Purps">
+            <color name="ibMissingResourceColor" catalog="#$assets-com.apple.dt.DVTKit" colorSpace="catalog"/>
+        </namedColor>
+>>>>>>> a1bc9255d39e17fa744d43d3fd8fb2ec58e3394e
     </resources>
 </document>
