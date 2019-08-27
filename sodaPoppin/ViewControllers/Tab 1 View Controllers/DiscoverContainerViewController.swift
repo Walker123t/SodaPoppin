@@ -33,20 +33,3 @@ class DiscoverContainerViewController: UIPageViewController {
     */
 
 }
-
-extension DiscoverContainerViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let index = allViewControllers.firstIndex(of: viewController) else { return UIViewController() }
-        if index == 0 {
-            return nil
-        }
-        let newIndex = index - 1
-        return allViewControllers[newIndex]
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        <#code#>
-    }
-    
-    
-}
