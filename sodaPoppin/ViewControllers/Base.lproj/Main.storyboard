@@ -36,7 +36,7 @@
         <scene sceneID="Dgo-CC-EMc">
             <objects>
                 <viewControllerPlaceholder storyboardName="tab1" id="d8Y-nF-M8m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="main" image="Dr.Pepper-1" selectedImage="JasonFace" id="rL0-UA-lAA">
+                    <tabBarItem key="tabBarItem" title="Sort By" image="recipeCards" selectedImage="JasonFace" id="rL0-UA-lAA">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -48,7 +48,7 @@
         <scene sceneID="eGn-Vz-iJc">
             <objects>
                 <viewControllerPlaceholder storyboardName="tab2" id="K2H-P1-ugF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="D63-6I-jd8"/>
+                    <tabBarItem key="tabBarItem" title="Fountain" image="nounFountain2195044" id="D63-6I-jd8"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfY-kX-ADy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,7 +58,7 @@
         <scene sceneID="xXB-To-pqA">
             <objects>
                 <viewControllerPlaceholder storyboardName="tab3" id="hV1-YY-V18" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Drinks" image="Dr.Pepper-1" selectedImage="Dr.Pepper-1" id="cwW-Dk-xLj"/>
+                    <tabBarItem key="tabBarItem" title="My Drinks" image="nounSoda337306" selectedImage="Dr.Pepper-1" id="cwW-Dk-xLj"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okw-PK-GHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +68,7 @@
         <scene sceneID="7az-Pq-6BS">
             <objects>
                 <viewControllerPlaceholder storyboardName="tab4" id="b1W-7G-opx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="tab4" image="JasonFace" id="QLB-Zl-2y3">
+                    <tabBarItem key="tabBarItem" title="Profile" image="gridiconsUserCircle" id="QLB-Zl-2y3">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -80,5 +80,9 @@
     <resources>
         <image name="Dr.Pepper-1" width="25" height="25"/>
         <image name="JasonFace" width="2407" height="3191"/>
+        <image name="gridiconsUserCircle" width="26" height="26"/>
+        <image name="nounFountain2195044" width="28" height="31"/>
+        <image name="nounSoda337306" width="19" height="30"/>
+        <image name="recipeCards" width="46" height="28"/>
     </resources>
 </document>

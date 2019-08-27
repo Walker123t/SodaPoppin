@@ -10,4 +10,16 @@ import UIKit
 
 class SelectedTagsCollectionViewCell: UICollectionViewCell {
     
+    var selectedTag: String?
+    
+    @IBOutlet weak var selectedTagLabel: UILabel!
+    
+    override func awakeFromNib() {
+        selectedTagLabel.text = selectedTag
+    }
+    
+    @IBAction func xButtonTapped(_ sender: Any) {
+        
+    }
+    
 }

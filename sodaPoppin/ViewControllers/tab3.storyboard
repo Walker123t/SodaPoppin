@@ -634,11 +634,11 @@
             </objects>
             <point key="canvasLocation" x="1726" y="720"/>
         </scene>
-        <!--Item-->
+        <!--My Drinks-->
         <scene sceneID="CWR-Lp-Xdd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q9s-g0-SW3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="Dr.Pepper-1" id="rT2-kw-WTN">
+                    <tabBarItem key="tabBarItem" title="My Drinks" image="nounSoda337306" id="rT2-kw-WTN">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -662,8 +662,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Dr.Pepper-1" width="25" height="25"/>
         <image name="Image" width="512" height="512"/>
         <image name="Image-1" width="128" height="128"/>
+        <image name="nounSoda337306" width="19" height="30"/>
     </resources>
 </document>
