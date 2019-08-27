@@ -10,13 +10,17 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let fakeData = FakeData()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "myGoTo")
-        cell.textLabel?.text = "I LIKE HAM"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as? DrinklTableViewCell else {return UITableViewCell()}
+        cell.selectionStyle = .none
+        cell.layer.cornerRadius = 5
+        cell.clipsToBounds = true
+        cell.populate(drink: fakeData.currentUser.favoriteDrink)
         return cell
     }
     
@@ -27,9 +31,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height / 2
+        profilePictureImageView.image = fakeData.currentUser.userImage
         myGoToTableView.delegate = self
         myGoToTableView.dataSource = self
+        myGoToTableView.register(cellNib, forCellReuseIdentifier: "drinkCell")
         // Do any additional setup after loading the view.
     }
     
