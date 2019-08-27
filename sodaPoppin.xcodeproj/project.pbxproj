@@ -10,6 +10,7 @@
 		3E40844A230926CD009B294F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E408449230926CD009B294F /* User.swift */; };
 		3E743B1A230F12F6009161F9 /* underlinedSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */; };
 		3E743B2423105D81009161F9 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B2323105D81009161F9 /* FilterViewController.swift */; };
+		3E743B2623108D3D009161F9 /* SearchAndFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B2523108D3D009161F9 /* SearchAndFilterViewController.swift */; };
 		3E9EF1F023046F8E00F4DF37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EF1EF23046F8E00F4DF37 /* AppDelegate.swift */; };
 		3E9EF1F223046F8E00F4DF37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EF1F123046F8E00F4DF37 /* ViewController.swift */; };
 		3E9EF1F523046F8E00F4DF37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9EF1F323046F8E00F4DF37 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		3E408449230926CD009B294F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = underlinedSegmentController.swift; sourceTree = "<group>"; };
 		3E743B2323105D81009161F9 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		3E743B2523108D3D009161F9 /* SearchAndFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAndFilterViewController.swift; sourceTree = "<group>"; };
 		3E9EF1EC23046F8E00F4DF37 /* sodaPoppin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sodaPoppin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9EF1EF23046F8E00F4DF37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E9EF1F123046F8E00F4DF37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				7C5748B423049F4500253B86 /* FirebaseController.swift */,
 				3EA20509230B56BD00E902B5 /* fakeData.swift */,
 				7C76127D230C612D0033C1B3 /* MyDrinksController.swift */,
+				3E743B2523108D3D009161F9 /* SearchAndFilterViewController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 			files = (
 				3EA80359230DB015002D99A5 /* SearchDrinksTableViewController.swift in Sources */,
 				7C761265230B3E4C0033C1B3 /* DrinksPageViewController.swift in Sources */,
+				3E743B2623108D3D009161F9 /* SearchAndFilterViewController.swift in Sources */,
 				3E743B1A230F12F6009161F9 /* underlinedSegmentController.swift in Sources */,
 				3EA2050A230B56BD00E902B5 /* fakeData.swift in Sources */,
 				7C761276230C515D0033C1B3 /* CreateNewDrinkViewController.swift in Sources */,
