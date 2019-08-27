@@ -24,10 +24,6 @@ class DiscoverPoppinViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        let allViewControllers = [
-            UIStoryboard(name: "tab1", bundle: nil).instantiateViewController(withIdentifier: "DiscoverPoppinContainerViewController"),
-            UIStoryboard(name: "tab1", bundle: nil).instantiateViewController(withIdentifier: "DiscoverFilterViewController")
-        ]
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(myDrinks), name: Notification.Name(rawValue: "myDrinks"), object: nil)
         
