@@ -476,5 +476,8 @@
     </scenes>
     <resources>
         <image name="Dr.Pepper-1" width="25" height="25"/>
+        <namedColor name="Purps">
+            <color name="ibMissingResourceColor" catalog="#$assets-com.apple.dt.DVTKit" colorSpace="catalog"/>
+        </namedColor>
     </resources>
 </document>
