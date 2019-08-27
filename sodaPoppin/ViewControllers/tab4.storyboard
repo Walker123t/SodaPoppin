@@ -150,11 +150,11 @@
             </objects>
             <point key="canvasLocation" x="1859" y="-327"/>
         </scene>
-        <!--tab 4-->
+        <!--Profile-->
         <scene sceneID="KWo-xg-jeQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OQv-75-VQr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="tab 4" image="Dr.Pepper-1" id="zXL-XM-T35">
+                    <tabBarItem key="tabBarItem" title="Profile" image="Dr.Pepper-1" id="zXL-XM-T35">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
