@@ -13,7 +13,7 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
     var selectedCategory: [String] = []
     var selectedTags: [String] = []
     
-    var sodas: [String] = ["Mountain Dew","Coke","Sprite","Dr. Pepper","Pepsi","Cream Soda","Lemonade"]
+    var sodas: [String] = ["Sprite","Coke","Dr. Pepper","Root Beer"]
     var syrups: [String] = ["Vanilla","Cherry","Raspberry","Blueberry","Watermelon"]
     var pureés: [String] = ["Raspberry","Cherry","Blackberry","Strawberry"]
     var other: [String] = ["Cream"]

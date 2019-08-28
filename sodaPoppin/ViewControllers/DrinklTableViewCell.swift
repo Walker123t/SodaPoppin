@@ -30,6 +30,7 @@ class DrinklTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func populate(drink: Drink){
+        // Populating Soda Icon
         sodaIcon.image = #imageLiteral(resourceName: "My Drinks Icon")
         if drink.mainSodaName == "Sprite" {
             sodaIcon.backgroundColor = UIColor.green
@@ -40,9 +41,19 @@ class DrinklTableViewCell: UITableViewCell {
         } else {
             sodaIcon.backgroundColor = UIColor.brown
         }
-        syrup1Icon.image = UIImage(named: "one")
-        syrupIcon2.image = UIImage(named: "two")
-        syrup3Icon.image = UIImage(named: "three")
+        
+        // Populating Syrup Icon
+        if drink.ingredients.count == 1 {
+            syrup1Icon.image = UIImage(named: "\(drink.ingredients[0])")
+        } else if drink.ingredients.count == 2 {
+            syrup1Icon.image = UIImage(named: "\(drink.ingredients[0])")
+            syrupIcon2.image = UIImage(named: "\(drink.ingredients[1])")
+        } else {
+            syrup1Icon.image = UIImage(named: "\(drink.ingredients[0])")
+            syrupIcon2.image = UIImage(named: "\(drink.ingredients[1])")
+            syrup3Icon.image = UIImage(named: "\(drink.ingredients[2])")
+        }
+        
         drinkNameLabel.text = drink.name
         switch drink.ingredients.count {
         case 0 :
