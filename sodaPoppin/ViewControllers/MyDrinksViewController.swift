@@ -20,7 +20,8 @@ class MyDrinksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.title = "My Drinks"
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         NotificationCenter.default.addObserver(self, selector: #selector(myDrinks), name: Notification.Name(rawValue: "myDrinks"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(myInventory), name: Notification.Name(rawValue: "myInventory"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(shoppingList), name: Notification.Name(rawValue: "shoppingList"), object: nil)

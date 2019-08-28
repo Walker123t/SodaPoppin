@@ -31,6 +31,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height / 2
         profilePictureImageView.image = fakeData.currentUser.userImage

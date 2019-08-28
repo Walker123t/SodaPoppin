@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D9A-8H-WMU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8DE-gH-jsy">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -386,7 +386,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3yh-oY-jsC">
-                                <rect key="frame" x="20" y="275" width="374" height="250"/>
+                                <rect key="frame" x="20" y="277" width="374" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="qYW-Va-wVw"/>
@@ -474,7 +474,7 @@
                             <constraint firstItem="Oh3-5V-WY9" firstAttribute="top" secondItem="9tu-dq-zt7" secondAttribute="bottom" id="RHC-rK-FU5"/>
                             <constraint firstAttribute="trailing" secondItem="9tu-dq-zt7" secondAttribute="trailing" id="WIg-K2-x3L"/>
                             <constraint firstItem="qI2-wB-cUG" firstAttribute="height" secondItem="3GG-k3-DPb" secondAttribute="height" multiplier="0.1" id="aAt-AG-NWa"/>
-                            <constraint firstItem="3yh-oY-jsC" firstAttribute="top" secondItem="sAY-Cb-R1M" secondAttribute="bottom" constant="3" id="aYd-B9-Dga"/>
+                            <constraint firstItem="3yh-oY-jsC" firstAttribute="top" secondItem="sAY-Cb-R1M" secondAttribute="bottom" constant="5" id="aYd-B9-Dga"/>
                             <constraint firstItem="Oh3-5V-WY9" firstAttribute="width" secondItem="3GG-k3-DPb" secondAttribute="width" multiplier="0.9" id="bZv-F9-qGk"/>
                             <constraint firstItem="Oh3-5V-WY9" firstAttribute="height" secondItem="3GG-k3-DPb" secondAttribute="height" multiplier="0.075" id="gTe-wa-4ks"/>
                             <constraint firstItem="sAY-Cb-R1M" firstAttribute="centerX" secondItem="3GG-k3-DPb" secondAttribute="centerX" id="iDv-OI-Dev"/>
