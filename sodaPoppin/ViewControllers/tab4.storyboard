@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Mse-zZ-LpZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SJY-fW-JS8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CD0-sn-Ott">
-                                <rect key="frame" x="0.0" y="88" width="414" height="215"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmD-rB-LXK">
                                         <rect key="frame" x="361" y="117" width="30" height="30"/>
@@ -32,20 +33,20 @@
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUh-oM-Clv">
-                                        <rect key="frame" x="20.5" y="160" width="373" height="2.5"/>
+                                        <rect key="frame" x="20.5" y="144.5" width="373" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="WcS-zn-OOk">
-                                        <rect key="frame" x="84" y="173" width="246.5" height="32"/>
+                                        <rect key="frame" x="84" y="155" width="246.5" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8f-hA-ZFs">
-                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFx-eU-V0T">
-                                                <rect key="frame" x="146.5" y="0.0" width="100" height="32"/>
+                                                <rect key="frame" x="146.5" y="0.0" width="100" height="29"/>
                                                 <state key="normal" title="Find Friends">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -76,7 +77,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.42352941176470588" green="0.32549019607843138" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="darkerPurp"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jason Mandozzi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc4-dN-mu6">
                                         <rect key="frame" x="154" y="36" width="124" height="21"/>
@@ -86,7 +87,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.42352941176470588" green="0.32549019607843138" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="darkerPurp"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="WcS-zn-OOk" secondAttribute="bottom" constant="10" id="CxD-3q-QBo"/>
                                     <constraint firstItem="YUh-oM-Clv" firstAttribute="height" secondItem="CD0-sn-Ott" secondAttribute="height" multiplier="0.01" id="R6l-0b-2hY"/>
@@ -98,10 +99,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lK-iX-uCq">
-                                <rect key="frame" x="0.0" y="303" width="414" height="215"/>
+                                <rect key="frame" x="0.0" y="194" width="414" height="194"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uNK-LE-VOT">
-                                        <rect key="frame" x="10" y="40" width="394" height="165"/>
+                                        <rect key="frame" x="10" y="40" width="394" height="144"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Go-To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biL-1A-0Hm">
@@ -164,9 +165,10 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aqD-kv-aKX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="aqD-kv-aKX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="darkerPurp"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -180,6 +182,9 @@
     </scenes>
     <resources>
         <image name="JasonFace" width="2407" height="3191"/>
-        <image name="Profile Icon" width="52" height="52"/>
+        <image name="Profile Icon" width="26" height="26"/>
+        <namedColor name="darkerPurp">
+            <color red="0.41568627450980394" green="0.31764705882352939" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
