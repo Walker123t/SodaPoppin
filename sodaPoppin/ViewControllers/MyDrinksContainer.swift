@@ -26,7 +26,7 @@ class MyDrinksContainer: UIViewController {
         addDrinkButton.layer.shadowOpacity = 0.5
         addDrinkButton.layer.shadowRadius = 4.0
         addDrinkButton.layer.masksToBounds = false
-        addDrinkButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//        addDrinkButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
 

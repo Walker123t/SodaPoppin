@@ -9,13 +9,8 @@
 import UIKit
 
 class TagsCollectionViewCell: UICollectionViewCell {
-
-    var objectReceived: String? {
-        didSet {
-            reloadInputViews()
-            updateViews()
-        }
-    }
+    
+    var isChosen = false
     
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var tagLabelWidth: NSLayoutConstraint!
@@ -24,16 +19,21 @@ class TagsCollectionViewCell: UICollectionViewCell {
         setUpCell()
     }
     
-    func updateViews() {
-        guard let object = objectReceived else {return}
-        tagLabel.text = object
-        if self.isSelected {
-            self.contentView.backgroundColor = .black
-            tagLabel.textColor = .white
-        } else {
-         self.contentView.backgroundColor = .white
-            tagLabel.textColor = .black
-        }
+    func toggleIsChosen() {
+        isChosen.toggle()
+        tagLabel.backgroundColor = isChosen ? .purp : .white
+        tagLabel.textColor = isChosen ? .white : .black
+        self.layer.borderColor = isChosen ? UIColor.purp?.cgColor : UIColor.black.cgColor
+        isUserInteractionEnabled = !isChosen
+    }
+    
+    func updateViews(with label: String, isChosen: Bool) {
+        self.isChosen = isChosen
+        tagLabel.text = label
+        tagLabel.backgroundColor = isChosen ? .purp : .white
+        tagLabel.textColor = isChosen ? .white : .black
+        self.layer.borderColor = isChosen ? UIColor.purp?.cgColor : UIColor.black.cgColor
+        isUserInteractionEnabled = !isChosen
     }
     
     func setUpCell() {
