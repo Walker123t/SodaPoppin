@@ -161,7 +161,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C8-jj-FfE">
-                                <rect key="frame" x="324.5" y="772.5" width="89.5" height="89.5"/>
+                                <rect key="frame" x="309.5" y="772.5" width="89.5" height="89.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6C8-jj-FfE" secondAttribute="height" multiplier="1:1" id="xXy-mk-tIB"/>
                                 </constraints>
@@ -181,7 +181,7 @@
                             <constraint firstItem="cMN-yG-nJb" firstAttribute="width" secondItem="Ef6-15-Rc6" secondAttribute="width" id="MUS-yU-OcN"/>
                             <constraint firstItem="b3g-e4-xXW" firstAttribute="height" secondItem="Ef6-15-Rc6" secondAttribute="height" multiplier="0.09" id="Y4z-2k-nzG"/>
                             <constraint firstItem="b3g-e4-xXW" firstAttribute="centerX" secondItem="2a6-hP-duL" secondAttribute="centerX" id="aVj-pT-7ZS"/>
-                            <constraint firstItem="2a6-hP-duL" firstAttribute="trailing" secondItem="6C8-jj-FfE" secondAttribute="trailing" id="ch1-qE-ybf"/>
+                            <constraint firstItem="2a6-hP-duL" firstAttribute="trailing" secondItem="6C8-jj-FfE" secondAttribute="trailing" constant="15" id="ch1-qE-ybf"/>
                             <constraint firstItem="cMN-yG-nJb" firstAttribute="height" secondItem="Ef6-15-Rc6" secondAttribute="height" multiplier="0.7" id="foZ-5c-vJP"/>
                             <constraint firstItem="6C8-jj-FfE" firstAttribute="height" secondItem="Ef6-15-Rc6" secondAttribute="height" multiplier="0.1" id="hcZ-go-9x9"/>
                             <constraint firstItem="b3g-e4-xXW" firstAttribute="width" secondItem="Ef6-15-Rc6" secondAttribute="width" id="rvI-C8-Hgd"/>
@@ -663,6 +663,6 @@
     <resources>
         <image name="Create Soda" width="128" height="128"/>
         <image name="Image" width="512" height="512"/>
-        <image name="My Drinks Icon" width="38" height="60"/>
+        <image name="My Drinks Icon" width="19" height="30"/>
     </resources>
 </document>

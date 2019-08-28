@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "My Drinks Icon.png",
+      "filename" : "My Drinks Icon (1).png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "My Drinks Icon@2x.png",
       "scale" : "2x"
     },
     {

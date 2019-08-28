@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Fountain Icon.png",
+      "filename" : "Fountain Icon 1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Fountain Icon.png",
       "scale" : "2x"
     },
     {
