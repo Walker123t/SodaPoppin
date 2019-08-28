@@ -24,10 +24,7 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-=======
         setUpSearchButton()
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
         selectedCategory = sodas
         
         // Do any additional setup after loading the view.
@@ -69,8 +66,6 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
         navigationController?.popViewController(animated: false)
     }
     
-<<<<<<< HEAD
-=======
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == tagsCollectionView {
             let cell = tagsCollectionView.cellForItem(at: indexPath) as? TagsCollectionViewCell
@@ -90,7 +85,6 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
         
     }
     
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == tagsCollectionView {
             return selectedCategory.count
@@ -103,15 +97,6 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
         if collectionView == tagsCollectionView {
             guard let cell = tagsCollectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as? TagsCollectionViewCell else { return UICollectionViewCell() }
             let object = selectedCategory[indexPath.row]
-<<<<<<< HEAD
-            cell.objectReceived = object
-            return cell
-        } else {
-            guard let cell = selectedTagsCollectionView.dequeueReusableCell(withReuseIdentifier: "selectedTagCell", for: indexPath) as? SelectedTagsCollectionViewCell else { return UICollectionViewCell() }
-            let tag = selectedTags[indexPath.row]
-            cell.selectedTag = tag
-            return cell
-=======
             cell.updateViews(with: object, isChosen: selectedTags.contains(object))
             return cell
         } else {
@@ -120,22 +105,10 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
                 cell.selectedTagLabel.text = tag
                 cell.cellDelegate = self
                 return cell
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
         }
     }
     
     /*
-<<<<<<< HEAD
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-=======
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -145,7 +118,6 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
      }
      */
     
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
 }
 
 extension DiscoverFilterViewController: UICollectionViewDelegateFlowLayout {
@@ -158,13 +130,6 @@ extension DiscoverFilterViewController: UICollectionViewDelegateFlowLayout {
             } else if charCount >= 10 {
                 return CGSize(width: (10 * charCount), height: 23)
             }
-<<<<<<< HEAD
-        }
-        return CGSize(width: 20, height: 23)
-    }
-    
-
-=======
         } else if collectionView == selectedTagsCollectionView {
             let item = selectedTags[indexPath.row]
             let charCount = item.count
@@ -178,7 +143,6 @@ extension DiscoverFilterViewController: UICollectionViewDelegateFlowLayout {
     }
     
     
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
     
     func sizeThatFits(_ size: CGSize) -> CGSize {
         if (self.view != nil) {
@@ -203,8 +167,6 @@ extension DiscoverFilterViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
-<<<<<<< HEAD
-=======
 extension DiscoverFilterViewController: SelectedTagsCellDelegate {
     
     func selectedTagsCellDelegate(for cell: SelectedTagsCollectionViewCell) {
@@ -217,4 +179,3 @@ extension DiscoverFilterViewController: SelectedTagsCellDelegate {
     
     
 }
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0

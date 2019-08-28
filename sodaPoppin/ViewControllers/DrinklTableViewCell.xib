@@ -25,19 +25,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-<<<<<<< HEAD
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="eeH-hy-qCM">
-                        <rect key="frame" x="14" y="41" width="336" height="50"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M2T-zS-zh9">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Create Soda" translatesAutoresizingMaskIntoConstraints="NO" id="LzC-dx-f5k">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="LzC-dx-f5k" secondAttribute="height" multiplier="1:1" id="Anv-KR-8uO"/>
-                                            <constraint firstAttribute="height" constant="50" id="Kn0-Lm-5Nk"/>
-=======
                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M2T-zS-zh9">
                         <rect key="frame" x="16" y="44" width="63" height="63"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -61,40 +48,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="63"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vjc-7c-yt8" secondAttribute="height" multiplier="1:1" id="qwD-2W-heP"/>
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
                                         </constraints>
                                     </imageView>
                                 </subviews>
                             </stackView>
-<<<<<<< HEAD
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="I1i-Hb-K3l">
-                                <rect key="frame" x="76" y="0.0" width="260" height="50"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Create Soda" translatesAutoresizingMaskIntoConstraints="NO" id="vjc-7c-yt8">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="vjc-7c-yt8" secondAttribute="height" multiplier="1:1" id="qwD-2W-heP"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Create Soda" translatesAutoresizingMaskIntoConstraints="NO" id="UKy-wP-WoY">
-                                        <rect key="frame" x="70" y="0.0" width="50" height="50"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Create Soda" translatesAutoresizingMaskIntoConstraints="NO" id="pQH-oV-vbc">
-                                        <rect key="frame" x="140" y="0.0" width="50" height="50"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zik-Rb-cGB">
-                                        <rect key="frame" x="210" y="15" width="50" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="vjc-7c-yt8" firstAttribute="height" secondItem="LzC-dx-f5k" secondAttribute="height" id="2r9-la-jfs"/>
-                        </constraints>
-=======
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ExH-aT-tcr">
                                 <rect key="frame" x="71" y="0.0" width="63" height="63"/>
                                 <subviews>
@@ -118,7 +75,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzD-we-ke4">
                         <rect key="frame" x="289" y="5" width="26" height="26"/>
@@ -128,32 +84,12 @@
                         </constraints>
                         <state key="normal" title="Button" image="unlikedIcon"/>
                     </button>
-<<<<<<< HEAD
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZ8-KF-DKF">
-                        <rect key="frame" x="0.0" y="31" width="320" height="2"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="2" id="vy5-mL-yA7"/>
-                        </constraints>
-                    </view>
-=======
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="RzD-we-ke4" secondAttribute="trailing" constant="5" id="D2u-cl-8sp"/>
                     <constraint firstItem="RzD-we-ke4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="FnH-Mk-bKX"/>
-<<<<<<< HEAD
-                    <constraint firstItem="eeH-hy-qCM" firstAttribute="top" secondItem="RzD-we-ke4" secondAttribute="bottom" constant="10" id="HHg-HQ-6Ac"/>
-                    <constraint firstItem="RZ8-KF-DKF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NOF-R5-QZZ"/>
                     <constraint firstItem="rC1-Xh-9ny" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="UZS-6G-b93"/>
                     <constraint firstItem="rC1-Xh-9ny" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="V59-V7-ZAW"/>
-                    <constraint firstAttribute="trailing" secondItem="RZ8-KF-DKF" secondAttribute="trailing" id="XBv-37-PNN"/>
-                    <constraint firstItem="RZ8-KF-DKF" firstAttribute="top" secondItem="RzD-we-ke4" secondAttribute="bottom" id="khZ-O7-hfV"/>
-                    <constraint firstItem="eeH-hy-qCM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="vfb-9m-rWh"/>
-=======
-                    <constraint firstItem="rC1-Xh-9ny" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="UZS-6G-b93"/>
-                    <constraint firstItem="rC1-Xh-9ny" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="V59-V7-ZAW"/>
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -170,11 +106,7 @@
         </tableViewCell>
     </objects>
     <resources>
-<<<<<<< HEAD
-        <image name="Create Soda" width="128" height="128"/>
-=======
         <image name="placeholderIcon" width="63" height="63"/>
->>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
         <image name="unlikedIcon" width="25" height="25"/>
     </resources>
 </document>
