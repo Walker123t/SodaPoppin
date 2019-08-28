@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kfC-kZ-fsW">
-                                <rect key="frame" x="0.0" y="58" width="414" height="667"/>
+                                <rect key="frame" x="0.0" y="30" width="414" height="695"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shoppingListCell" id="8Ux-0q-lUH">
@@ -41,8 +41,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QA-3H-4dY">
-                                <rect key="frame" x="265.5" y="596.5" width="128" height="128"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QA-3H-4dY">
+                                <rect key="frame" x="329.5" y="660.5" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3QA-3H-4dY" secondAttribute="height" multiplier="1:1" id="1x2-hN-QJD"/>
                                 </constraints>
@@ -52,14 +52,15 @@
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hos-sW-ePN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FEm-su-vr1">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FEm-su-vr1">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyH-Pp-CWT">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
                                                 <color key="backgroundColor" name="darkerPurp"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="My Drinks">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -68,8 +69,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2d-6W-AoZ">
-                                                <rect key="frame" x="143" y="0.0" width="128" height="30"/>
+                                                <rect key="frame" x="138" y="0.0" width="138" height="30"/>
                                                 <color key="backgroundColor" name="darkerPurp"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="My Inventory">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -78,8 +80,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilc-rt-7Mg">
-                                                <rect key="frame" x="286" y="0.0" width="128" height="30"/>
+                                                <rect key="frame" x="276" y="0.0" width="138" height="30"/>
                                                 <color key="backgroundColor" name="darkerPurp"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Shopping List">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -89,8 +92,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="onf-2C-aMv">
-                                        <rect key="frame" x="0.0" y="30" width="414" height="29"/>
+                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="onf-2C-aMv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
                                             <segment title="Liked Drinks"/>
@@ -98,11 +101,6 @@
                                         </segments>
                                         <color key="tintColor" red="0.42352941179999998" green="0.32549019610000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
-                                    <searchBar hidden="YES" contentMode="redraw" placeholder="Search for ingredient..." translatesAutoresizingMaskIntoConstraints="NO" id="cBR-wv-xZD">
-                                        <rect key="frame" x="0.0" y="58" width="414" height="0.0"/>
-                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -130,9 +128,9 @@
                         <outlet property="myDrinksButton" destination="zyH-Pp-CWT" id="ZdT-HF-o8p"/>
                         <outlet property="myDrinksSegment" destination="onf-2C-aMv" id="nsl-dM-Nd6"/>
                         <outlet property="myInventoryButton" destination="e2d-6W-AoZ" id="dA1-9o-2mH"/>
-                        <outlet property="searchBar" destination="cBR-wv-xZD" id="nbj-5f-rMC"/>
                         <outlet property="shoppingListButton" destination="Ilc-rt-7Mg" id="nCM-BT-vaS"/>
                         <outlet property="tableView" destination="kfC-kZ-fsW" id="X62-Rl-q5t"/>
+                        <outlet property="titleLabel" destination="9Rl-Wy-Km3" id="5PN-CZ-W9s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7x-uX-LkE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -433,6 +431,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wkb-jc-0Ni">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="darkerPurp"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -449,7 +448,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Create Soda" width="128" height="128"/>
+        <image name="Create Soda" width="64" height="64"/>
         <image name="Image" width="512" height="512"/>
         <image name="My Drinks Icon" width="17" height="30"/>
         <namedColor name="darkerPurp">
