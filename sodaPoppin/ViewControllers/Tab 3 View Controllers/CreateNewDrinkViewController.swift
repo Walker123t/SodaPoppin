@@ -61,9 +61,9 @@ class CreateNewDrinkViewController: UIViewController {
     
     func arrayToString() {
         loadViewIfNeeded()
-        if MyDrinksController.sharedInstance.ingredients != [] {
+        if FakeData.shared.inventory != [] {
             ingredientLabel.textColor = .black
-            let ingredients = MyDrinksController.sharedInstance.ingredients
+            let ingredients = FakeData.shared.inventory
             if ingredients.count == 1 {
                 stringFromArray += "\(ingredients[i])"
             } else {
