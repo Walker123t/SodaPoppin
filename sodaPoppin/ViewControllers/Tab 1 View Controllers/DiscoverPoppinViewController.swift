@@ -21,6 +21,8 @@ class DiscoverPoppinViewController: UIViewController {
         super.viewDidLoad()
         poppinTableView.delegate = self
         poppinTableView.dataSource = self
+        let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
+        poppinTableView.register(cellNib, forCellReuseIdentifier: "drinkCell")
         // To take out the line between the navigation bar and the purple view at the top of the page
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -53,13 +55,31 @@ class DiscoverPoppinViewController: UIViewController {
 }
 
 extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = .clear
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return FakeData.shared.drinks.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        // #warning Incomplete implementation, return the number of rows
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as? DrinklTableViewCell else {return UITableViewCell()}
+        cell.selectionStyle = .none
+        cell.layer.cornerRadius = 5
+        cell.clipsToBounds = true
+        cell.populate(drink: FakeData.shared.drinks[indexPath.section])
+        return cell
     }
-    
-    
 }

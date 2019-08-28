@@ -12,11 +12,10 @@ class MyDrinksController {
     
     static let shared = MyDrinksController()
     
-    let fakeData = FakeData()
-    func createDrink(name: String, ingredients: [String], notes: String) {
+    func createDrink(name: String, mainSodaName: String, ingredients: [String], notes: String) {
         
-        let newDrink = Drink(uuid: nil, name: name, ingredients: ingredients, notes: notes)
-        fakeData.drinks.append(newDrink)
+        let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients, notes: notes)
+        FakeData.shared.drinks.append(newDrink)
     }
     
     
