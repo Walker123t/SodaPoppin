@@ -12,13 +12,13 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
 
+    @IBOutlet weak var titleLabel: UINavigationItem!
     @IBOutlet weak var myDrinksButton: UIButton!
     @IBOutlet weak var myInventoryButton: UIButton!
     @IBOutlet weak var shoppingListButton: UIButton!
     @IBOutlet weak var drinksTableView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var myDrinksSegment: UISegmentedControl!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     var selectedTap: Int = 0
     
@@ -67,25 +67,42 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             return UITableViewCell()
         }
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            switch selectedTap {
+            case 0:
+                FakeData.shared.drinks.remove(at: indexPath.row)
+            case 1:
+                FakeData.shared.inventory.remove(at: indexPath.row)
+            case 2:
+                FakeData.shared.shoppingList.remove(at: indexPath.row)
+            default:
+                return
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
     
     @IBAction func myDrinksButtonTapped(_ sender: Any) {
         selectedTap = 0
-        searchBar.isHidden = true
-        myDrinksSegment.isHidden = false
+        titleLabel.title = "My Drinks"
+        //myDrinksSegment.isHidden = false
         tableView.reloadData()
     }
     
     @IBAction func myInventoryButtonTapped(_ sender: Any) {
         selectedTap = 1
-        searchBar.isHidden = false
-        myDrinksSegment.isHidden = true
+        titleLabel.title = "My Inventory"
+        //myDrinksSegment.isHidden = true
         tableView.reloadData()
     }
     
     @IBAction func shoppingListButtonTapped(_ sender: Any) {
         selectedTap = 2
-        searchBar.isHidden = false
-        myDrinksSegment.isHidden = true
+        titleLabel.title = "My Shopping List"
+        //myDrinksSegment.isHidden = true
         tableView.reloadData()
     }
     
