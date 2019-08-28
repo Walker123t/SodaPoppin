@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3E01DA2F23159044004F4023 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E01DA2E23159044004F4023 /* UserController.swift */; };
 		3E01DA31231597E7004F4023 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E01DA30231597E7004F4023 /* CurrentUser.swift */; };
+<<<<<<< HEAD
+		3E01DA3823161F60004F4023 /* IngredientCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E01DA3723161F60004F4023 /* IngredientCollectionViewCell.swift */; };
+=======
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
 		3E40844A230926CD009B294F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E408449230926CD009B294F /* User.swift */; };
 		3E743B1A230F12F6009161F9 /* underlinedSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */; };
 		3E743B2423105D81009161F9 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B2323105D81009161F9 /* FilterViewController.swift */; };
@@ -76,6 +80,10 @@
 /* Begin PBXFileReference section */
 		3E01DA2E23159044004F4023 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		3E01DA30231597E7004F4023 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		3E01DA3723161F60004F4023 /* IngredientCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCollectionViewCell.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
 		3E408449230926CD009B294F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = underlinedSegmentController.swift; sourceTree = "<group>"; };
 		3E743B2323105D81009161F9 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +316,10 @@
 				7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */,
 				7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */,
 				7CEBEA19230D99B900A5CEFB /* CreateIngredientViewController.swift */,
+<<<<<<< HEAD
+				3E01DA3723161F60004F4023 /* IngredientCollectionViewCell.swift */,
+=======
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
 			);
 			path = "Tab 3 View Controllers";
 			sourceTree = "<group>";
@@ -576,6 +588,10 @@
 				3E9EF1F023046F8E00F4DF37 /* AppDelegate.swift in Sources */,
 				3EA80351230C5174002D99A5 /* FriendTableViewCell.swift in Sources */,
 				3EC97D53230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift in Sources */,
+<<<<<<< HEAD
+				3E01DA3823161F60004F4023 /* IngredientCollectionViewCell.swift in Sources */,
+=======
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
 				7C76127C230C5EB40033C1B3 /* SelectFromInventoryViewController.swift in Sources */,
 				7CD07E2A2315A32700B40206 /* ColorsExtension.swift in Sources */,
 			);

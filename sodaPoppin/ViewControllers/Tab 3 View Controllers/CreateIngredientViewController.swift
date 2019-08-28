@@ -19,8 +19,11 @@ class CreateIngredientViewController: UIViewController {
     }
     
     @IBAction func chooseButtonTapped(_ sender: Any) {
+<<<<<<< HEAD
+=======
         guard let customIngredient = createIngredientTextField.text else {return}
         MyDrinksController.sharedInstance.ingredients.append(customIngredient)
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
         navigationController?.popViewController(animated: true)
     }
     

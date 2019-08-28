@@ -10,11 +10,21 @@ import UIKit
 
 class CreateNewDrinkViewController: UIViewController {
 
+<<<<<<< HEAD
+    @IBOutlet weak var notesTextView: UITextField!
+    @IBOutlet weak var ingredientLabel: UILabel!
+    @IBOutlet weak var drinkNameTextField: UITextField!
+    
+    var stringFromArray: String = ""
+    var i = 0
+    let fakeData = FakeData()
+=======
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var ingredientLabel: UILabel!
     
     var stringFromArray: String = ""
     var i = 0
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +47,11 @@ class CreateNewDrinkViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
+<<<<<<< HEAD
+         //MyDrinksController.shared.createDrink(name: <#T##String#>, ingredients: <#T##[String]#>, notes: <#T##String#>)
+=======
         
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
     }
 
     @IBAction func addIngredientButtonTapped(_ sender: UIButton) {
@@ -60,6 +74,20 @@ class CreateNewDrinkViewController: UIViewController {
     }
     
     func arrayToString() {
+<<<<<<< HEAD
+//        loadViewIfNeeded()
+//        if fakeData.inventory != [] {
+//            ingredientLabel.textColor = .black
+//            let ingredients = fakeData.inventory
+//            if ingredients.count == 1 {
+//                stringFromArray += "\(ingredients[i])"
+//            } else {
+//                stringFromArray += ", \(ingredients[i])"
+//            }
+//            ingredientLabel.text = stringFromArray
+//            i += 1
+//        }
+=======
         loadViewIfNeeded()
         if MyDrinksController.sharedInstance.ingredients != [] {
             ingredientLabel.textColor = .black
@@ -72,6 +100,7 @@ class CreateNewDrinkViewController: UIViewController {
             ingredientLabel.text = stringFromArray
             i += 1
         }
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
     }
 
     

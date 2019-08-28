@@ -10,6 +10,9 @@ import Foundation
 
 class FakeData {
     
+<<<<<<< HEAD
+    var drinks: [Drink] = [Drink(uuid: "", name: "Drink 1", ingredients: ["one", "two", "three"], notes: "none"), Drink(uuid: "", name: "Drink 2", ingredients: ["one", "two", "three" , "Four", "Five", "Six"], notes: "none"), Drink(uuid: "", name: "Drink 3", ingredients: ["one", "two"], notes: "none"), Drink(uuid: "", name: "Drink 4", ingredients: ["one", "two", "three"], notes: "none")]
+=======
     var drinks: [Drink]{
         let drink1 = Drink(uuid: "", name: "Drink 1", ingredients: ["one", "two", "three"], notes: "none")
         let drink2 = Drink(uuid: "", name: "Drink 2", ingredients: ["one", "two", "three" , "Four", "Five", "Six"], notes: "none")
@@ -17,6 +20,7 @@ class FakeData {
         let drink4 = Drink(uuid: "", name: "Drink 4", ingredients: ["one", "two", "three"], notes: "none")
         return [drink1, drink2, drink3, drink4]
     }
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
     
     var people: [User]{
         let user1 = User(name: "Person1", userName: "Username1", profilePic: nil, desc: "a good description", favDrink: drinks[0], uuid: nil)
@@ -30,4 +34,10 @@ class FakeData {
         let currentUser = CurrentUser(userImage: #imageLiteral(resourceName: "JasonFace"), name: "Jason Mandozi", location: "Boston, MA", friends: [], favoriteDrink: drinks[0])
         return currentUser
     }
+<<<<<<< HEAD
+    
+    var inventory: [String] = ["one", "two", "three", "four"]
+    var shoppingList: [String: Bool] = ["one": true, "two": false]
+=======
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
 }

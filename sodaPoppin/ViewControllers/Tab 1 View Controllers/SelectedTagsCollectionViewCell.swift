@@ -14,6 +14,17 @@ class SelectedTagsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var selectedTagLabel: UILabel!
     
+<<<<<<< HEAD
+    override func awakeFromNib() {
+        selectedTagLabel.text = selectedTag
+    }
+    
+    @IBAction func xButtonTapped(_ sender: Any) {
+        
+    }
+    
+}
+=======
     weak var cellDelegate: SelectedTagsCellDelegate?
     
     override func awakeFromNib() {
@@ -30,3 +41,4 @@ class SelectedTagsCollectionViewCell: UICollectionViewCell {
 protocol SelectedTagsCellDelegate: class {
     func selectedTagsCellDelegate(for cell: SelectedTagsCollectionViewCell)
 }
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
