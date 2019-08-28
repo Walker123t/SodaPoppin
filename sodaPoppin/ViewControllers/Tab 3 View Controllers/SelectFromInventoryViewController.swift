@@ -13,12 +13,12 @@ class SelectFromInventoryViewController: UIViewController, UITableViewDataSource
     @IBOutlet weak var inventoryTableView: UITableView!
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MyDrinksController.sharedInstance.inventory.count
+        return FakeData.shared.inventory.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.inventoryTableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath)
-        let inventoryItem = MyDrinksController.sharedInstance.inventory[indexPath.row]
+        let inventoryItem = FakeData.shared.inventory[indexPath.row]
         cell.textLabel?.text = inventoryItem
         return cell
     }
@@ -34,8 +34,8 @@ class SelectFromInventoryViewController: UIViewController, UITableViewDataSource
     
     @IBAction func addToRecipeButtonTapped(_ sender: Any) {
         guard let index = inventoryTableView.indexPathForSelectedRow else {return}
-              let ingredientToAdd = MyDrinksController.sharedInstance.inventory[index.row]
-        MyDrinksController.sharedInstance.ingredients.append(ingredientToAdd)
+              let ingredientToAdd = FakeData.shared.inventory[index.row]
+        FakeData.shared.inventory.append(ingredientToAdd)
         navigationController?.popViewController(animated: true)
     }
     
