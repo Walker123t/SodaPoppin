@@ -84,6 +84,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OKL-Ci-yy2">
                                 <rect key="frame" x="20" y="197" width="374" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OIc-fC-dM5" customClass="DrinklTableViewCell" customModule="sodaPoppin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OIc-fC-dM5" id="LRI-2d-Ht4">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Drinks" translatesAutoresizingMaskIntoConstraints="NO" id="vzk-ek-6MQ">
                                 <rect key="frame" x="5" y="77.5" width="404" height="56"/>
@@ -128,6 +138,7 @@
                         <outlet property="filterButton" destination="gMs-Va-TuJ" id="Sfd-4R-8PY"/>
                         <outlet property="filterUnderline" destination="wwB-NH-Lx8" id="ymK-zd-atC"/>
                         <outlet property="poppinButton" destination="jRy-qo-xey" id="yDX-Iw-Elo"/>
+                        <outlet property="poppinTableView" destination="OKL-Ci-yy2" id="My3-P5-5iL"/>
                         <outlet property="poppinUnderline" destination="Bv4-6x-anj" id="mKl-2b-iEh"/>
                     </connections>
                 </viewController>

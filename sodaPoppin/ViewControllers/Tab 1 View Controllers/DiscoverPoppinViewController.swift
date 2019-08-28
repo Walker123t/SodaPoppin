@@ -14,12 +14,13 @@ class DiscoverPoppinViewController: UIViewController {
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var poppinUnderline: UIView!
     @IBOutlet weak var filterUnderline: UIView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var poppinTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        poppinTableView.delegate = self
+        poppinTableView.dataSource = self
         // To take out the line between the navigation bar and the purple view at the top of the page
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -49,4 +50,16 @@ class DiscoverPoppinViewController: UIViewController {
     }
     */
 
+}
+
+extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }
