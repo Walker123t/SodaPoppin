@@ -178,6 +178,7 @@
 		3E9EF1EE23046F8E00F4DF37 /* sodaPoppin */ = {
 			isa = PBXGroup;
 			children = (
+				7C4DDEC4231724A300C35EB5 /* Storyboards */,
 				3EA204E0230B09BC00E902B5 /* ViewControllers */,
 				7C5748B323049F3100253B86 /* Model Controllers */,
 				3EB0DDD02304737200923E0D /* Modals */,
@@ -190,20 +191,13 @@
 		3EA204E0230B09BC00E902B5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3EC97D55230DF07900255F36 /* Custom Resuable Views */,
-				3E9EF1F323046F8E00F4DF37 /* Main.storyboard */,
-				3EA204E2230B09D000E902B5 /* tab4.storyboard */,
-				7CEBEA1D230DB55700A5CEFB /* Tab 4 View Controllers */,
-				3EA204E4230B09D000E902B5 /* tab3.storyboard */,
-				3EA204E1230B09D000E902B5 /* tab2.storyboard */,
 				7CD07E1923143D4800B40206 /* Tab 1 View Controllers */,
-				3EA204E3230B09D000E902B5 /* tab1.storyboard */,
-				3EA8035B230DB043002D99A5 /* SearchDrinks */,
-				7C761274230C4E040033C1B3 /* Tab 3 View Controllers */,
 				3EA8034D230C50F7002D99A5 /* Tab 2 View Controllers */,
+				7C761274230C4E040033C1B3 /* Tab 3 View Controllers */,
+				7CEBEA1D230DB55700A5CEFB /* Tab 4 View Controllers */,
+				3EC97D55230DF07900255F36 /* Custom Resuable Views */,
+				3EA8035B230DB043002D99A5 /* SearchDrinks */,
 				3EA8035A230DB01B002D99A5 /* DrinkCell */,
-				3EC97D51230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift */,
-				3EC97D52230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -222,6 +216,8 @@
 			children = (
 				3EA80354230CA497002D99A5 /* DrinklTableViewCell.swift */,
 				3EA80355230CA497002D99A5 /* DrinklTableViewCell.xib */,
+				3EC97D51230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift */,
+				3EC97D52230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib */,
 			);
 			path = DrinkCell;
 			sourceTree = "<group>";
@@ -275,6 +271,18 @@
 				3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */,
 			);
 			path = "Custom Resuable Views";
+			sourceTree = "<group>";
+		};
+		7C4DDEC4231724A300C35EB5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3E9EF1F323046F8E00F4DF37 /* Main.storyboard */,
+				3EA204E3230B09D000E902B5 /* tab1.storyboard */,
+				3EA204E1230B09D000E902B5 /* tab2.storyboard */,
+				3EA204E4230B09D000E902B5 /* tab3.storyboard */,
+				3EA204E2230B09D000E902B5 /* tab4.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		7C5748B323049F3100253B86 /* Model Controllers */ = {

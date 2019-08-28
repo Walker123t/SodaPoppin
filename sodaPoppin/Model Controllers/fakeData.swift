@@ -12,7 +12,8 @@ class FakeData {
     
     static var shared = FakeData()
     
-    var drinks: [Drink] = [Drink(uuid: "", name: "Drink 1", ingredients: ["one", "two", "three"], notes: "none"), Drink(uuid: "", name: "Drink 2", ingredients: ["one", "two", "three" , "Four", "Five", "Six"], notes: "none"), Drink(uuid: "", name: "Drink 3", ingredients: ["one", "two"], notes: "none"), Drink(uuid: "", name: "Drink 4", ingredients: ["one", "two", "three"], notes: "none")]
+    var drinks: [Drink] = [Drink(uuid: "", name: "Drink 1", mainSodaName: "Sprite", ingredients: ["one", "two", "three"], notes: "none"), Drink(uuid: "", name: "Drink 2", mainSodaName: "Dr. Pepper", ingredients: ["one", "two", "three" , "Four", "Five", "Six"], notes: "none"), Drink(uuid: "", name: "Drink 3", mainSodaName: "Root Beer", ingredients: ["one", "two"], notes: "none"), Drink(uuid: "", name: "Drink 4", mainSodaName: "Coke", ingredients: ["one", "two", "three"], notes: "none")]
+
     
     var people: [User]{
         let user1 = User(name: "Person1", userName: "Username1", profilePic: nil, desc: "a good description", favDrink: drinks[0], uuid: nil)
