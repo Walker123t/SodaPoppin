@@ -19,6 +19,7 @@ class FakeData {
         let drink4 = Drink(uuid: "", name: "Drink 4", mainSodaName: "Coke", ingredients: ["one", "two", "three"], notes: "none")
         return [drink1, drink2, drink3, drink4]
     }
+
     
     var people: [User]{
         let user1 = User(name: "Person1", userName: "Username1", profilePic: nil, desc: "a good description", favDrink: drinks[0], uuid: nil)
@@ -32,4 +33,8 @@ class FakeData {
         let currentUser = CurrentUser(userImage: #imageLiteral(resourceName: "JasonFace"), name: "Jason Mandozi", location: "Boston, MA", friends: [], favoriteDrink: drinks[0])
         return currentUser
     }
+    
+    var inventory: [String] = ["one", "two", "three", "four"]
+    var shoppingList: [String: Bool] = ["one": true, "two": false]
 }
+

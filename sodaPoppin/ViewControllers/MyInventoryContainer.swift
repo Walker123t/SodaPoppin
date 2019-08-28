@@ -11,12 +11,12 @@ import UIKit
 class MyInventoryContainer: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MyDrinksController.sharedInstance.inventory.count
+        return FakeData.shared.inventory.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myInventoryTableView.dequeueReusableCell(withIdentifier: "myInventoryCell", for: indexPath)
-        let inventoryItem = MyDrinksController.sharedInstance.inventory[indexPath.row]
+        let inventoryItem = FakeData.shared.inventory[indexPath.row]
         cell.textLabel?.text = inventoryItem
         return cell
     }
