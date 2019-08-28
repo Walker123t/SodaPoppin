@@ -8,6 +8,7 @@
 
 import UIKit
 
+<<<<<<< HEAD
 class MyDrinksContainer: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let fakeData = FakeData()
@@ -23,6 +24,15 @@ class MyDrinksContainer: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.dataSource = self
         tableView.register(cellNib, forCellReuseIdentifier: "drinkCell")
         
+=======
+class MyDrinksContainer: UIViewController {
+
+    @IBOutlet weak var addDrinkButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupButton()
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
         // Do any additional setup after loading the view.
     }
     
@@ -34,6 +44,7 @@ class MyDrinksContainer: UIViewController, UITableViewDelegate, UITableViewDataS
         addDrinkButton.layer.shadowOpacity = 0.5
         addDrinkButton.layer.shadowRadius = 4.0
         addDrinkButton.layer.masksToBounds = false
+<<<<<<< HEAD
         addDrinkButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
@@ -65,6 +76,11 @@ class MyDrinksContainer: UIViewController, UITableViewDelegate, UITableViewDataS
     }
 
     
+=======
+//        addDrinkButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
 
     /*
     // MARK: - Navigation

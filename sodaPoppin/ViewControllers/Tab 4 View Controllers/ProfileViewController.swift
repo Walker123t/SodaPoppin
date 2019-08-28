@@ -11,7 +11,24 @@ import UIKit
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let fakeData = FakeData()
+<<<<<<< HEAD
     
+=======
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as? DrinklTableViewCell else {return UITableViewCell()}
+        cell.selectionStyle = .none
+        cell.layer.cornerRadius = 5
+        cell.clipsToBounds = true
+        cell.populate(drink: fakeData.currentUser.favoriteDrink)
+        return cell
+    }
+    
+
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
     @IBOutlet weak var profileImageViewOnView: UIView!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var myGoToTableView: UITableView!
@@ -27,6 +44,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
     }
     
+<<<<<<< HEAD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -48,6 +66,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 
     
     
+=======
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
 
     /*
     // MARK: - Navigation

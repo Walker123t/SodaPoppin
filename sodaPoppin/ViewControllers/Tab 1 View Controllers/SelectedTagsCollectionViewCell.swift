@@ -14,6 +14,7 @@ class SelectedTagsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var selectedTagLabel: UILabel!
     
+<<<<<<< HEAD
     override func awakeFromNib() {
         selectedTagLabel.text = selectedTag
     }
@@ -23,3 +24,21 @@ class SelectedTagsCollectionViewCell: UICollectionViewCell {
     }
     
 }
+=======
+    weak var cellDelegate: SelectedTagsCellDelegate?
+    
+    override func awakeFromNib() {
+        self.layer.cornerRadius = self.frame.height / 5
+        self.frame.size = CGSize(width: self.selectedTagLabel.frame.width * 2, height: self.selectedTagLabel.frame.height * 2)
+    }
+    
+    @IBAction func xButtonTapped(_ sender: Any) {
+        cellDelegate?.selectedTagsCellDelegate(for: self)
+    }
+    
+}
+
+protocol SelectedTagsCellDelegate: class {
+    func selectedTagsCellDelegate(for cell: SelectedTagsCollectionViewCell)
+}
+>>>>>>> 153ee70b49be5472f5d5dc4eac71d302a42c50a0
