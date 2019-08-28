@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable
 class underlinedSegmentController: UIView {
+    
     var buttons: [UIButton] = []
     var selector: UIView!
     

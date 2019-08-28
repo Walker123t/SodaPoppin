@@ -28,6 +28,6 @@ class FakeData {
     }
     
     var inventory: [String] = ["one", "two", "three", "four"]
-    var shoppingList: [String: Bool] = ["one": true, "two": false]
+    var shoppingList: [(String, Bool)] = [("one", true), ("two", false)]
 }
 
