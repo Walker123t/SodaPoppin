@@ -25,13 +25,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CD0-sn-Ott">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmD-rB-LXK">
-                                        <rect key="frame" x="361" y="117" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Edit">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUh-oM-Clv">
                                         <rect key="frame" x="20.5" y="144.5" width="373" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,9 +46,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJp-nS-Hc1">
-                                        <rect key="frame" x="311" y="12" width="82" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJp-nS-Hc1">
+                                        <rect key="frame" x="311" y="22" width="82" height="34"/>
                                         <state key="normal" title="Messages">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -86,15 +78,25 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmD-rB-LXK">
+                                        <rect key="frame" x="337" y="99.5" width="30" height="30"/>
+                                        <state key="normal" title="Edit">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="darkerPurp"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="WcS-zn-OOk" secondAttribute="bottom" constant="10" id="CxD-3q-QBo"/>
+                                    <constraint firstItem="YUh-oM-Clv" firstAttribute="top" secondItem="wmD-rB-LXK" secondAttribute="bottom" constant="15" id="Dtz-bd-0Sm"/>
                                     <constraint firstItem="YUh-oM-Clv" firstAttribute="height" secondItem="CD0-sn-Ott" secondAttribute="height" multiplier="0.01" id="R6l-0b-2hY"/>
                                     <constraint firstItem="YUh-oM-Clv" firstAttribute="width" secondItem="CD0-sn-Ott" secondAttribute="width" multiplier="0.9" id="RG4-zK-2Pg"/>
+                                    <constraint firstItem="wmD-rB-LXK" firstAttribute="centerX" secondItem="qJp-nS-Hc1" secondAttribute="centerX" id="TTb-bj-BKI"/>
                                     <constraint firstItem="YUh-oM-Clv" firstAttribute="centerY" secondItem="CD0-sn-Ott" secondAttribute="centerY" multiplier="1.5" id="VVF-mr-T5U"/>
                                     <constraint firstItem="YUh-oM-Clv" firstAttribute="centerX" secondItem="CD0-sn-Ott" secondAttribute="centerX" id="YAM-QM-78n"/>
                                     <constraint firstItem="WcS-zn-OOk" firstAttribute="centerX" secondItem="CD0-sn-Ott" secondAttribute="centerX" id="YsA-j8-aaf"/>
+                                    <constraint firstItem="qJp-nS-Hc1" firstAttribute="centerY" secondItem="CD0-sn-Ott" secondAttribute="centerY" multiplier="0.4" id="eWY-Tu-scc"/>
+                                    <constraint firstItem="qJp-nS-Hc1" firstAttribute="centerX" secondItem="CD0-sn-Ott" secondAttribute="centerX" multiplier="1.7" id="iGv-KY-Tc5"/>
                                     <constraint firstItem="WcS-zn-OOk" firstAttribute="height" secondItem="CD0-sn-Ott" secondAttribute="height" multiplier="0.15" id="iee-XH-5S6"/>
                                 </constraints>
                             </view>

@@ -64,7 +64,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="u45-Yf-P7O">
-                                <rect key="frame" x="6" y="141.5" width="112" height="40.5"/>
+                                <rect key="frame" x="6" y="141" width="112" height="40.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Drinks" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhK-dZ-ZRc">
                                         <rect key="frame" x="0.0" y="0.0" width="112" height="37.5"/>
@@ -82,7 +82,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OKL-Ci-yy2">
-                                <rect key="frame" x="20" y="197" width="374" height="518"/>
+                                <rect key="frame" x="20" y="196.5" width="374" height="518.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Drinks" translatesAutoresizingMaskIntoConstraints="NO" id="vzk-ek-6MQ">
@@ -97,7 +97,6 @@
                         <constraints>
                             <constraint firstItem="OKL-Ci-yy2" firstAttribute="leading" secondItem="ugn-uT-RIn" secondAttribute="leadingMargin" id="1A9-LG-Soi"/>
                             <constraint firstItem="Bv4-6x-anj" firstAttribute="centerY" secondItem="jRy-qo-xey" secondAttribute="centerY" multiplier="1.5" id="1Fb-hK-tMK"/>
-                            <constraint firstItem="u45-Yf-P7O" firstAttribute="centerY" secondItem="ugn-uT-RIn" secondAttribute="centerY" multiplier="0.4" id="1VV-Sk-ax9"/>
                             <constraint firstAttribute="trailing" secondItem="INo-qV-htT" secondAttribute="trailing" id="3vx-hZ-jwR"/>
                             <constraint firstItem="wwB-NH-Lx8" firstAttribute="centerY" secondItem="gMs-Va-TuJ" secondAttribute="centerY" multiplier="1.5" id="9HC-9j-5mO"/>
                             <constraint firstItem="u45-Yf-P7O" firstAttribute="centerX" secondItem="ugn-uT-RIn" secondAttribute="centerX" multiplier="0.3" id="ADg-r6-qD4"/>
@@ -113,6 +112,7 @@
                             <constraint firstItem="u45-Yf-P7O" firstAttribute="height" secondItem="ugn-uT-RIn" secondAttribute="height" multiplier="0.05" id="TEC-bF-pb7"/>
                             <constraint firstItem="wwB-NH-Lx8" firstAttribute="height" secondItem="gMs-Va-TuJ" secondAttribute="height" multiplier="0.1" id="U98-hX-V1J"/>
                             <constraint firstItem="Bv4-6x-anj" firstAttribute="height" secondItem="jRy-qo-xey" secondAttribute="height" multiplier="0.1" id="W1L-1X-Gl5"/>
+                            <constraint firstItem="u45-Yf-P7O" firstAttribute="top" secondItem="vzk-ek-6MQ" secondAttribute="bottom" constant="7.5" id="XNJ-hU-eCf"/>
                             <constraint firstItem="INo-qV-htT" firstAttribute="top" secondItem="GOK-03-U7z" secondAttribute="bottom" id="bA7-b9-LcI"/>
                             <constraint firstAttribute="trailing" secondItem="vzk-ek-6MQ" secondAttribute="trailing" constant="5" id="dAc-mC-gFT"/>
                             <constraint firstItem="Bv4-6x-anj" firstAttribute="width" secondItem="jRy-qo-xey" secondAttribute="width" multiplier="0.9" id="ix8-7X-DAK"/>

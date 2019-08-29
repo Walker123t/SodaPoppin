@@ -35,6 +35,7 @@
 		3EC97D54230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC97D52230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib */; };
 		3EC97D57230DF09600255F36 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D56230DF09600255F36 /* CustomSegmentedControl.swift */; };
 		7C14E4FB230DD95100A17708 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14E4FA230DD95100A17708 /* ProfileViewController.swift */; };
+		7C4DDEC723184AA700C35EB5 /* LocalJSONDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */; };
 		7C5748B523049F4500253B86 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5748B423049F4500253B86 /* FirebaseController.swift */; };
 		7C761276230C515D0033C1B3 /* CreateNewDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */; };
 		7C76127C230C5EB40033C1B3 /* SelectFromInventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */; };
@@ -102,6 +103,8 @@
 		3EC97D52230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedDrinkTableViewCell.xib; sourceTree = "<group>"; };
 		3EC97D56230DF09600255F36 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		7C14E4FA230DD95100A17708 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7C4DDEC52318455E00C35EB5 /* sodaPoppin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sodaPoppin.entitlements; sourceTree = "<group>"; };
+		7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJSONDataController.swift; sourceTree = "<group>"; };
 		7C5748B423049F4500253B86 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewDrinkViewController.swift; sourceTree = "<group>"; };
 		7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFromInventoryViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +181,7 @@
 		3E9EF1EE23046F8E00F4DF37 /* sodaPoppin */ = {
 			isa = PBXGroup;
 			children = (
+				7C4DDEC52318455E00C35EB5 /* sodaPoppin.entitlements */,
 				7C4DDEC4231724A300C35EB5 /* Storyboards */,
 				3EA204E0230B09BC00E902B5 /* ViewControllers */,
 				7C5748B323049F3100253B86 /* Model Controllers */,
@@ -293,6 +297,7 @@
 				7C76127D230C612D0033C1B3 /* MyDrinksController.swift */,
 				3E743B2523108D3D009161F9 /* SearchAndFilterViewController.swift */,
 				3E01DA2E23159044004F4023 /* UserController.swift */,
+				7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -409,6 +414,11 @@
 				TargetAttributes = {
 					3E9EF1EB23046F8E00F4DF37 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					3E9EF1FF23046F8F00F4DF37 = {
 						CreatedOnToolsVersion = 10.3;
@@ -566,6 +576,7 @@
 				3E743B2423105D81009161F9 /* FilterViewController.swift in Sources */,
 				3E01DA31231597E7004F4023 /* CurrentUser.swift in Sources */,
 				3E9EF1F023046F8E00F4DF37 /* AppDelegate.swift in Sources */,
+				7C4DDEC723184AA700C35EB5 /* LocalJSONDataController.swift in Sources */,
 				3EA80351230C5174002D99A5 /* FriendTableViewCell.swift in Sources */,
 				3EC97D53230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift in Sources */,
 				7C76127C230C5EB40033C1B3 /* SelectFromInventoryViewController.swift in Sources */,
@@ -743,6 +754,7 @@
 			baseConfigurationReference = 8DBF8D38E3CB0111E36E4FF6 /* Pods-sodaPoppin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = sodaPoppin/sodaPoppin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2HLC2FMZN4;
 				INFOPLIST_FILE = "$(SRCROOT)/sodaPoppin/Resources/Info.plist";
@@ -750,10 +762,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TrevorWalker.sodaPoppin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.interactivesportsapps.sodaPoppin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -762,6 +774,7 @@
 			baseConfigurationReference = A6FD35F118B4F1D9FD418641 /* Pods-sodaPoppin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = sodaPoppin/sodaPoppin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2HLC2FMZN4;
 				INFOPLIST_FILE = "$(SRCROOT)/sodaPoppin/Resources/Info.plist";
@@ -769,10 +782,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TrevorWalker.sodaPoppin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.interactivesportsapps.sodaPoppin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
