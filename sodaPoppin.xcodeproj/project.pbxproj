@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E01DA2F23159044004F4023 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E01DA2E23159044004F4023 /* UserController.swift */; };
-		3E01DA31231597E7004F4023 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E01DA30231597E7004F4023 /* CurrentUser.swift */; };
-		3E40844A230926CD009B294F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E408449230926CD009B294F /* User.swift */; };
 		3E743B1A230F12F6009161F9 /* underlinedSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */; };
 		3E743B2423105D81009161F9 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B2323105D81009161F9 /* FilterViewController.swift */; };
 		3E743B2623108D3D009161F9 /* SearchAndFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E743B2523108D3D009161F9 /* SearchAndFilterViewController.swift */; };
@@ -18,13 +15,9 @@
 		3E9EF1F523046F8E00F4DF37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9EF1F323046F8E00F4DF37 /* Main.storyboard */; };
 		3E9EF1F723046F8F00F4DF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E9EF1F623046F8F00F4DF37 /* Assets.xcassets */; };
 		3E9EF1FA23046F8F00F4DF37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9EF1F823046F8F00F4DF37 /* LaunchScreen.storyboard */; };
-		3EA204E5230B09D000E902B5 /* tab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA204E1230B09D000E902B5 /* tab2.storyboard */; };
-		3EA204E6230B09D000E902B5 /* tab4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA204E2230B09D000E902B5 /* tab4.storyboard */; };
 		3EA204E7230B09D000E902B5 /* tab1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA204E3230B09D000E902B5 /* tab1.storyboard */; };
 		3EA204E8230B09D000E902B5 /* tab3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA204E4230B09D000E902B5 /* tab3.storyboard */; };
 		3EA2050A230B56BD00E902B5 /* fakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA20509230B56BD00E902B5 /* fakeData.swift */; };
-		3EA8034F230C5155002D99A5 /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA8034E230C5155002D99A5 /* FriendsListTableViewController.swift */; };
-		3EA80351230C5174002D99A5 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA80350230C5174002D99A5 /* FriendTableViewCell.swift */; };
 		3EA80356230CA497002D99A5 /* DrinklTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA80354230CA497002D99A5 /* DrinklTableViewCell.swift */; };
 		3EA80357230CA497002D99A5 /* DrinklTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EA80355230CA497002D99A5 /* DrinklTableViewCell.xib */; };
 		3EA80359230DB015002D99A5 /* SearchDrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA80358230DB015002D99A5 /* SearchDrinksTableViewController.swift */; };
@@ -34,7 +27,6 @@
 		3EC97D53230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D51230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift */; };
 		3EC97D54230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC97D52230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib */; };
 		3EC97D57230DF09600255F36 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D56230DF09600255F36 /* CustomSegmentedControl.swift */; };
-		7C14E4FB230DD95100A17708 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14E4FA230DD95100A17708 /* ProfileViewController.swift */; };
 		7C4DDEC723184AA700C35EB5 /* LocalJSONDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */; };
 		7C5748B523049F4500253B86 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5748B423049F4500253B86 /* FirebaseController.swift */; };
 		7C761276230C515D0033C1B3 /* CreateNewDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */; };
@@ -71,9 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3E01DA2E23159044004F4023 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-		3E01DA30231597E7004F4023 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
-		3E408449230926CD009B294F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E743B19230F12F6009161F9 /* underlinedSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = underlinedSegmentController.swift; sourceTree = "<group>"; };
 		3E743B2323105D81009161F9 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3E743B2523108D3D009161F9 /* SearchAndFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAndFilterViewController.swift; sourceTree = "<group>"; };
@@ -86,13 +75,9 @@
 		3E9EF1FB23046F8F00F4DF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E9EF20023046F8F00F4DF37 /* sodaPoppin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = sodaPoppin; path = sodaPoppinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9EF20B23046F8F00F4DF37 /* sodaPoppinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sodaPoppinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EA204E1230B09D000E902B5 /* tab2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab2.storyboard; sourceTree = "<group>"; };
-		3EA204E2230B09D000E902B5 /* tab4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab4.storyboard; sourceTree = "<group>"; };
 		3EA204E3230B09D000E902B5 /* tab1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab1.storyboard; sourceTree = "<group>"; };
 		3EA204E4230B09D000E902B5 /* tab3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab3.storyboard; sourceTree = "<group>"; };
 		3EA20509230B56BD00E902B5 /* fakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fakeData.swift; sourceTree = "<group>"; };
-		3EA8034E230C5155002D99A5 /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
-		3EA80350230C5174002D99A5 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		3EA80354230CA497002D99A5 /* DrinklTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrinklTableViewCell.swift; path = sodaPoppin/ViewControllers/DrinklTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3EA80355230CA497002D99A5 /* DrinklTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DrinklTableViewCell.xib; path = sodaPoppin/ViewControllers/DrinklTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		3EA80358230DB015002D99A5 /* SearchDrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchDrinksTableViewController.swift; path = ../SearchDrinksTableViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +87,6 @@
 		3EC97D51230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDrinkTableViewCell.swift; sourceTree = "<group>"; };
 		3EC97D52230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedDrinkTableViewCell.xib; sourceTree = "<group>"; };
 		3EC97D56230DF09600255F36 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
-		7C14E4FA230DD95100A17708 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7C4DDEC52318455E00C35EB5 /* sodaPoppin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sodaPoppin.entitlements; sourceTree = "<group>"; };
 		7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJSONDataController.swift; sourceTree = "<group>"; };
 		7C5748B423049F4500253B86 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
@@ -196,23 +180,12 @@
 			isa = PBXGroup;
 			children = (
 				7CD07E1923143D4800B40206 /* Tab 1 View Controllers */,
-				3EA8034D230C50F7002D99A5 /* Tab 2 View Controllers */,
 				7C761274230C4E040033C1B3 /* Tab 3 View Controllers */,
-				7CEBEA1D230DB55700A5CEFB /* Tab 4 View Controllers */,
 				3EC97D55230DF07900255F36 /* Custom Resuable Views */,
 				3EA8035B230DB043002D99A5 /* SearchDrinks */,
 				3EA8035A230DB01B002D99A5 /* DrinkCell */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		3EA8034D230C50F7002D99A5 /* Tab 2 View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3EA8034E230C5155002D99A5 /* FriendsListTableViewController.swift */,
-				3EA80350230C5174002D99A5 /* FriendTableViewCell.swift */,
-			);
-			path = "Tab 2 View Controllers";
 			sourceTree = "<group>";
 		};
 		3EA8035A230DB01B002D99A5 /* DrinkCell */ = {
@@ -262,8 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				3EB0DDD12304738A00923E0D /* Drink.swift */,
-				3E408449230926CD009B294F /* User.swift */,
-				3E01DA30231597E7004F4023 /* CurrentUser.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -282,9 +253,7 @@
 			children = (
 				3E9EF1F323046F8E00F4DF37 /* Main.storyboard */,
 				3EA204E3230B09D000E902B5 /* tab1.storyboard */,
-				3EA204E1230B09D000E902B5 /* tab2.storyboard */,
 				3EA204E4230B09D000E902B5 /* tab3.storyboard */,
-				3EA204E2230B09D000E902B5 /* tab4.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -296,7 +265,6 @@
 				3EA20509230B56BD00E902B5 /* fakeData.swift */,
 				7C76127D230C612D0033C1B3 /* MyDrinksController.swift */,
 				3E743B2523108D3D009161F9 /* SearchAndFilterViewController.swift */,
-				3E01DA2E23159044004F4023 /* UserController.swift */,
 				7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */,
 			);
 			path = "Model Controllers";
@@ -324,14 +292,6 @@
 				7CD07E2523147A9200B40206 /* DiscoverContainerViewController.swift */,
 			);
 			path = "Tab 1 View Controllers";
-			sourceTree = "<group>";
-		};
-		7CEBEA1D230DB55700A5CEFB /* Tab 4 View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				7C14E4FA230DD95100A17708 /* ProfileViewController.swift */,
-			);
-			path = "Tab 4 View Controllers";
 			sourceTree = "<group>";
 		};
 		C0BC8D213E6F7D11A29D7967 /* Pods */ = {
@@ -458,14 +418,12 @@
 				3EA204E8230B09D000E902B5 /* tab3.storyboard in Resources */,
 				3E9EF1FA23046F8F00F4DF37 /* LaunchScreen.storyboard in Resources */,
 				7CD07E2823159DEF00B40206 /* Colors.xcassets in Resources */,
-				3EA204E6230B09D000E902B5 /* tab4.storyboard in Resources */,
 				3EB0DDD42304A70E00923E0D /* GoogleService-Info.plist in Resources */,
 				3E9EF1F723046F8F00F4DF37 /* Assets.xcassets in Resources */,
 				3EA204E7230B09D000E902B5 /* tab1.storyboard in Resources */,
 				3E9EF1F523046F8E00F4DF37 /* Main.storyboard in Resources */,
 				3EC97D54230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib in Resources */,
 				3EA80357230CA497002D99A5 /* DrinklTableViewCell.xib in Resources */,
-				3EA204E5230B09D000E902B5 /* tab2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +509,6 @@
 			files = (
 				3EA80359230DB015002D99A5 /* SearchDrinksTableViewController.swift in Sources */,
 				3E743B2623108D3D009161F9 /* SearchAndFilterViewController.swift in Sources */,
-				3E01DA2F23159044004F4023 /* UserController.swift in Sources */,
 				3E743B1A230F12F6009161F9 /* underlinedSegmentController.swift in Sources */,
 				7CD07E242314785900B40206 /* DiscoverPoppinContainerViewController.swift in Sources */,
 				3EA2050A230B56BD00E902B5 /* fakeData.swift in Sources */,
@@ -563,21 +520,16 @@
 				7C5748B523049F4500253B86 /* FirebaseController.swift in Sources */,
 				7CD07E1D231459BB00B40206 /* TagsCollectionViewCell.swift in Sources */,
 				7CE926DF230B222E00BAC78E /* MyDrinksViewController.swift in Sources */,
-				3EA8034F230C5155002D99A5 /* FriendsListTableViewController.swift in Sources */,
 				3EC97D57230DF09600255F36 /* CustomSegmentedControl.swift in Sources */,
 				3EB0DDCF230472E000923E0D /* firebaseStuff.swift in Sources */,
-				7C14E4FB230DD95100A17708 /* ProfileViewController.swift in Sources */,
 				3E9EF1F223046F8E00F4DF37 /* ViewController.swift in Sources */,
 				3EB0DDD22304738A00923E0D /* Drink.swift in Sources */,
 				3EA80356230CA497002D99A5 /* DrinklTableViewCell.swift in Sources */,
-				3E40844A230926CD009B294F /* User.swift in Sources */,
 				7CEBEA1A230D99B900A5CEFB /* CreateIngredientViewController.swift in Sources */,
 				7C76127E230C612D0033C1B3 /* MyDrinksController.swift in Sources */,
 				3E743B2423105D81009161F9 /* FilterViewController.swift in Sources */,
-				3E01DA31231597E7004F4023 /* CurrentUser.swift in Sources */,
 				3E9EF1F023046F8E00F4DF37 /* AppDelegate.swift in Sources */,
 				7C4DDEC723184AA700C35EB5 /* LocalJSONDataController.swift in Sources */,
-				3EA80351230C5174002D99A5 /* FriendTableViewCell.swift in Sources */,
 				3EC97D53230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift in Sources */,
 				7C76127C230C5EB40033C1B3 /* SelectFromInventoryViewController.swift in Sources */,
 				7CD07E2A2315A32700B40206 /* ColorsExtension.swift in Sources */,
