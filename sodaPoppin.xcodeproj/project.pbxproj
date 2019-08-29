@@ -27,7 +27,11 @@
 		3EC97D53230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D51230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift */; };
 		3EC97D54230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC97D52230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib */; };
 		3EC97D57230DF09600255F36 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D56230DF09600255F36 /* CustomSegmentedControl.swift */; };
+<<<<<<< HEAD
 		7C4DDEC723184AA700C35EB5 /* LocalJSONDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */; };
+=======
+		3EE3061C23184A5300A8D001 /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE3061B23184A5300A8D001 /* InventoryTableViewCell.swift */; };
+>>>>>>> 798b9b61fb90f52b12c57c7110d1b5c4c3a65ee6
 		7C5748B523049F4500253B86 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5748B423049F4500253B86 /* FirebaseController.swift */; };
 		7C761276230C515D0033C1B3 /* CreateNewDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */; };
 		7C76127C230C5EB40033C1B3 /* SelectFromInventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */; };
@@ -87,8 +91,12 @@
 		3EC97D51230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDrinkTableViewCell.swift; sourceTree = "<group>"; };
 		3EC97D52230DD9BE00255F36 /* ExpandedDrinkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedDrinkTableViewCell.xib; sourceTree = "<group>"; };
 		3EC97D56230DF09600255F36 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		7C4DDEC52318455E00C35EB5 /* sodaPoppin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sodaPoppin.entitlements; sourceTree = "<group>"; };
 		7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJSONDataController.swift; sourceTree = "<group>"; };
+=======
+		3EE3061B23184A5300A8D001 /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
+>>>>>>> 798b9b61fb90f52b12c57c7110d1b5c4c3a65ee6
 		7C5748B423049F4500253B86 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewDrinkViewController.swift; sourceTree = "<group>"; };
 		7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFromInventoryViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +256,24 @@
 			path = "Custom Resuable Views";
 			sourceTree = "<group>";
 		};
+		3EE3061923184A2A00A8D001 /* Create Drink */ = {
+			isa = PBXGroup;
+			children = (
+				7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */,
+				7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */,
+				7CEBEA19230D99B900A5CEFB /* CreateIngredientViewController.swift */,
+			);
+			path = "Create Drink";
+			sourceTree = "<group>";
+		};
+		3EE3061A23184A3800A8D001 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3EE3061B23184A5300A8D001 /* InventoryTableViewCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		7C4DDEC4231724A300C35EB5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,7 +291,10 @@
 				3EA20509230B56BD00E902B5 /* fakeData.swift */,
 				7C76127D230C612D0033C1B3 /* MyDrinksController.swift */,
 				3E743B2523108D3D009161F9 /* SearchAndFilterViewController.swift */,
+<<<<<<< HEAD
 				7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */,
+=======
+>>>>>>> 798b9b61fb90f52b12c57c7110d1b5c4c3a65ee6
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -273,10 +302,9 @@
 		7C761274230C4E040033C1B3 /* Tab 3 View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3EE3061A23184A3800A8D001 /* Custom Cells */,
 				7CE926DE230B222E00BAC78E /* MyDrinksViewController.swift */,
-				7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */,
-				7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */,
-				7CEBEA19230D99B900A5CEFB /* CreateIngredientViewController.swift */,
+				3EE3061923184A2A00A8D001 /* Create Drink */,
 			);
 			path = "Tab 3 View Controllers";
 			sourceTree = "<group>";
@@ -529,9 +557,13 @@
 				7C76127E230C612D0033C1B3 /* MyDrinksController.swift in Sources */,
 				3E743B2423105D81009161F9 /* FilterViewController.swift in Sources */,
 				3E9EF1F023046F8E00F4DF37 /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
 				7C4DDEC723184AA700C35EB5 /* LocalJSONDataController.swift in Sources */,
+=======
+>>>>>>> 798b9b61fb90f52b12c57c7110d1b5c4c3a65ee6
 				3EC97D53230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift in Sources */,
 				7C76127C230C5EB40033C1B3 /* SelectFromInventoryViewController.swift in Sources */,
+				3EE3061C23184A5300A8D001 /* InventoryTableViewCell.swift in Sources */,
 				7CD07E2A2315A32700B40206 /* ColorsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

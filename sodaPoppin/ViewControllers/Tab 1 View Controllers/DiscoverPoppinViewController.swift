@@ -63,7 +63,7 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         return 10
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return UITableView.automaticDimension
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return FakeData.shared.drinks.count
