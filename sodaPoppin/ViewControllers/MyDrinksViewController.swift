@@ -11,7 +11,7 @@ import UIKit
 class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
-
+    
     @IBOutlet weak var titleLabel: UINavigationItem!
     @IBOutlet weak var myDrinksButton: UIButton!
     @IBOutlet weak var myInventoryButton: UIButton!
@@ -113,14 +113,13 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             case 0:
                 tableData = FakeData.shared.drinks.filter{$0.isLiked ?? false}
             case 1:
-                tableData = FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personID}
-        case 1:
-            FakeData.shared.inventory.remove(at: indexPath.row)
-        case 2:
-            FakeData.shared.shoppingList.remove(at: indexPath.row)
+                tableData = FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}
+            default:
+                return
+            }
         default:
             return
         }
     }
-    
 }
+
