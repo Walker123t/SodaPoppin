@@ -1,14 +1,14 @@
 //
-//  FriendTableViewCell.swift
+//  InventoryTableViewCell.swift
 //  sodaPoppin
 //
-//  Created by Trevor Walker on 8/20/19.
+//  Created by Trevor Walker on 8/29/19.
 //  Copyright © 2019 Trevor Walker. All rights reserved.
 //
 
 import UIKit
 
-class FriendTableViewCell: UITableViewCell {
+class InventoryTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

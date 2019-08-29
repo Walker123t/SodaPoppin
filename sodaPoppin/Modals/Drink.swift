@@ -9,13 +9,15 @@
 import UIKit
 
 class Drink {
+    
     let uuid: String
     var name: String
     var mainSodaName: String
     var ingredients: [String]
-    var notes: String
-    var image: UIImage?
     var isLiked: Bool?
+    var notes: String
+    var creator: String?
+    
     init(uuid: String?, name: String, mainSodaName: String, ingredients: [String], notes: String){
         self.uuid = uuid ?? UUID().uuidString
         self.name = name
@@ -24,6 +26,7 @@ class Drink {
         self.notes = notes
     }
 }
+
 extension Drink: Equatable{
     static func == (lhs: Drink, rhs: Drink) -> Bool {
         if lhs.uuid == rhs.uuid{
