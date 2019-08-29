@@ -83,7 +83,7 @@
 		3E9EF1F623046F8F00F4DF37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E9EF1F923046F8F00F4DF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E9EF1FB23046F8F00F4DF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E9EF20023046F8F00F4DF37 /* sodaPoppin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = sodaPoppin; path = ../../../../../../../../Desktop/SodaPoppin/sodaPoppin; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E9EF20023046F8F00F4DF37 /* sodaPoppin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = sodaPoppin; path = sodaPoppinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9EF20B23046F8F00F4DF37 /* sodaPoppinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sodaPoppinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA204E1230B09D000E902B5 /* tab2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab2.storyboard; sourceTree = "<group>"; };
 		3EA204E2230B09D000E902B5 /* tab4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab4.storyboard; sourceTree = "<group>"; };
@@ -744,7 +744,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UCL5625TDG;
+				DEVELOPMENT_TEAM = 2HLC2FMZN4;
 				INFOPLIST_FILE = "$(SRCROOT)/sodaPoppin/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -763,7 +763,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UCL5625TDG;
+				DEVELOPMENT_TEAM = 2HLC2FMZN4;
 				INFOPLIST_FILE = "$(SRCROOT)/sodaPoppin/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
