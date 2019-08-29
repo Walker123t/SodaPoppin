@@ -8,68 +8,102 @@
 
 import UIKit
 
-class MyDrinksViewController: UIViewController {
+class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
 
+    @IBOutlet weak var titleLabel: UINavigationItem!
     @IBOutlet weak var myDrinksButton: UIButton!
-    @IBOutlet weak var myDrinksUnderline: UIView!
     @IBOutlet weak var myInventoryButton: UIButton!
-    @IBOutlet weak var myInventoryUnderline: UIView!
     @IBOutlet weak var shoppingListButton: UIButton!
-    @IBOutlet weak var shoppingListUnderline: UIView!
     @IBOutlet weak var drinksTableView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var myDrinksSegment: UISegmentedControl!
+    
+    var selectedTap: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.title = "My Drinks"
-        NotificationCenter.default.addObserver(self, selector: #selector(myDrinks), name: Notification.Name(rawValue: "myDrinks"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(myInventory), name: Notification.Name(rawValue: "myInventory"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(shoppingList), name: Notification.Name(rawValue: "shoppingList"), object: nil)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(cellNib, forCellReuseIdentifier: "drinkCell")
     }
-    
-    @objc func myDrinks() {
-        hideUnderlines()
-        myDrinksUnderline.isHidden = false
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch selectedTap {
+        case 0:
+            return FakeData.shared.drinks.count
+        case 1:
+            return FakeData.shared.inventory.count
+        case 2:
+            return FakeData.shared.shoppingList.count
+        default:
+            return 0
+        }
     }
-    @objc func myInventory() {
-        hideUnderlines()
-        myInventoryUnderline.isHidden = false
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
-    @objc func shoppingList() {
-        hideUnderlines()
-        shoppingListUnderline.isHidden = false
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch selectedTap {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as? DrinklTableViewCell else {return UITableViewCell()}
+            cell.selectionStyle = .none
+            cell.layer.cornerRadius = 5
+            cell.clipsToBounds = true
+            cell.populate(drink: FakeData.shared.drinks[indexPath.section])
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as UITableViewCell
+            cell.textLabel?.text = FakeData.shared.inventory[indexPath.row]
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath) as UITableViewCell
+            cell.textLabel?.text = FakeData.shared.shoppingList[indexPath.row].0
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            switch selectedTap {
+            case 0:
+                FakeData.shared.drinks.remove(at: indexPath.row)
+            case 1:
+                FakeData.shared.inventory.remove(at: indexPath.row)
+            case 2:
+                FakeData.shared.shoppingList.remove(at: indexPath.row)
+            default:
+                return
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
     }
     
     @IBAction func myDrinksButtonTapped(_ sender: Any) {
-        hideUnderlines()
-        myDrinksUnderline.isHidden = false
+        selectedTap = 0
+        titleLabel.title = "My Drinks"
+        //myDrinksSegment.isHidden = false
+        tableView.reloadData()
     }
     
     @IBAction func myInventoryButtonTapped(_ sender: Any) {
-        hideUnderlines()
-        myInventoryUnderline.isHidden = false
+        selectedTap = 1
+        titleLabel.title = "My Inventory"
+        //myDrinksSegment.isHidden = true
+        tableView.reloadData()
     }
     
     @IBAction func shoppingListButtonTapped(_ sender: Any) {
-        hideUnderlines()
-        shoppingListUnderline.isHidden = false
+        selectedTap = 2
+        titleLabel.title = "My Shopping List"
+        //myDrinksSegment.isHidden = true
+        tableView.reloadData()
     }
     
-    func hideUnderlines() {
-        myDrinksUnderline.isHidden = true
-        myInventoryUnderline.isHidden = true
-        shoppingListUnderline.isHidden = true
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

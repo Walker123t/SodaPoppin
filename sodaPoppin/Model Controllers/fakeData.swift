@@ -7,21 +7,28 @@
 //
 
 import Foundation
+
 class FakeData {
     
-    var drinks: [Drink]{
-        let drink1 = Drink(uuid: "", name: "Drink 1", ingredients: ["one", "two", "three"], notes: "none")
-        let drink2 = Drink(uuid: "", name: "Drink 2", ingredients: ["one", "two", "three" , "Four", "Five", "Six"], notes: "none")
-        let drink3 = Drink(uuid: "", name: "Drink 3", ingredients: ["one", "two"], notes: "none")
-        let drink4 = Drink(uuid: "", name: "Drink 4", ingredients: ["one", "two", "three"], notes: "none")
-        return [drink1, drink2, drink3, drink4]
-    }
+    static var shared = FakeData()
+    
+    var drinks: [Drink] = [Drink(uuid: "", name: "Drink 1", mainSodaName: "Sprite", ingredients: ["Pineapple","Blueberry","Coconut"], notes: "none"), Drink(uuid: "", name: "Drink 2", mainSodaName: "Dr. Pepper", ingredients: ["Pineapple","Blueberry","Coconut" , "Guava","Lavendar","Rasberry"], notes: "none"), Drink(uuid: "", name: "Drink 3", mainSodaName: "Root Beer", ingredients: ["Rasberry","Coconut"], notes: "none"), Drink(uuid: "", name: "Drink 4", mainSodaName: "Coke", ingredients: ["Pineapple","Blueberry","Coconut"], notes: "none")]
+
     
     var people: [User]{
-        let user1 = User(name: "Person1", userName: "Username1", profilePic: nil, desc: "a good description", favDrink: drinks[0])
-        let user2 = User(name: "Person2", userName: "Username2", profilePic: nil, desc: "a good description", favDrink: drinks[1])
-        let user3 = User(name: "Person3", userName: "Username3", profilePic: nil, desc: "a good description", favDrink: drinks[2])
-        let user4 = User(name: "Person4", userName: "Username4", profilePic: nil, desc: "a good description", favDrink: drinks[3])
+        let user1 = User(name: "Person1", userName: "Username1", profilePic: nil, desc: "a good description", favDrink: drinks[0], uuid: nil)
+        let user2 = User(name: "Person2", userName: "Username2", profilePic: nil, desc: "a good description", favDrink: drinks[1], uuid: nil)
+        let user3 = User(name: "Person3", userName: "Username3", profilePic: nil, desc: "a good description", favDrink: drinks[2], uuid: nil)
+        let user4 = User(name: "Person4", userName: "Username4", profilePic: nil, desc: "a good description", favDrink: drinks[3], uuid: nil)
         return [user1, user2, user3, user4]
     }
+    
+    var currentUser: CurrentUser {
+        let currentUser = CurrentUser(userImage: #imageLiteral(resourceName: "JasonFace"), name: "Jason Mandozi", location: "Boston, MA", friends: [], favoriteDrink: drinks[0])
+        return currentUser
+    }
+    
+    var inventory: [String] = ["one", "two", "three", "four"]
+    var shoppingList: [(String, Bool)] = [("one", true), ("two", false)]
 }
+

@@ -10,38 +10,42 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
+    let fakeData = FakeData()
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "myGoTo")
-        cell.textLabel?.text = "I LIKE HAM"
-        return cell
-    }
-    
-
     @IBOutlet weak var profileImageViewOnView: UIView!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var myGoToTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height / 2
+        profilePictureImageView.image = fakeData.currentUser.userImage
         myGoToTableView.delegate = self
         myGoToTableView.dataSource = self
+        myGoToTableView.register(cellNib, forCellReuseIdentifier: "drinkCell")
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    */
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as? DrinklTableViewCell else {return UITableViewCell()}
+        cell.selectionStyle = .none
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowRadius = 10
+        cell.layer.cornerRadius = cell.frame.height / 10
+        cell.clipsToBounds = true
+        cell.populate(drink: fakeData.currentUser.favoriteDrink)
+        return cell
+    }
+    
 
 }

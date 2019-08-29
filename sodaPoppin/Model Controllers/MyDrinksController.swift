@@ -10,11 +10,13 @@ import Foundation
 
 class MyDrinksController {
     
-    static var sharedInstance = MyDrinksController()
+    static let shared = MyDrinksController()
     
-    var inventory: [String] = ["Grapes", "Grape Soda", "Grape Extract", "Seedless Grapes","Red Wine","Grape Jelly", "Grape Pureé"]
-    
-    var ingredients: [String] = []
+    func createDrink(name: String, mainSodaName: String, ingredients: [String], notes: String) {
+        
+        let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients, notes: notes)
+        FakeData.shared.drinks.append(newDrink)
+    }
     
     
     

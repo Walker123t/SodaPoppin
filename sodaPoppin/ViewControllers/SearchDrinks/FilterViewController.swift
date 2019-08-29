@@ -5,7 +5,6 @@
 //  Created by Trevor Walker on 8/23/19.
 //  Copyright © 2019 Trevor Walker. All rights reserved.
 //
-
 import UIKit
 
 class FilterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -34,5 +33,4 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         // Pass the selected object to the new view controller.
     }
     */
-
 }
