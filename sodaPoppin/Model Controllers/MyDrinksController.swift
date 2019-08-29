@@ -19,5 +19,5 @@ class MyDrinksController {
     }
     
     
-    
+    var personId = ""
 }
