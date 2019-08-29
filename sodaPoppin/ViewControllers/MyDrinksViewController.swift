@@ -21,7 +21,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var myDrinksSegment: UISegmentedControl!
     
     var selectedTap: Int = 0
-    
+    var tableData: Any = []
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
@@ -44,7 +44,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch selectedTap {
@@ -104,6 +104,23 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         titleLabel.title = "My Shopping List"
         //myDrinksSegment.isHidden = true
         tableView.reloadData()
+    }
+    
+    func populateTableData(selectedTab: Int, segmentIndex: Int){
+        switch selectedTab {
+        case 0:
+            switch segmentIndex {
+            case 0:
+                tableData = FakeData.shared.drinks.filter{$0.isLiked ?? false}
+            case 1:
+                tableData = FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personID}
+        case 1:
+            FakeData.shared.inventory.remove(at: indexPath.row)
+        case 2:
+            FakeData.shared.shoppingList.remove(at: indexPath.row)
+        default:
+            return
+        }
     }
     
 }

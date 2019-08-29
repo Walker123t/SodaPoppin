@@ -54,7 +54,6 @@
     </scenes>
     <resources>
         <image name="Dr.Pepper-1" width="25" height="25"/>
-        <image name="Fountain Icon" width="28" height="31"/>
         <image name="My Drinks Icon" width="17" height="30"/>
         <namedColor name="darkerPurp">
             <color red="0.41568627450980394" green="0.31764705882352939" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
