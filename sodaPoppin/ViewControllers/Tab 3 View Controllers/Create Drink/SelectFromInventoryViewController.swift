@@ -35,7 +35,11 @@ class SelectFromInventoryViewController: UIViewController, UITableViewDataSource
     @IBAction func addToRecipeButtonTapped(_ sender: Any) {
         guard let index = inventoryTableView.indexPathForSelectedRow else {return}
               let ingredientToAdd = FakeData.shared.inventory[index.row]
-        FakeData.shared.inventory.append(ingredientToAdd)
+        FakeData.shared.ingredients.append(ingredientToAdd)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     

@@ -24,6 +24,9 @@ class CreateIngredientViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class Drink {
     
@@ -15,14 +16,23 @@ class Drink {
     var mainSodaName: String
     var ingredients: [String]
     var isLiked: Bool?
-    var notes: String
     var creator: String?
-    init(uuid: String?, name: String, mainSodaName: String, ingredients: [String], notes: String){
+    var dictionary: [String:Any] {
+        return [
+        DrinkConstants.uuidKey : self.uuid,
+        DrinkConstants.nameKey : self.name,
+        DrinkConstants.mainSodaNameKey : self.mainSodaName,
+        DrinkConstants.ingreidentsKey : self.ingredients,
+        DrinkConstants.isLikedKey : self.isLiked,
+        DrinkConstants.creatorKey : self.creator
+        ]
+    }
+    
+    init(uuid: String?, name: String, mainSodaName: String, ingredients: [String]) {
         self.uuid = uuid ?? UUID().uuidString
         self.name = name
         self.mainSodaName = mainSodaName
         self.ingredients = ingredients
-        self.notes = notes
     }
 }
 
@@ -33,4 +43,14 @@ extension Drink: Equatable{
         }
         return false
     }
+}
+
+struct DrinkConstants {
+    static let typeKey = "Drink"
+    fileprivate static let uuidKey = "uuid"
+    fileprivate static let nameKey = "name"
+    fileprivate static let mainSodaNameKey = "mainSodaName"
+    fileprivate static let ingreidentsKey = "ingredients"
+    fileprivate static let isLikedKey = "isLiked"
+    fileprivate static let creatorKey = "creator"
 }

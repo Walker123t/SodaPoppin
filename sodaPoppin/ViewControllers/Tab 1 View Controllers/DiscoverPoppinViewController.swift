@@ -19,6 +19,7 @@ class DiscoverPoppinViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseController.sharedInstance.fetchDrinks()
         poppinTableView.delegate = self
         poppinTableView.dataSource = self
         let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
