@@ -55,4 +55,19 @@ class FirebaseController {
             completion(userID)
         }
     }
+    
+    func fetchDrinks() {
+        let docRef = ref.collection("Drink")
+        docRef.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("There was an error in \(#function) : \(error) : \(error.localizedDescription)")
+                return
+            } else {
+                for document in snapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+    }
+    
 }

@@ -13,8 +13,7 @@ class MyDrinksController {
     static let shared = MyDrinksController()
     
     func createDrink(name: String, mainSodaName: String, ingredients: [String], notes: String) {
-        
-        let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients, notes: notes)
+        let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients)
         FakeData.shared.drinks.append(newDrink)
     }
     
