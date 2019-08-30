@@ -51,6 +51,7 @@ class Drink {
         self.ingredients = ingredients
         self.creator = creator
         self.uuid = uuid
+        self.isLiked = isLiked
     }
 }
 
