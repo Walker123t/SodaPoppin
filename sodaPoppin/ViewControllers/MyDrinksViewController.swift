@@ -25,6 +25,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     var isSearching = false
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseController.sharedInstance.fetchDrinks()
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
         let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
