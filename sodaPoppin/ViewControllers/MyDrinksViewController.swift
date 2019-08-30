@@ -36,7 +36,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string != ""{
-        searchTerm += string
+            searchTerm += string
         } else {
             searchTerm.removeLast()
         }
@@ -45,13 +45,16 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return true
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     func searchTerm(item: String) -> Bool{
-            if searchTerm == ""{
-                return true
-            }
-            print(searchTerm)
-            return item.contains(searchTerm)
+        if searchTerm == ""{
+            return true
+        }
+        print(searchTerm)
+        return item.contains(searchTerm)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,17 +63,16 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             switch myDrinksSegment.selectedSegmentIndex{
             case 0:
                 let count = (FakeData.shared.drinks.filter{$0.isLiked == true && searchTerm(item: $0.name)})
-                print((FakeData.shared.drinks.filter{$0.isLiked == true && $0.name.contains(searchBar.text ?? "Drink")}))
                 return count.count
             case 1:
-                return FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId && $0.name.contains(searchBar.text ?? "")}.count
+                return FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId && searchTerm(item: $0.name)}.count
             default:
-                return FakeData.shared.drinks.filter({$0.name.contains(searchBar.text ?? "")}).count
+                return FakeData.shared.drinks.filter({searchTerm(item: $0.name)}).count
             }
         case 1:
-            return FakeData.shared.inventory.filter({$0.contains(searchBar.text ?? "")}).count
+            return FakeData.shared.inventory.filter({searchTerm(item: $0)}).count
         case 2:
-            return FakeData.shared.shoppingList.filter({$0.0.contains(searchBar.text ?? "")}).count
+            return FakeData.shared.shoppingList.filter({searchTerm(item: $0.0)}).count
         default:
             return 0
         }
@@ -86,32 +88,32 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         switch selectedTap {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as? DrinklTableViewCell else {print("dun broke"); return UITableViewCell()}
-                cell.selectionStyle = .none
-                cell.layer.cornerRadius = 5
-                cell.clipsToBounds = true
-                switch myDrinksSegment.selectedSegmentIndex{
-                case 0:
-                    let drink = FakeData.shared.drinks.filter{$0.isLiked}
-                    cell.populate(drink: drink[indexPath.section])
-                case 1:
-                    // Populate the table view with their created drinks
-                    FirebaseController.sharedInstance.fetchDrinksMadeByUser()
-                    if MyDrinksController.shared.myDrinks.count > 0 {
-                        cell.populate(drink: MyDrinksController.shared.myDrinks[indexPath.row])
-                    }
-//                    cell.populate(drink: FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}[indexPath.section])
-                default:
-                    cell.populate(drink: FakeData.shared.drinks[indexPath.section])
+            cell.selectionStyle = .none
+            cell.layer.cornerRadius = 5
+            cell.clipsToBounds = true
+            switch myDrinksSegment.selectedSegmentIndex{
+            case 0:
+                let drink = FakeData.shared.drinks.filter{$0.isLiked && searchTerm(item: $0.name)}
+                cell.populate(drink: drink[indexPath.section])
+            case 1:
+                // Populate the table view with their created drinks
+                FirebaseController.sharedInstance.fetchDrinksMadeByUser()
+                if MyDrinksController.shared.myDrinks.count > 0 {
+                    cell.populate(drink: MyDrinksController.shared.myDrinks[indexPath.row])
+                }
+            //                    cell.populate(drink: FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}[indexPath.section])
+            default:
+                cell.populate(drink: FakeData.shared.drinks[indexPath.section])
             }
             cell.likeButton.isHidden = true
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as? InventoryTableViewCell else {return UITableViewCell()}
-            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), itemName: FakeData.shared.inventory.filter({$0.contains(searchBar.text ?? "")})[indexPath.section])
+            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), itemName: FakeData.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)  as? ShoppingItemTableViewCell else {return UITableViewCell()}
-            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), name: FakeData.shared.shoppingList.filter({$0.0.contains(searchBar.text ?? "")})[indexPath.section].0, doesHaveIcon: (FakeData.shared.shoppingList.filter({$0.0.contains(searchBar.text ?? "")})[indexPath.section].1 ? #imageLiteral(resourceName: "unlikedIcon"): #imageLiteral(resourceName: "Blood Orange")))
+            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), name: FakeData.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].0, doesHaveIcon: (FakeData.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].1 ? #imageLiteral(resourceName: "unlikedIcon"): #imageLiteral(resourceName: "Blood Orange")))
             return cell
         default:
             return UITableViewCell()
@@ -121,11 +123,11 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         if editingStyle == .delete {
             switch selectedTap {
             case 0:
-                FakeData.shared.drinks.remove(at: indexPath.row)
+                return
             case 1:
-                FakeData.shared.inventory.remove(at: indexPath.row)
+                FakeData.shared.inventory.remove(at: FakeData.shared.inventory.firstIndex(of: FakeData.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])!)
             case 2:
-                FakeData.shared.shoppingList.remove(at: indexPath.row)
+                FakeData.shared.shoppingList.remove(at: findShoppingListIndex(index: indexPath.section)!)
             default:
                 return
             }
@@ -133,6 +135,16 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+    
+    func findShoppingListIndex(index: Int) -> Int?{
+        let selectItem = FakeData.shared.shoppingList.filter({searchTerm(item: $0.0)})[index]
+        for (index, item) in FakeData.shared.shoppingList.enumerated(){
+            if selectItem == item{
+                return index
+            }
+        }
+        return nil
     }
     
     @IBAction func segmentController(_ sender: Any) {
