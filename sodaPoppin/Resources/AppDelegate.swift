@@ -13,7 +13,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     override init() {
         super.init()
         FirebaseApp.configure()
@@ -22,12 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        if let uid = UserDefaultsController.loadUIDFromDefaults() {
-            
+        if let loadedUID = UserDefaults.standard.string(forKey: "UID"){
+            MyDrinksController.shared.personId = loadedUID
         } else {
-            // there was no uid
-            UserDefaultsController.saveUIDToDefaults(UUID().uuidString)
+            MyDrinksController.shared.personId = "\(UserDefaults.standard.set(UUID().uuidString, forKey: "UID"))"
         }
+        
         return true
     }
 

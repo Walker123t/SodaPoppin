@@ -9,8 +9,9 @@
 import UIKit
 
 class CreateNewDrinkViewController: UIViewController {
-
-    @IBOutlet weak var notesTextView: UITextView!
+    
+    @IBOutlet weak var drinkNameTextField: UITextField!
+    @IBOutlet weak var mainSodaNameTextField: UITextField!
     @IBOutlet weak var ingredientLabel: UILabel!
     
     var stringFromArray: String = ""
@@ -37,7 +38,14 @@ class CreateNewDrinkViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
-        
+        guard let drinkName = drinkNameTextField.text,
+              let mainSodaName = mainSodaNameTextField.text,
+              let ingredients = ingredientLabel.text else {return}
+        let drink = Drink(uuid: UUID().uuidString, name: drinkName, mainSodaName: mainSodaName, ingredients: MyDrinksController.shared.ingredients, isLikedBy: [], creator: UserDefaults.standard.string(forKey: "UID")!)
+        // Can force unwrap because we know they will have a UID
+        FirebaseController.saveData(type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 
     @IBAction func addIngredientButtonTapped(_ sender: UIButton) {
@@ -61,16 +69,20 @@ class CreateNewDrinkViewController: UIViewController {
     
     func arrayToString() {
         loadViewIfNeeded()
-        if FakeData.shared.inventory != [] {
+        if MyDrinksController.shared.inventory != [] {
             ingredientLabel.textColor = .black
-            let ingredients = FakeData.shared.inventory
-            if ingredients.count == 1 {
+            let ingredients = MyDrinksController.shared.ingredients
+            if ingredients.count == 0 {
+                stringFromArray = ""
+            }
+            else if ingredients.count == 1 {
                 stringFromArray += "\(ingredients[i])"
+                i += 1
             } else {
                 stringFromArray += ", \(ingredients[i])"
+                i += 1
             }
             ingredientLabel.text = stringFromArray
-            i += 1
         }
     }
 

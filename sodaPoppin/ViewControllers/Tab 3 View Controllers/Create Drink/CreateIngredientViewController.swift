@@ -20,10 +20,13 @@ class CreateIngredientViewController: UIViewController {
     
     @IBAction func chooseButtonTapped(_ sender: Any) {
         guard let customIngredient = createIngredientTextField.text else {return}
-        FakeData.shared.inventory.append(customIngredient)
+        MyDrinksController.shared.inventory.append(customIngredient)
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

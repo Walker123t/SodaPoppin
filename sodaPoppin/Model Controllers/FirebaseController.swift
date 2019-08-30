@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 
 let ref = Firestore.firestore()
+let docRef = ref.collection("Drink")
 
 class FirebaseController {
     
@@ -30,7 +31,6 @@ class FirebaseController {
                 completion("")
                 return
             }
-            
         }
     }
     
@@ -54,5 +54,49 @@ class FirebaseController {
             print("User authenticated successfully")
             completion(userID)
         }
+    }
+    
+    func fetchDrinksMadeByUser() {
+        docRef.whereField("creator", isEqualTo: UserDefaults.standard.string(forKey: "UID") as Any)
+            .getDocuments { (snapshot, error) in
+                if let error = error {
+                    print("There was an error in \(#function) : \(error) : \(error.localizedDescription)")
+                    return
+                } else {
+                    guard let snapshot = snapshot else {return}
+                    for document in snapshot.documents {
+                        guard let drink = Drink(snapshot: document) else {return}
+                        MyDrinksController.shared.myDrinks.append(drink)
+                    }
+                }
+        }
+    }
+    
+    func fetchDrinks(completion: @escaping (Bool) -> Void) {
+        docRef.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("There was an error in \(#function) : \(error) : \(error.localizedDescription)")
+                completion(false)
+                return
+            } else {
+                guard let snapshot = snapshot else {return}
+                for document in snapshot.documents {
+                    guard let drink = Drink(snapshot: document) else {return}
+                    MyDrinksController.shared.drinks.append(drink)
+                }
+                completion(true)
+            }
+        }
+        return
+    }
+    
+    func addUserToLikedBy(currentDrink: String, uid: String) {
+        let drinkRef = docRef.document(currentDrink)
+        drinkRef.updateData(["isLikedBy" : FieldValue.arrayUnion([uid])])
+    }
+    
+    func removeUserFromLikedBy(currentDrink: String, uid: String) {
+        let drinkRef = docRef.document(currentDrink)
+        drinkRef.updateData(["isLikedBy" : FieldValue.arrayRemove([uid])])
     }
 }
