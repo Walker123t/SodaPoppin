@@ -11,9 +11,15 @@ import Foundation
 class MyDrinksController {
     
     static let shared = MyDrinksController()
+
+    var inventory: [String] = []
+    var ingredients: [String] = []
+    var myDrinks: [Drink] = []
+//    var shoppingList: [(String, Bool)] = [("one", true), ("two", false)]
     
-    func createDrink(name: String, mainSodaName: String, ingredients: [String], notes: String) {
-        let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients)
+    
+    func createDrink(name: String, mainSodaName: String, ingredients: [String], creator: String) {
+        let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients, creator: creator)
         FakeData.shared.drinks.append(newDrink)
     }
     

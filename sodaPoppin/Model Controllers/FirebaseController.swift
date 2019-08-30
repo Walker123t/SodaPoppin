@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 
 let ref = Firestore.firestore()
+let docRef = ref.collection("Drink")
 
 class FirebaseController {
     
@@ -56,15 +57,32 @@ class FirebaseController {
         }
     }
     
+    func fetchDrinksMadeByUser() {
+        docRef.whereField("creator", isEqualTo: UserDefaults.standard.string(forKey: "UID") as Any)
+            .getDocuments { (snapshot, error) in
+                if let error = error {
+                    print("There was an error in \(#function) : \(error) : \(error.localizedDescription)")
+                    return
+                } else {
+                    guard let snapshot = snapshot else {return}
+                    for document in snapshot.documents {
+                        guard let drink = Drink(snapshot: document) else {return}
+                        MyDrinksController.shared.myDrinks.append(drink)
+                    }
+                }
+        }
+    }
+    
     func fetchDrinks() {
-        let docRef = ref.collection("Drink")
         docRef.getDocuments { (snapshot, error) in
             if let error = error {
                 print("There was an error in \(#function) : \(error) : \(error.localizedDescription)")
                 return
             } else {
-                for document in snapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+                guard let snapshot = snapshot else {return}
+                for document in snapshot.documents {
+                    guard let drink = Drink(snapshot: document) else {return}
+                    FakeData.shared.drinks.append(drink)
                 }
             }
         }

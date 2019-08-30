@@ -71,7 +71,12 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
                     let drink = FakeData.shared.drinks.filter{$0.isLiked}
                     cell.populate(drink: drink[indexPath.section])
                 case 1:
-                    cell.populate(drink: FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}[indexPath.section])
+                    // Populate the table view with their created drinks
+                    FirebaseController.sharedInstance.fetchDrinksMadeByUser()
+                    if MyDrinksController.shared.myDrinks.count > 0 {
+                        cell.populate(drink: MyDrinksController.shared.myDrinks[indexPath.row])
+                    }
+//                    cell.populate(drink: FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}[indexPath.section])
                 default:
                     cell.populate(drink: FakeData.shared.drinks[indexPath.section])
             }
