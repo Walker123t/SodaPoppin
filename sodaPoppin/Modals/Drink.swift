@@ -14,9 +14,9 @@ class Drink {
     var name: String
     var mainSodaName: String
     var ingredients: [String]
-    var isLiked: Bool?
+    var isLiked: Bool = true
     var notes: String
-    var creator: String?
+    var creator: String = ""
     init(uuid: String?, name: String, mainSodaName: String, ingredients: [String], notes: String){
         self.uuid = uuid ?? UUID().uuidString
         self.name = name

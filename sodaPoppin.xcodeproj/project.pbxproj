@@ -15,6 +15,8 @@
 		3E9EF1F523046F8E00F4DF37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9EF1F323046F8E00F4DF37 /* Main.storyboard */; };
 		3E9EF1F723046F8F00F4DF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E9EF1F623046F8F00F4DF37 /* Assets.xcassets */; };
 		3E9EF1FA23046F8F00F4DF37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9EF1F823046F8F00F4DF37 /* LaunchScreen.storyboard */; };
+		3EA1027B2318758800DAC811 /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1027A2318758800DAC811 /* InventoryTableViewCell.swift */; };
+		3EA1027D2318769A00DAC811 /* ShoppingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1027C2318769A00DAC811 /* ShoppingItemTableViewCell.swift */; };
 		3EA204E7230B09D000E902B5 /* tab1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA204E3230B09D000E902B5 /* tab1.storyboard */; };
 		3EA204E8230B09D000E902B5 /* tab3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA204E4230B09D000E902B5 /* tab3.storyboard */; };
 		3EA2050A230B56BD00E902B5 /* fakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA20509230B56BD00E902B5 /* fakeData.swift */; };
@@ -75,6 +77,8 @@
 		3E9EF1FB23046F8F00F4DF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E9EF20023046F8F00F4DF37 /* sodaPoppin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = sodaPoppin; path = sodaPoppinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9EF20B23046F8F00F4DF37 /* sodaPoppinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sodaPoppinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EA1027A2318758800DAC811 /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
+		3EA1027C2318769A00DAC811 /* ShoppingItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemTableViewCell.swift; sourceTree = "<group>"; };
 		3EA204E3230B09D000E902B5 /* tab1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab1.storyboard; sourceTree = "<group>"; };
 		3EA204E4230B09D000E902B5 /* tab3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab3.storyboard; sourceTree = "<group>"; };
 		3EA20509230B56BD00E902B5 /* fakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fakeData.swift; sourceTree = "<group>"; };
@@ -176,6 +180,15 @@
 			path = sodaPoppin;
 			sourceTree = "<group>";
 		};
+		3EA102792318756500DAC811 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3EA1027A2318758800DAC811 /* InventoryTableViewCell.swift */,
+				3EA1027C2318769A00DAC811 /* ShoppingItemTableViewCell.swift */,
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
 		3EA204E0230B09BC00E902B5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +286,7 @@
 		7C761274230C4E040033C1B3 /* Tab 3 View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3EA102792318756500DAC811 /* Custom Cell */,
 				7CE926DE230B222E00BAC78E /* MyDrinksViewController.swift */,
 				7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */,
 				7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */,
@@ -515,8 +529,10 @@
 				7CD07E1B23143DA200B40206 /* DiscoverPoppinViewController.swift in Sources */,
 				7C761276230C515D0033C1B3 /* CreateNewDrinkViewController.swift in Sources */,
 				7CD07E2623147A9200B40206 /* DiscoverContainerViewController.swift in Sources */,
+				3EA1027D2318769A00DAC811 /* ShoppingItemTableViewCell.swift in Sources */,
 				7CD07E212314707300B40206 /* DiscoverFilterViewController.swift in Sources */,
 				7CD07E1F231459C500B40206 /* SelectedTagsCollectionViewCell.swift in Sources */,
+				3EA1027B2318758800DAC811 /* InventoryTableViewCell.swift in Sources */,
 				7C5748B523049F4500253B86 /* FirebaseController.swift in Sources */,
 				7CD07E1D231459BB00B40206 /* TagsCollectionViewCell.swift in Sources */,
 				7CE926DF230B222E00BAC78E /* MyDrinksViewController.swift in Sources */,

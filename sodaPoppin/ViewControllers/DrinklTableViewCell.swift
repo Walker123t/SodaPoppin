@@ -18,17 +18,6 @@ class DrinklTableViewCell: UITableViewCell {
     @IBOutlet weak var syrup3Icon: UIImageView!
     @IBOutlet weak var extraCountLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
     func populate(drink: Drink){
         // Populating Soda Icon
         sodaIcon.image = #imageLiteral(resourceName: "My Drinks Icon")
