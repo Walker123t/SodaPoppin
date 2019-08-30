@@ -11,7 +11,6 @@ import UIKit
 class SearchDrinksTableViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let fakeData = FakeData()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -34,7 +33,7 @@ class SearchDrinksTableViewController:UIViewController, UITableViewDelegate, UIT
         return 150
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return fakeData.drinks.count
+        return MyDrinksController.shared.drinks.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,7 +46,7 @@ class SearchDrinksTableViewController:UIViewController, UITableViewDelegate, UIT
         cell.selectionStyle = .none
         cell.layer.cornerRadius = 5
         cell.clipsToBounds = true
-        cell.populate(drink: fakeData.drinks[indexPath.section])
+        cell.populate(drink: MyDrinksController.shared.drinks[indexPath.section])
         return cell
     }
 

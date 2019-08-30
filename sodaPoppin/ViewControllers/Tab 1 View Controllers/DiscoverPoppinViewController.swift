@@ -89,7 +89,7 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         return UITableView.automaticDimension
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return FakeData.shared.drinks.filter({searchTerm(item: $0.name)}).count
+        return MyDrinksController.shared.drinks.filter({searchTerm(item: $0.name)}).count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,7 +102,7 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         cell.selectionStyle = .none
         cell.layer.cornerRadius = 5
         cell.clipsToBounds = true
-        cell.populate(drink: FakeData.shared.drinks.filter({searchTerm(item: $0.name)})[indexPath.section])
+        cell.populate(drink: MyDrinksController.shared.drinks.filter({searchTerm(item: $0.name)})[indexPath.section])
         return cell
     }
 }

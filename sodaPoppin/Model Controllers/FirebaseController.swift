@@ -81,7 +81,7 @@ class FirebaseController {
                 guard let snapshot = snapshot else {return}
                 for document in snapshot.documents {
                     guard let drink = Drink(snapshot: document) else {return}
-                    FakeData.shared.drinks.append(drink)
+                    MyDrinksController.shared.drinks.append(drink)
                 }
             }
         }
