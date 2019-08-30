@@ -18,3 +18,4 @@ class FakeData {
     var ingredients: [String] = []
     var shoppingList: [(String, Bool)] = [("one", true), ("two", false)]
 }
+
