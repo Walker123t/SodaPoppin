@@ -19,7 +19,6 @@
 		3EA1027D2318769A00DAC811 /* ShoppingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1027C2318769A00DAC811 /* ShoppingItemTableViewCell.swift */; };
 		3EA204E7230B09D000E902B5 /* tab1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA204E3230B09D000E902B5 /* tab1.storyboard */; };
 		3EA204E8230B09D000E902B5 /* tab3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA204E4230B09D000E902B5 /* tab3.storyboard */; };
-		3EA2050A230B56BD00E902B5 /* fakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA20509230B56BD00E902B5 /* fakeData.swift */; };
 		3EA80356230CA497002D99A5 /* DrinklTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA80354230CA497002D99A5 /* DrinklTableViewCell.swift */; };
 		3EA80357230CA497002D99A5 /* DrinklTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EA80355230CA497002D99A5 /* DrinklTableViewCell.xib */; };
 		3EA80359230DB015002D99A5 /* SearchDrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA80358230DB015002D99A5 /* SearchDrinksTableViewController.swift */; };
@@ -81,7 +80,6 @@
 		3EA1027C2318769A00DAC811 /* ShoppingItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemTableViewCell.swift; sourceTree = "<group>"; };
 		3EA204E3230B09D000E902B5 /* tab1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab1.storyboard; sourceTree = "<group>"; };
 		3EA204E4230B09D000E902B5 /* tab3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tab3.storyboard; sourceTree = "<group>"; };
-		3EA20509230B56BD00E902B5 /* fakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fakeData.swift; sourceTree = "<group>"; };
 		3EA80354230CA497002D99A5 /* DrinklTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrinklTableViewCell.swift; path = sodaPoppin/ViewControllers/DrinklTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3EA80355230CA497002D99A5 /* DrinklTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DrinklTableViewCell.xib; path = sodaPoppin/ViewControllers/DrinklTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		3EA80358230DB015002D99A5 /* SearchDrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchDrinksTableViewController.swift; path = ../SearchDrinksTableViewController.swift; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				7C5748B423049F4500253B86 /* FirebaseController.swift */,
-				3EA20509230B56BD00E902B5 /* fakeData.swift */,
 				7C76127D230C612D0033C1B3 /* MyDrinksController.swift */,
 				3E743B2523108D3D009161F9 /* SearchAndFilterViewController.swift */,
 				7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */,
@@ -525,7 +522,6 @@
 				3E743B2623108D3D009161F9 /* SearchAndFilterViewController.swift in Sources */,
 				3E743B1A230F12F6009161F9 /* underlinedSegmentController.swift in Sources */,
 				7CD07E242314785900B40206 /* DiscoverPoppinContainerViewController.swift in Sources */,
-				3EA2050A230B56BD00E902B5 /* fakeData.swift in Sources */,
 				7CD07E1B23143DA200B40206 /* DiscoverPoppinViewController.swift in Sources */,
 				7C761276230C515D0033C1B3 /* CreateNewDrinkViewController.swift in Sources */,
 				7CD07E2623147A9200B40206 /* DiscoverContainerViewController.swift in Sources */,

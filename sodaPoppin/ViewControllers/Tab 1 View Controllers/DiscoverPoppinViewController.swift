@@ -19,6 +19,7 @@ class DiscoverPoppinViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseController.sharedInstance.fetchDrinks()
         poppinTableView.delegate = self
         poppinTableView.dataSource = self
         let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
@@ -71,7 +72,7 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         return UITableView.automaticDimension
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return FakeData.shared.drinks.count
+        return MyDrinksController.shared.drinks.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,7 +85,7 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         cell.selectionStyle = .none
         cell.layer.cornerRadius = 5
         cell.clipsToBounds = true
-        cell.populate(drink: FakeData.shared.drinks[indexPath.section])
+        cell.populate(drink: MyDrinksController.shared.drinks[indexPath.section])
         return cell
     }
 }

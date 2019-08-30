@@ -41,7 +41,7 @@ class CreateNewDrinkViewController: UIViewController {
         guard let drinkName = drinkNameTextField.text,
               let mainSodaName = mainSodaNameTextField.text,
               let ingredients = ingredientLabel.text else {return}
-        let drink = Drink(uuid: UUID().uuidString, name: drinkName, mainSodaName: mainSodaName, ingredients: FakeData.shared.ingredients, isLikedBy: [], creator: UserDefaults.standard.string(forKey: "UID")!)
+        let drink = Drink(uuid: UUID().uuidString, name: drinkName, mainSodaName: mainSodaName, ingredients: MyDrinksController.shared.ingredients, isLikedBy: [], creator: UserDefaults.standard.string(forKey: "UID")!)
         // Can force unwrap because we know they will have a UID
         FirebaseController.saveData(type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in
             self.navigationController?.popViewController(animated: true)
@@ -69,9 +69,9 @@ class CreateNewDrinkViewController: UIViewController {
     
     func arrayToString() {
         loadViewIfNeeded()
-        if FakeData.shared.inventory != [] {
+        if MyDrinksController.shared.inventory != [] {
             ingredientLabel.textColor = .black
-            let ingredients = FakeData.shared.ingredients
+            let ingredients = MyDrinksController.shared.ingredients
             if ingredients.count == 0 {
                 stringFromArray = ""
             }
