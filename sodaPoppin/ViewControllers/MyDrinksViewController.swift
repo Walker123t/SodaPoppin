@@ -78,6 +78,11 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             return 0
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedTap == 2 {
+            FakeData.shared.shoppingList[findShoppingListIndex(index: indexPath.section)!].1 = !FakeData.shared.shoppingList[findShoppingListIndex(index: indexPath.section)!].1
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -114,7 +119,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)  as? ShoppingItemTableViewCell else {return UITableViewCell()}
-            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), name: FakeData.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].0, doesHaveIcon: (FakeData.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].1 ? #imageLiteral(resourceName: "unlikedIcon"): #imageLiteral(resourceName: "Blood Orange")))
+            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), name: FakeData.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].0, doesHaveIcon: (FakeData.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].1 ? #imageLiteral(resourceName: "selectedIcon"): #imageLiteral(resourceName: "unSelectedIcon")))
             return cell
         default:
             return UITableViewCell()
@@ -147,7 +152,6 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return nil
     }
-    
     @IBAction func segmentController(_ sender: Any) {
         tableView.reloadData()
     }
