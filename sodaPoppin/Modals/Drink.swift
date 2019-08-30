@@ -15,8 +15,8 @@ class Drink {
     var name: String
     var mainSodaName: String
     var ingredients: [String]
-    var isLiked: Bool?
-    var creator: String?
+    var isLiked: Bool = false
+    var creator: String
     var dictionary: [String:Any] {
         return [
         DrinkConstants.uuidKey : self.uuid,
@@ -28,11 +28,29 @@ class Drink {
         ]
     }
     
-    init(uuid: String?, name: String, mainSodaName: String, ingredients: [String]) {
+    init(uuid: String?, name: String, mainSodaName: String, ingredients: [String], creator: String) {
         self.uuid = uuid ?? UUID().uuidString
         self.name = name
         self.mainSodaName = mainSodaName
         self.ingredients = ingredients
+        self.creator = creator
+    }
+    
+    init?(snapshot: DocumentSnapshot) {
+        let snapshot = snapshot.data()
+        guard let uuid = snapshot?[DrinkConstants.uuidKey] as? String,
+              let name = snapshot?[DrinkConstants.nameKey] as? String,
+              let mainSodaName = snapshot?[DrinkConstants.mainSodaNameKey] as? String,
+              let ingredients = snapshot?[DrinkConstants.ingreidentsKey] as? [String],
+              let isLiked = snapshot?[DrinkConstants.isLikedKey] as? Bool,
+              let creator = snapshot?[DrinkConstants.creatorKey] as? String
+            else { return nil }
+        
+        self.name = name
+        self.mainSodaName = mainSodaName
+        self.ingredients = ingredients
+        self.creator = creator
+        self.uuid = uuid
     }
 }
 

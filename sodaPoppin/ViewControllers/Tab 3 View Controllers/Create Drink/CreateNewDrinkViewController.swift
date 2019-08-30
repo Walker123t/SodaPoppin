@@ -11,6 +11,7 @@ import UIKit
 class CreateNewDrinkViewController: UIViewController {
     
     @IBOutlet weak var drinkNameTextField: UITextField!
+    @IBOutlet weak var mainSodaNameTextField: UITextField!
     @IBOutlet weak var ingredientLabel: UILabel!
     
     var stringFromArray: String = ""
@@ -37,8 +38,11 @@ class CreateNewDrinkViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
-        guard let drinkName = drinkNameTextField.text else {return}
-        let drink = Drink(uuid: UUID().uuidString, name: drinkName, mainSodaName: "Sprite", ingredients: FakeData.shared.ingredients)
+        guard let drinkName = drinkNameTextField.text,
+              let mainSodaName = mainSodaNameTextField.text else {return}
+        let drink = Drink(uuid: UUID().uuidString, name: drinkName, mainSodaName: mainSodaName, ingredients:
+            // Can force unwrap because we know they will have a UID
+            FakeData.shared.ingredients, creator: UserDefaults.standard.string(forKey: "UID")!)
         FirebaseController.saveData(type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in
             self.navigationController?.popViewController(animated: true)
         }

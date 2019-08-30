@@ -86,17 +86,22 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         switch selectedTap {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as? DrinklTableViewCell else {print("dun broke"); return UITableViewCell()}
-            cell.selectionStyle = .none
-            cell.layer.cornerRadius = 5
-            cell.clipsToBounds = true
-            switch myDrinksSegment.selectedSegmentIndex{
-            case 0:
-                let drink = FakeData.shared.drinks.filter{$0.isLiked && searchTerm(item: $0.name)}
-                cell.populate(drink: drink[indexPath.section])
-            case 1:
-                cell.populate(drink: FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId && $0.name.contains(searchBar.text ?? "")}[indexPath.section])
-            default:
-                cell.populate(drink: FakeData.shared.drinks[indexPath.section])
+                cell.selectionStyle = .none
+                cell.layer.cornerRadius = 5
+                cell.clipsToBounds = true
+                switch myDrinksSegment.selectedSegmentIndex{
+                case 0:
+                    let drink = FakeData.shared.drinks.filter{$0.isLiked}
+                    cell.populate(drink: drink[indexPath.section])
+                case 1:
+                    // Populate the table view with their created drinks
+                    FirebaseController.sharedInstance.fetchDrinksMadeByUser()
+                    if MyDrinksController.shared.myDrinks.count > 0 {
+                        cell.populate(drink: MyDrinksController.shared.myDrinks[indexPath.row])
+                    }
+//                    cell.populate(drink: FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}[indexPath.section])
+                default:
+                    cell.populate(drink: FakeData.shared.drinks[indexPath.section])
             }
             cell.likeButton.isHidden = true
             return cell

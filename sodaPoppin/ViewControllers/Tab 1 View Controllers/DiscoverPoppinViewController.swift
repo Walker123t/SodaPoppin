@@ -19,7 +19,6 @@ class DiscoverPoppinViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseController.sharedInstance.fetchDrinks()
         poppinTableView.delegate = self
         poppinTableView.dataSource = self
         let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
@@ -41,6 +40,11 @@ class DiscoverPoppinViewController: UIViewController {
     
     @IBAction func filterButtonTapped(_ sender: Any) {
         
+    }
+    
+    func populateDrinkArrays() {
+        FirebaseController.sharedInstance.fetchDrinks()
+        FirebaseController.sharedInstance.fetchDrinksMadeByUser()
     }
     
     /*
