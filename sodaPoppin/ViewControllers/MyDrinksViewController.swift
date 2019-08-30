@@ -78,6 +78,11 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             return 0
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedTap == 2 {
+            FakeData.shared.shoppingList[findShoppingListIndex(index: indexPath.section)!].1 = !FakeData.shared.shoppingList[findShoppingListIndex(index: indexPath.section)!].1
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -147,7 +152,6 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return nil
     }
-    
     @IBAction func segmentController(_ sender: Any) {
         tableView.reloadData()
     }
