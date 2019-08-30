@@ -72,10 +72,11 @@ class FirebaseController {
         }
     }
     
-    func fetchDrinks() {
+    func fetchDrinks(completion: @escaping (Bool) -> Void) {
         docRef.getDocuments { (snapshot, error) in
             if let error = error {
                 print("There was an error in \(#function) : \(error) : \(error.localizedDescription)")
+                completion(false)
                 return
             } else {
                 guard let snapshot = snapshot else {return}
@@ -83,8 +84,10 @@ class FirebaseController {
                     guard let drink = Drink(snapshot: document) else {return}
                     MyDrinksController.shared.drinks.append(drink)
                 }
+                completion(true)
             }
         }
+        return
     }
     
     func addUserToLikedBy(currentDrink: String, uid: String) {

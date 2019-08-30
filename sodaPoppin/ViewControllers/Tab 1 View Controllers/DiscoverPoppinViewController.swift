@@ -19,9 +19,18 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     
     var searchTerm: String = ""
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseController.sharedInstance.fetchDrinks()
+        FirebaseController.sharedInstance.fetchDrinks { (complete) in
+            if complete {
+                DispatchQueue.main.async {
+                    self.poppinTableView.reloadData()
+                }
+            }
+        }
         poppinTableView.delegate = self
         poppinTableView.dataSource = self
         let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
@@ -72,7 +81,9 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     }
     
     func populateDrinkArrays() {
-        FirebaseController.sharedInstance.fetchDrinks()
+        FirebaseController.sharedInstance.fetchDrinks { (_) in
+            return
+        }
         FirebaseController.sharedInstance.fetchDrinksMadeByUser()
     }
 }

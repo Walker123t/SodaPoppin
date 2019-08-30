@@ -25,7 +25,9 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     var isSearching = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseController.sharedInstance.fetchDrinks()
+        FirebaseController.sharedInstance.fetchDrinks { (_) in
+            return
+        }
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
         let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
@@ -46,10 +48,12 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return true
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
     func searchTerm(item: String) -> Bool{
         if searchTerm == ""{
             return true
@@ -80,7 +84,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if selectedTap == 2 {
-            FakeData.shared.shoppingList[findShoppingListIndex(index: indexPath.section)!].1 = !FakeData.shared.shoppingList[findShoppingListIndex(index: indexPath.section)!].1
+            MyDrinksController.shared.shoppingList[findShoppingListIndex(index: indexPath.section)!].1 = !MyDrinksController.shared.shoppingList[findShoppingListIndex(index: indexPath.section)!].1
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
