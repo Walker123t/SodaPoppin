@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="68.5" width="414" height="656.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shoppingListCell" rowHeight="65" id="8Ux-0q-lUH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shoppingListCell" rowHeight="65" id="8Ux-0q-lUH" customClass="ShoppingItemTableViewCell" customModule="sodaPoppin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Ux-0q-lUH" id="9a9-HN-awn">
@@ -34,6 +34,7 @@
                                                     <rect key="frame" x="20" y="5" width="54.5" height="54.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Czc-oa-k46" secondAttribute="height" multiplier="1:1" id="Gk2-ch-Q9P"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="Ztf-Tk-60f"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="um5-Av-i5y">
@@ -44,9 +45,6 @@
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6lJ-KR-ptq">
                                                     <rect key="frame" x="339.5" y="5" width="54.5" height="54.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="6lJ-KR-ptq" secondAttribute="height" multiplier="1:1" id="1eg-cb-lwx"/>
-                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -54,14 +52,20 @@
                                                 <constraint firstItem="Czc-oa-k46" firstAttribute="leading" secondItem="9a9-HN-awn" secondAttribute="leading" constant="20" id="H4y-kI-Dge"/>
                                                 <constraint firstItem="um5-Av-i5y" firstAttribute="centerY" secondItem="Czc-oa-k46" secondAttribute="centerY" id="IeK-2c-m1A"/>
                                                 <constraint firstItem="um5-Av-i5y" firstAttribute="leading" secondItem="Czc-oa-k46" secondAttribute="trailing" constant="10" id="WEK-Vm-nvj"/>
+                                                <constraint firstItem="6lJ-KR-ptq" firstAttribute="width" secondItem="Czc-oa-k46" secondAttribute="height" multiplier="1:1" id="Ybi-6N-4aW"/>
                                                 <constraint firstAttribute="trailing" secondItem="6lJ-KR-ptq" secondAttribute="trailing" constant="20" id="d9c-1v-7iT"/>
                                                 <constraint firstAttribute="bottom" secondItem="6lJ-KR-ptq" secondAttribute="bottom" constant="5" id="pmy-LV-MrS"/>
                                                 <constraint firstAttribute="bottom" secondItem="Czc-oa-k46" secondAttribute="bottom" constant="5" id="tUA-Jt-Nxj"/>
                                                 <constraint firstItem="6lJ-KR-ptq" firstAttribute="top" secondItem="9a9-HN-awn" secondAttribute="top" constant="5" id="ztX-7y-3Ug"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="doesHaveIcon" destination="6lJ-KR-ptq" id="uZI-fQ-pFk"/>
+                                            <outlet property="iconImage" destination="Czc-oa-k46" id="z1Q-nz-uge"/>
+                                            <outlet property="name" destination="um5-Av-i5y" id="Ucr-J4-lMu"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="inventoryCell" rowHeight="65" id="gBy-od-RF8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="inventoryCell" rowHeight="65" id="gBy-od-RF8" customClass="InventoryTableViewCell" customModule="sodaPoppin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="93" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gBy-od-RF8" id="tsw-hv-4hi">
@@ -72,6 +76,7 @@
                                                     <rect key="frame" x="20" y="5" width="54.5" height="54.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jNi-ib-d8Q" secondAttribute="height" multiplier="1:1" id="lXo-g9-ojr"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="vJh-OH-WTJ"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L65-0s-jGb">
@@ -89,6 +94,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="jNi-ib-d8Q" secondAttribute="bottom" constant="5" id="xw7-UQ-dmq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemIcon" destination="jNi-ib-d8Q" id="eqD-Ds-Fj7"/>
+                                            <outlet property="itemName" destination="L65-0s-jGb" id="mNX-0t-HOx"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -151,6 +160,9 @@
                                             <segment title="My Creations"/>
                                         </segments>
                                         <color key="tintColor" red="0.42352941179999998" green="0.32549019610000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="segmentController:" destination="5Nk-U0-zqk" eventType="valueChanged" id="pBZ-Ui-Lkm"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
@@ -181,7 +193,7 @@
                         <outlet property="myDrinksSegment" destination="onf-2C-aMv" id="nsl-dM-Nd6"/>
                         <outlet property="myInventoryButton" destination="e2d-6W-AoZ" id="dA1-9o-2mH"/>
                         <outlet property="shoppingListButton" destination="Ilc-rt-7Mg" id="nCM-BT-vaS"/>
-                        <outlet property="tableView" destination="kfC-kZ-fsW" id="X62-Rl-q5t"/>
+                        <outlet property="tableView" destination="kfC-kZ-fsW" id="LhC-Bv-d4E"/>
                         <outlet property="titleLabel" destination="9Rl-Wy-Km3" id="5PN-CZ-W9s"/>
                     </connections>
                 </viewController>

@@ -10,8 +10,6 @@ import UIKit
 
 class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
-    
     @IBOutlet weak var titleLabel: UINavigationItem!
     @IBOutlet weak var myDrinksButton: UIButton!
     @IBOutlet weak var myInventoryButton: UIButton!
@@ -19,9 +17,10 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var drinksTableView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var myDrinksSegment: UISegmentedControl!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var selectedTap: Int = 0
-    var tableData: Any = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
@@ -31,10 +30,20 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         tableView.register(cellNib, forCellReuseIdentifier: "drinkCell")
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         switch selectedTap {
         case 0:
-            return FakeData.shared.drinks.count
+            switch myDrinksSegment.selectedSegmentIndex{
+            case 0:
+                print((FakeData.shared.drinks.filter{$0.isLiked == true}).count)
+                let count = (FakeData.shared.drinks.filter{$0.isLiked == true})
+                return count.count
+            case 1:
+                return FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}.count
+            default:
+                return FakeData.shared.drinks.count
+            }
         case 1:
             return FakeData.shared.inventory.count
         case 2:
@@ -43,25 +52,38 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             return 0
         }
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch selectedTap {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as? DrinklTableViewCell else {return UITableViewCell()}
-            cell.selectionStyle = .none
-            cell.layer.cornerRadius = 5
-            cell.clipsToBounds = true
-            cell.populate(drink: FakeData.shared.drinks[indexPath.section])
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as? DrinklTableViewCell else {print("dun broke"); return UITableViewCell()}
+                cell.selectionStyle = .none
+                cell.layer.cornerRadius = 5
+                cell.clipsToBounds = true
+                switch myDrinksSegment.selectedSegmentIndex{
+                case 0:
+                    let drink = FakeData.shared.drinks.filter{$0.isLiked}
+                    cell.populate(drink: drink[indexPath.section])
+                case 1:
+                    cell.populate(drink: FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}[indexPath.section])
+                default:
+                    cell.populate(drink: FakeData.shared.drinks[indexPath.section])
+            }
+            cell.likeButton.isHidden = true
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as UITableViewCell
-            cell.textLabel?.text = FakeData.shared.inventory[indexPath.row]
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as? InventoryTableViewCell else {return UITableViewCell()}
+            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), itemName: FakeData.shared.inventory[indexPath.section])
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath) as UITableViewCell
-            cell.textLabel?.text = FakeData.shared.shoppingList[indexPath.row].0
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)  as? ShoppingItemTableViewCell else {return UITableViewCell()}
+            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), name: FakeData.shared.shoppingList[indexPath.section].0, doesHaveIcon: (FakeData.shared.shoppingList[indexPath.section].1 ? #imageLiteral(resourceName: "unlikedIcon"): #imageLiteral(resourceName: "Blood Orange")))
             return cell
         default:
             return UITableViewCell()
@@ -85,41 +107,28 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    @IBAction func segmentController(_ sender: Any) {
+        tableView.reloadData()
+    }
+    
     @IBAction func myDrinksButtonTapped(_ sender: Any) {
         selectedTap = 0
         titleLabel.title = "My Drinks"
-        //myDrinksSegment.isHidden = false
+        myDrinksSegment.isHidden = false
         tableView.reloadData()
     }
     
     @IBAction func myInventoryButtonTapped(_ sender: Any) {
         selectedTap = 1
         titleLabel.title = "My Inventory"
-        //myDrinksSegment.isHidden = true
+        myDrinksSegment.isHidden = true
         tableView.reloadData()
     }
     
     @IBAction func shoppingListButtonTapped(_ sender: Any) {
         selectedTap = 2
         titleLabel.title = "My Shopping List"
-        //myDrinksSegment.isHidden = true
+        myDrinksSegment.isHidden = true
         tableView.reloadData()
     }
-    
-    func populateTableData(selectedTab: Int, segmentIndex: Int){
-        switch selectedTab {
-        case 0:
-            switch segmentIndex {
-            case 0:
-                tableData = FakeData.shared.drinks.filter{$0.isLiked ?? false}
-            case 1:
-                tableData = FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}
-            default:
-                return
-            }
-        default:
-            return
-        }
-    }
 }
-
