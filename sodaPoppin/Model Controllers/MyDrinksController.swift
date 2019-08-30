@@ -19,7 +19,7 @@ class MyDrinksController {
     
     
     func createDrink(name: String, mainSodaName: String, ingredients: [String], creator: String) {
-        let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients, creator: creator)
+        let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients, isLikedBy: [], creator: creator)
         FakeData.shared.drinks.append(newDrink)
     }
     

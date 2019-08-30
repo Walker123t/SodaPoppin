@@ -16,6 +16,7 @@ class Drink {
     var mainSodaName: String
     var ingredients: [String]
     var isLiked: Bool = false
+    var isLikedBy: [String] = []
     var creator: String
     var dictionary: [String:Any] {
         return [
@@ -23,16 +24,17 @@ class Drink {
         DrinkConstants.nameKey : self.name,
         DrinkConstants.mainSodaNameKey : self.mainSodaName,
         DrinkConstants.ingreidentsKey : self.ingredients,
-        DrinkConstants.isLikedKey : self.isLiked,
+        DrinkConstants.isLikedByKey : self.isLikedBy,
         DrinkConstants.creatorKey : self.creator
         ]
     }
     
-    init(uuid: String?, name: String, mainSodaName: String, ingredients: [String], creator: String) {
+    init(uuid: String?, name: String, mainSodaName: String, ingredients: [String], isLikedBy: [String], creator: String) {
         self.uuid = uuid ?? UUID().uuidString
         self.name = name
         self.mainSodaName = mainSodaName
         self.ingredients = ingredients
+        self.isLikedBy = isLikedBy
         self.creator = creator
     }
     
@@ -42,7 +44,7 @@ class Drink {
               let name = snapshot?[DrinkConstants.nameKey] as? String,
               let mainSodaName = snapshot?[DrinkConstants.mainSodaNameKey] as? String,
               let ingredients = snapshot?[DrinkConstants.ingreidentsKey] as? [String],
-              let isLiked = snapshot?[DrinkConstants.isLikedKey] as? Bool,
+              let isLikedBy = snapshot?[DrinkConstants.isLikedByKey] as? [String],
               let creator = snapshot?[DrinkConstants.creatorKey] as? String
             else { return nil }
         
@@ -51,7 +53,7 @@ class Drink {
         self.ingredients = ingredients
         self.creator = creator
         self.uuid = uuid
-        self.isLiked = isLiked
+        self.isLikedBy = isLikedBy
     }
 }
 
@@ -70,6 +72,6 @@ struct DrinkConstants {
     fileprivate static let nameKey = "name"
     fileprivate static let mainSodaNameKey = "mainSodaName"
     fileprivate static let ingreidentsKey = "ingredients"
-    fileprivate static let isLikedKey = "isLiked"
+    fileprivate static let isLikedByKey = "isLikedBy"
     fileprivate static let creatorKey = "creator"
 }

@@ -12,7 +12,7 @@ class FakeData {
     
     static var shared = FakeData()
     
-    var drinks: [Drink] = [Drink(uuid: "", name: "Psycho's Dream", mainSodaName: "Sprite", ingredients: ["Pineapple","Blueberry","Coconut"], creator: "129857125"), Drink(uuid: "", name: "Mixed Medly", mainSodaName: "Dr. Pepper", ingredients: ["Pineapple","Blueberry","Coconut" , "Guava","Lavendar","Rasberry"], creator: "209875109"), Drink(uuid: "", name: "Country Storm", mainSodaName: "Root Beer", ingredients: ["Rasberry","Coconut"], creator: "2498540"), Drink(uuid: "", name: "Ol' Reliable", mainSodaName: "Coke", ingredients: ["Pineapple","Blueberry","Coconut"], creator: "1201341324")]
+    var drinks: [Drink] = [Drink(uuid: "", name: "Psycho's Dream", mainSodaName: "Sprite", ingredients: ["Pineapple","Blueberry","Coconut"], isLikedBy: [], creator: "129857125"), Drink(uuid: "", name: "Mixed Medly", mainSodaName: "Dr. Pepper", ingredients: ["Pineapple","Blueberry","Coconut" , "Guava","Lavendar","Rasberry"], isLikedBy: [], creator: "209875109"), Drink(uuid: "", name: "Country Storm", mainSodaName: "Root Beer", ingredients: ["Rasberry","Coconut"], isLikedBy: [], creator: "2498540"), Drink(uuid: "", name: "Ol' Reliable", mainSodaName: "Coke", ingredients: ["Pineapple","Blueberry","Coconut"], isLikedBy: [], creator: "1201341324")]
 
     var inventory: [String] = ["Pineapple", "Blueberry", "Orange", "Mango"]
     var ingredients: [String] = []
