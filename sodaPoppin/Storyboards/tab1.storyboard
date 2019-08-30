@@ -46,7 +46,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRy-qo-xey">
-                                <rect key="frame" x="10" y="24" width="65" height="24.5"/>
+                                <rect key="frame" x="10" y="24" width="65" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Poppin'">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bv4-6x-anj">
-                                <rect key="frame" x="13.5" y="53" width="58.5" height="2.5"/>
+                                <rect key="frame" x="13.5" y="60" width="58.5" height="3"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwB-NH-Lx8">
@@ -64,7 +64,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="u45-Yf-P7O">
-                                <rect key="frame" x="6" y="141" width="112" height="40.5"/>
+                                <rect key="frame" x="6" y="122.5" width="112" height="40.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Drinks" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhK-dZ-ZRc">
                                         <rect key="frame" x="0.0" y="0.0" width="112" height="37.5"/>
@@ -82,16 +82,15 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OKL-Ci-yy2">
-                                <rect key="frame" x="20" y="196.5" width="374" height="518.5"/>
+                                <rect key="frame" x="20" y="178" width="374" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Drinks" translatesAutoresizingMaskIntoConstraints="NO" id="vzk-ek-6MQ">
-                                <rect key="frame" x="5" y="77.5" width="404" height="56"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjJ-18-yAq">
+                                <rect key="frame" x="30" y="82.5" width="354" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -100,24 +99,23 @@
                             <constraint firstAttribute="trailing" secondItem="INo-qV-htT" secondAttribute="trailing" id="3vx-hZ-jwR"/>
                             <constraint firstItem="wwB-NH-Lx8" firstAttribute="centerY" secondItem="gMs-Va-TuJ" secondAttribute="centerY" multiplier="1.5" id="9HC-9j-5mO"/>
                             <constraint firstItem="u45-Yf-P7O" firstAttribute="centerX" secondItem="ugn-uT-RIn" secondAttribute="centerX" multiplier="0.3" id="ADg-r6-qD4"/>
-                            <constraint firstItem="vzk-ek-6MQ" firstAttribute="leading" secondItem="ugn-uT-RIn" secondAttribute="leading" constant="5" id="DUh-Vo-Jlx"/>
                             <constraint firstItem="4fb-jK-VLG" firstAttribute="top" secondItem="OKL-Ci-yy2" secondAttribute="bottom" constant="10" id="FW1-6w-Dye"/>
-                            <constraint firstItem="vzk-ek-6MQ" firstAttribute="top" secondItem="INo-qV-htT" secondAttribute="bottom" constant="5" id="HGs-c9-XGN"/>
+                            <constraint firstItem="u45-Yf-P7O" firstAttribute="top" secondItem="wjJ-18-yAq" secondAttribute="bottom" constant="10" id="Fb0-KN-K0N"/>
                             <constraint firstItem="jRy-qo-xey" firstAttribute="top" secondItem="GOK-03-U7z" secondAttribute="bottom" constant="24" id="Haj-UW-iNI"/>
                             <constraint firstItem="INo-qV-htT" firstAttribute="leading" secondItem="ugn-uT-RIn" secondAttribute="leading" id="ICr-gw-44h"/>
-                            <constraint firstItem="vzk-ek-6MQ" firstAttribute="top" secondItem="jRy-qo-xey" secondAttribute="bottom" constant="29" id="Jl5-g8-X7y"/>
                             <constraint firstItem="Bv4-6x-anj" firstAttribute="centerX" secondItem="jRy-qo-xey" secondAttribute="centerX" id="KXN-re-uHZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OKL-Ci-yy2" secondAttribute="trailing" id="OqH-A2-cgp"/>
                             <constraint firstItem="wwB-NH-Lx8" firstAttribute="centerX" secondItem="gMs-Va-TuJ" secondAttribute="centerX" id="Saz-9S-duL"/>
                             <constraint firstItem="u45-Yf-P7O" firstAttribute="height" secondItem="ugn-uT-RIn" secondAttribute="height" multiplier="0.05" id="TEC-bF-pb7"/>
                             <constraint firstItem="wwB-NH-Lx8" firstAttribute="height" secondItem="gMs-Va-TuJ" secondAttribute="height" multiplier="0.1" id="U98-hX-V1J"/>
                             <constraint firstItem="Bv4-6x-anj" firstAttribute="height" secondItem="jRy-qo-xey" secondAttribute="height" multiplier="0.1" id="W1L-1X-Gl5"/>
-                            <constraint firstItem="u45-Yf-P7O" firstAttribute="top" secondItem="vzk-ek-6MQ" secondAttribute="bottom" constant="7.5" id="XNJ-hU-eCf"/>
+                            <constraint firstItem="wjJ-18-yAq" firstAttribute="leading" secondItem="ugn-uT-RIn" secondAttribute="leadingMargin" constant="10" id="ZEU-8O-zVR"/>
                             <constraint firstItem="INo-qV-htT" firstAttribute="top" secondItem="GOK-03-U7z" secondAttribute="bottom" id="bA7-b9-LcI"/>
-                            <constraint firstAttribute="trailing" secondItem="vzk-ek-6MQ" secondAttribute="trailing" constant="5" id="dAc-mC-gFT"/>
                             <constraint firstItem="Bv4-6x-anj" firstAttribute="width" secondItem="jRy-qo-xey" secondAttribute="width" multiplier="0.9" id="ix8-7X-DAK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wjJ-18-yAq" secondAttribute="trailing" constant="10" id="k4L-E6-EWh"/>
                             <constraint firstItem="u45-Yf-P7O" firstAttribute="width" secondItem="ugn-uT-RIn" secondAttribute="width" multiplier="0.27" id="pjJ-eu-OjA"/>
                             <constraint firstItem="wwB-NH-Lx8" firstAttribute="width" secondItem="gMs-Va-TuJ" secondAttribute="width" multiplier="0.9" id="qaC-mo-sib"/>
+                            <constraint firstItem="wjJ-18-yAq" firstAttribute="top" secondItem="INo-qV-htT" secondAttribute="bottom" constant="10" id="sMl-zJ-BgZ"/>
                             <constraint firstItem="jRy-qo-xey" firstAttribute="leading" secondItem="ugn-uT-RIn" secondAttribute="leading" constant="10" id="vNo-UY-O1w"/>
                             <constraint firstItem="OKL-Ci-yy2" firstAttribute="top" secondItem="u45-Yf-P7O" secondAttribute="bottom" constant="15" id="yx2-I8-YYv"/>
                         </constraints>
@@ -130,6 +128,7 @@
                         <outlet property="poppinButton" destination="jRy-qo-xey" id="yDX-Iw-Elo"/>
                         <outlet property="poppinTableView" destination="OKL-Ci-yy2" id="My3-P5-5iL"/>
                         <outlet property="poppinUnderline" destination="Bv4-6x-anj" id="mKl-2b-iEh"/>
+                        <outlet property="searchBar" destination="wjJ-18-yAq" id="yAH-Xf-lmD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AoO-wN-MgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
