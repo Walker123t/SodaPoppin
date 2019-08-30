@@ -31,7 +31,6 @@ class FirebaseController {
                 completion("")
                 return
             }
-            
         }
     }
     
@@ -88,4 +87,13 @@ class FirebaseController {
         }
     }
     
+    func addUserToLikedBy(currentDrink: String, uid: String) {
+        let drinkRef = docRef.document(currentDrink)
+        drinkRef.updateData(["isLikedBy" : FieldValue.arrayUnion([uid])])
+    }
+    
+    func removeUserFromLikedBy(currentDrink: String, uid: String) {
+        let drinkRef = docRef.document(currentDrink)
+        drinkRef.updateData(["isLikedBy" : FieldValue.arrayRemove([uid])])
+    }
 }
