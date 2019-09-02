@@ -19,8 +19,13 @@ class FirebaseController {
     
     static let sharedInstance = FirebaseController()
     
-    static func saveData(type: String, dictionary: [String: Any], completion: @escaping (Bool) -> Void) {
-        ref.collection(type).addDocument(data: dictionary)
+//    static func saveData(type: String, dictionary: [String: Any], completion: @escaping (Bool) -> Void) {
+//        ref.collection(type).addDocument(data: dictionary)
+//        completion(true);return
+//    }
+    
+    static func saveDrink(drinkName: String, type: String, dictionary: [String: Any], completion: @escaping (Bool) -> Void) {
+        ref.collection(type).document(drinkName).setData(dictionary)
         completion(true);return
     }
     
@@ -83,6 +88,10 @@ class FirebaseController {
                 for document in snapshot.documents {
                     guard let drink = Drink(snapshot: document) else {return}
                     MyDrinksController.shared.drinks.append(drink)
+                    guard let uid = UserDefaults.standard.string(forKey: "UID") else { return }
+                    if drink.isLikedBy.contains(uid) {
+                        drink.isLiked = true
+                    }
                 }
                 completion(true)
             }
