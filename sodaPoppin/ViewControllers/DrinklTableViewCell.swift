@@ -85,6 +85,7 @@ class DrinklTableViewCell: UITableViewCell {
             sodaIsLiked = true
         } else {
             likeButton.setImage(UIImage(named: "unlikedIcon"), for: .normal)
+            sodaIsLiked = false
         }
     }
     
@@ -98,11 +99,15 @@ class DrinklTableViewCell: UITableViewCell {
             DispatchQueue.main.async {
                 self.likeButton.setImage(UIImage(named: "unlikedIcon"), for: .normal)
             }
+            sodaIsLiked = !sodaIsLiked
         } else {
             FirebaseController.sharedInstance.addUserToLikedBy(currentDrink: drinkName, uid: userUID!)
             DispatchQueue.main.async {
                 self.likeButton.setImage(UIImage(named: "liked"), for: .normal)
             }
+            sodaIsLiked = !sodaIsLiked
+        }
+        FirebaseController.sharedInstance.fetchDrinks { (success) in
         }
     }
 }
