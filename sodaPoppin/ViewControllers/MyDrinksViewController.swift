@@ -129,23 +129,23 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             return UITableViewCell()
         }
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            switch selectedTap {
-            case 0:
-                return
-            case 1:
-                MyDrinksController.shared.inventory.remove(at: MyDrinksController.shared.inventory.firstIndex(of: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])!)
-            case 2:
-                MyDrinksController.shared.shoppingList.remove(at: findShoppingListIndex(index: indexPath.section)!)
-            default:
-                return
-            }
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            switch selectedTap {
+//            case 0:
+//                return
+//            case 1:
+//                MyDrinksController.shared.inventory.remove(at: MyDrinksController.shared.inventory.firstIndex(of: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])!)
+//            case 2:
+//                MyDrinksController.shared.shoppingList.remove(at: findShoppingListIndex(index: indexPath.section)!)
+//            default:
+//                return
+//            }
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
+//    }
     
     func findShoppingListIndex(index: Int) -> Int?{
         let selectItem = MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[index]
