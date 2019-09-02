@@ -119,7 +119,8 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as? InventoryTableViewCell else {return UITableViewCell()}
-            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), itemName: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])
+            guard let inventoryIcon = UIImage(named: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section]) else {return UITableViewCell()}
+            cell.populate(icon: inventoryIcon, itemName: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)  as? ShoppingItemTableViewCell else {return UITableViewCell()}

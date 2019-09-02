@@ -59,8 +59,13 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+//        searchBar.text = ""
+//        searchBar.placeholder = "Search By Drink Name..."
+//        searchTerm = ""
         return true
     }
     

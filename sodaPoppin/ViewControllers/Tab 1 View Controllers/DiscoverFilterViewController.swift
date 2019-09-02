@@ -15,7 +15,7 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
     
     var sodas: [String] = ["Sprite","Coke","Dr. Pepper","Root Beer"]
     var syrups: [String] = ["Vanilla","Cherry","Raspberry","Blueberry","Watermelon"]
-    var pureés: [String] = ["Raspberry","Cherry","Blackberry","Strawberry"]
+    var pureés: [String] = ["Raspberry Pureé","Cherry Pureé","Blackberry Pureé","Strawberry Pureé"]
     var other: [String] = ["Cream"]
     
     @IBOutlet weak var selectedTagsCollectionView: UICollectionView!

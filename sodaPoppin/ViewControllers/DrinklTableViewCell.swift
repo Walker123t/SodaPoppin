@@ -32,7 +32,9 @@ class DrinklTableViewCell: UITableViewCell {
         }
         
         // Populating Syrup Icon
-        if drink.ingredients.count == 1 {
+        if drink.ingredients.count == 0 {
+            
+        } else if drink.ingredients.count == 1 {
             syrup1Icon.image = UIImage(named: "\(drink.ingredients[0])")
         } else if drink.ingredients.count == 2 {
             syrup1Icon.image = UIImage(named: "\(drink.ingredients[0])")
