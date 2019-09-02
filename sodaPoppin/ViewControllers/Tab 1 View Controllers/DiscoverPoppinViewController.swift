@@ -74,7 +74,8 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
             return true
         }
         print(searchTerm)
-        return item.contains(searchTerm)
+        let lowercasedItem = item.lowercased()
+        return lowercasedItem.contains(searchTerm.lowercased())
     }
     
     @IBAction func poppinButtonTapped(_ sender: Any) {
