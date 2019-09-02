@@ -22,11 +22,18 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     var selectedTap: Int = 0
     var searchTerm: String = ""
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     var isSearching = false
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         super.viewDidLoad()
-        FirebaseController.sharedInstance.fetchDrinks { (_) in
-            return
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
@@ -107,7 +114,6 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
                 cell.populate(drink: drink[indexPath.section])
             case 1:
                 // Populate the table view with their created drinks
-                FirebaseController.sharedInstance.fetchDrinksMadeByUser()
                 if MyDrinksController.shared.myDrinks.count > 0 {
                     cell.populate(drink: MyDrinksController.shared.myDrinks[indexPath.row])
                 }
@@ -164,6 +170,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func myDrinksButtonTapped(_ sender: Any) {
         selectedTap = 0
         titleLabel.title = "My Drinks"
+        searchBar.isHidden = true
         myDrinksSegment.isHidden = false
         tableView.reloadData()
     }
@@ -171,6 +178,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func myInventoryButtonTapped(_ sender: Any) {
         selectedTap = 1
         titleLabel.title = "My Inventory"
+        searchBar.isHidden = false
         myDrinksSegment.isHidden = true
         tableView.reloadData()
     }
@@ -178,7 +186,24 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func shoppingListButtonTapped(_ sender: Any) {
         selectedTap = 2
         titleLabel.title = "My Shopping List"
+        searchBar.isHidden = false
         myDrinksSegment.isHidden = true
         tableView.reloadData()
     }
+}
+
+class SetGradient {
+    
+    static func setGradient(view: UIView, mainColor: UIColor, secondColor: UIColor) {
+        
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = [mainColor.cgColor, secondColor.cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: view.frame.size.width, height: view.frame.size.height)
+        
+        view.layer.insertSublayer(gradient, at: 0)
+    }
+    
 }

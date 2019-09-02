@@ -42,6 +42,9 @@ class CreateNewDrinkViewController: UIViewController {
               let mainSodaName = mainSodaNameTextField.text,
               let ingredients = ingredientLabel.text else {return}
         let drink = Drink(uuid: UUID().uuidString, name: drinkName, mainSodaName: mainSodaName, ingredients: MyDrinksController.shared.ingredients, isLikedBy: [], creator: UserDefaults.standard.string(forKey: "UID")!)
+        if !MyDrinksController.shared.drinks.contains(drink) {
+            MyDrinksController.shared.drinks.append(drink)
+        }
         MyDrinksController.shared.drinks.append(drink)
         // Can force unwrap because we know they will have a UID
         FirebaseController.saveDrink(drinkName: drinkName, type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in

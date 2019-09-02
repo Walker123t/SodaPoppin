@@ -85,13 +85,6 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     @IBAction func filterButtonTapped(_ sender: Any) {
         
     }
-    
-    func populateDrinkArrays() {
-        FirebaseController.sharedInstance.fetchDrinks { (_) in
-            return
-        }
-        FirebaseController.sharedInstance.fetchDrinksMadeByUser()
-    }
 }
 
 extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelegate {
