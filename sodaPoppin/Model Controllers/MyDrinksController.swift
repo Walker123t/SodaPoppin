@@ -18,8 +18,6 @@ class MyDrinksController {
     var shoppingList: [(String, Bool)] = [("one", true), ("two", false)]
     var drinks: [Drink] = []
     
-    //Drink(uuid: "", name: "Psycho's Dream", mainSodaName: "Sprite", ingredients: ["Pineapple","Blueberry","Coconut"], isLikedBy: [], creator: "129857125"), Drink(uuid: "", name: "Mixed Medly", mainSodaName: "Dr. Pepper", ingredients: ["Pineapple","Blueberry","Coconut" , "Guava","Lavendar","Rasberry"], isLikedBy: [], creator: "209875109"), Drink(uuid: "", name: "Country Storm", mainSodaName: "Root Beer", ingredients: ["Rasberry","Coconut"], isLikedBy: [], creator: "2498540"), Drink(uuid: "", name: "Ol' Reliable", mainSodaName: "Coke", ingredients: ["Pineapple","Blueberry","Coconut"], isLikedBy: [], creator: "1201341324")
-    
     func createDrink(name: String, mainSodaName: String, ingredients: [String], creator: String) {
         let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients, isLikedBy: [], creator: creator)
         MyDrinksController.shared.drinks.append(newDrink)

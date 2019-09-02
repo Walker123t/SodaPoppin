@@ -10,6 +10,9 @@ import UIKit
 
 class DrinklTableViewCell: UITableViewCell {
     
+    let userUID = UserDefaults.standard.string(forKey: "UID")
+    var sodaIsLiked = false
+    
     @IBOutlet weak var drinkNameLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var sodaIcon: UIImageView!
@@ -30,6 +33,8 @@ class DrinklTableViewCell: UITableViewCell {
         } else {
             sodaIcon.backgroundColor = UIColor.brown
         }
+        
+        
         
         // Populating Syrup Icon
         if drink.ingredients.count == 0 {
@@ -73,6 +78,36 @@ class DrinklTableViewCell: UITableViewCell {
             syrup3Icon.isHidden = true
             extraCountLabel.isHidden = false
             extraCountLabel.text = "+\(drink.ingredients.count - 2)"
+        }
+        
+        if drink.isLiked == true {
+            likeButton.setImage(UIImage(named: "liked"), for: .normal)
+            sodaIsLiked = true
+        } else {
+            likeButton.setImage(UIImage(named: "unlikedIcon"), for: .normal)
+            sodaIsLiked = false
+        }
+    }
+    
+    override func awakeFromNib() {
+    }
+    
+    @IBAction func likedButtonTapped(_ sender: Any) {
+        guard let drinkName = drinkNameLabel.text else {return}
+        if sodaIsLiked {
+            FirebaseController.sharedInstance.removeUserFromLikedBy(currentDrink: drinkName, uid: userUID!)
+            DispatchQueue.main.async {
+                self.likeButton.setImage(UIImage(named: "unlikedIcon"), for: .normal)
+            }
+            sodaIsLiked = !sodaIsLiked
+        } else {
+            FirebaseController.sharedInstance.addUserToLikedBy(currentDrink: drinkName, uid: userUID!)
+            DispatchQueue.main.async {
+                self.likeButton.setImage(UIImage(named: "liked"), for: .normal)
+            }
+            sodaIsLiked = !sodaIsLiked
+        }
+        FirebaseController.sharedInstance.fetchDrinks { (success) in
         }
     }
 }
