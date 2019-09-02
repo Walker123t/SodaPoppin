@@ -38,6 +38,7 @@ class CreateNewDrinkViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
+        MyDrinksController.shared.ingredients = []
         guard let drinkName = drinkNameTextField.text,
               let mainSodaName = mainSodaNameTextField.text,
               let ingredients = ingredientLabel.text else {return}
