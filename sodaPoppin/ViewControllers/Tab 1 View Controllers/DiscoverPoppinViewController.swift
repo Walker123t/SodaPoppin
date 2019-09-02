@@ -8,18 +8,29 @@
 
 import UIKit
 
-class DiscoverPoppinViewController: UIViewController {
+class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var poppinButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var poppinUnderline: UIView!
     @IBOutlet weak var filterUnderline: UIView!
     @IBOutlet weak var poppinTableView: UITableView!
+    @IBOutlet weak var searchBar: UITextField!
     
+    var searchTerm: String = ""
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseController.sharedInstance.fetchDrinks()
+        FirebaseController.sharedInstance.fetchDrinks { (complete) in
+            if complete {
+                DispatchQueue.main.async {
+                    self.poppinTableView.reloadData()
+                }
+            }
+        }
         poppinTableView.delegate = self
         poppinTableView.dataSource = self
         let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
@@ -27,12 +38,43 @@ class DiscoverPoppinViewController: UIViewController {
         // To take out the line between the navigation bar and the purple view at the top of the page
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        searchBar.delegate = self
         
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(myDrinks), name: Notification.Name(rawValue: "myDrinks"), object: nil)
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string != ""{
+            searchTerm += string
+        } else {
+            searchTerm.removeLast()
+        }
+        DispatchQueue.main.async {
+            self.poppinTableView.reloadData()
+        }
+        return true
+    }
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+//        searchBar.text = ""
+//        searchBar.placeholder = "Search By Drink Name..."
+//        searchTerm = ""
+        return true
+    }
+    
+    func searchTerm(item: String) -> Bool{
+        if searchTerm == ""{
+            return true
+        }
+        print(searchTerm)
+        return item.contains(searchTerm)
     }
     
     @IBAction func poppinButtonTapped(_ sender: Any) {
@@ -44,20 +86,11 @@ class DiscoverPoppinViewController: UIViewController {
     }
     
     func populateDrinkArrays() {
-        FirebaseController.sharedInstance.fetchDrinks()
+        FirebaseController.sharedInstance.fetchDrinks { (_) in
+            return
+        }
         FirebaseController.sharedInstance.fetchDrinksMadeByUser()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelegate {
@@ -72,7 +105,7 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         return UITableView.automaticDimension
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return MyDrinksController.shared.drinks.count
+        return MyDrinksController.shared.drinks.filter({searchTerm(item: $0.name)}).count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,7 +118,7 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         cell.selectionStyle = .none
         cell.layer.cornerRadius = 5
         cell.clipsToBounds = true
-        cell.populate(drink: MyDrinksController.shared.drinks[indexPath.section])
+        cell.populate(drink: MyDrinksController.shared.drinks.filter({searchTerm(item: $0.name)})[indexPath.section])
         return cell
     }
 }

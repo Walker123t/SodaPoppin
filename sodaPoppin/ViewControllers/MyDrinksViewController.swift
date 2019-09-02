@@ -25,7 +25,9 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     var isSearching = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseController.sharedInstance.fetchDrinks()
+        FirebaseController.sharedInstance.fetchDrinks { (_) in
+            return
+        }
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
         let cellNib = UINib(nibName: "DrinklTableViewCell", bundle: nil)
@@ -46,10 +48,12 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return true
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
     func searchTerm(item: String) -> Bool{
         if searchTerm == ""{
             return true
@@ -76,6 +80,11 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             return MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)}).count
         default:
             return 0
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedTap == 2 {
+            MyDrinksController.shared.shoppingList[findShoppingListIndex(index: indexPath.section)!].1 = !MyDrinksController.shared.shoppingList[findShoppingListIndex(index: indexPath.section)!].1
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,7 +119,8 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as? InventoryTableViewCell else {return UITableViewCell()}
-            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), itemName: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])
+            guard let inventoryIcon = UIImage(named: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section]) else {return UITableViewCell()}
+            cell.populate(icon: inventoryIcon, itemName: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)  as? ShoppingItemTableViewCell else {return UITableViewCell()}
@@ -147,7 +157,6 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return nil
     }
-    
     @IBAction func segmentController(_ sender: Any) {
         tableView.reloadData()
     }
