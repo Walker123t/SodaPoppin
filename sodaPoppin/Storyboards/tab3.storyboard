@@ -198,6 +198,7 @@
                     <navigationItem key="navigationItem" title="My Drinks" id="9Rl-Wy-Km3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="createDrinkButton" destination="3QA-3H-4dY" id="Ei5-Rt-3kQ"/>
                         <outlet property="drinksTableView" destination="kfC-kZ-fsW" id="vhU-F5-4Ov"/>
                         <outlet property="myDrinksButton" destination="zyH-Pp-CWT" id="ZdT-HF-o8p"/>
                         <outlet property="myDrinksSegment" destination="onf-2C-aMv" id="nsl-dM-Nd6"/>
