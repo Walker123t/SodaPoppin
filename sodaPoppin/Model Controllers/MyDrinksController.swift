@@ -11,7 +11,7 @@ import Foundation
 class MyDrinksController {
     
     static let shared = MyDrinksController()
-
+    var selectedTags: [String] = []
     var inventory: [String] = ["Pineapple","Blueberry","Coconut","Guava","Lavendar","Rasberry"]
     var ingredients: [String] = []
     var myDrinks: [Drink] = []
