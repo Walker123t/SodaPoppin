@@ -18,6 +18,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var myDrinksSegment: UISegmentedControl!
     @IBOutlet weak var searchBar: UITextField!
+    @IBOutlet weak var createDrinkButton: UIButton!
     
     var selectedTap: Int = 0
     var searchTerm: String = ""
@@ -34,7 +35,6 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(cellNib, forCellReuseIdentifier: "drinkCell")
-        
         searchBar.delegate = self
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -101,6 +101,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.selectionStyle = .none
             cell.layer.cornerRadius = 5
             cell.clipsToBounds = true
+            cell.selectionStyle = .none
             switch myDrinksSegment.selectedSegmentIndex{
             case 0:
                 let drink = MyDrinksController.shared.drinks.filter{$0.isLiked && searchTerm(item: $0.name)}
@@ -115,37 +116,45 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             default:
                 cell.populate(drink: MyDrinksController.shared.drinks[indexPath.section])
             }
+            cell.selectionStyle = .none
             cell.likeButton.isHidden = true
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as? InventoryTableViewCell else {return UITableViewCell()}
-            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), itemName: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])
+            guard let inventoryIcon = UIImage(named: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section]) else {return UITableViewCell()}
+            cell.populate(icon: inventoryIcon, itemName: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])
+            cell.selectionStyle = .none
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)  as? ShoppingItemTableViewCell else {return UITableViewCell()}
             cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), name: MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].0, doesHaveIcon: (MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].1 ? #imageLiteral(resourceName: "unlikedIcon"): #imageLiteral(resourceName: "Blood Orange")))
+            cell.selectionStyle = .none
             return cell
         default:
             return UITableViewCell()
         }
     }
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            switch selectedTap {
-//            case 0:
-//                return
-//            case 1:
-//                MyDrinksController.shared.inventory.remove(at: MyDrinksController.shared.inventory.firstIndex(of: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])!)
-//            case 2:
-//                MyDrinksController.shared.shoppingList.remove(at: findShoppingListIndex(index: indexPath.section)!)
-//            default:
-//                return
-//            }
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }
-//    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            switch selectedTap {
+            case 0:
+                return
+            case 1:
+                guard let index = MyDrinksController.shared.inventory.firstIndex(of: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section]) else {return}
+                MyDrinksController.shared.shoppingList.append((MyDrinksController.shared.inventory[index], false))
+                MyDrinksController.shared.inventory.remove(at: index)
+                self.tableView.reloadData()
+            case 2:
+                guard let index = findShoppingListIndex(index: indexPath.section) else {return}
+                MyDrinksController.shared.inventory.append(MyDrinksController.shared.shoppingList[index].0)
+                MyDrinksController.shared.shoppingList.remove(at: index)
+                self.tableView.reloadData()
+            default:
+                return
+            }
+        }
+    }
     
     func findShoppingListIndex(index: Int) -> Int?{
         let selectItem = MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[index]
@@ -164,6 +173,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         selectedTap = 0
         titleLabel.title = "My Drinks"
         myDrinksSegment.isHidden = false
+        createDrinkButton.isHidden = false
         tableView.reloadData()
     }
     
@@ -171,6 +181,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         selectedTap = 1
         titleLabel.title = "My Inventory"
         myDrinksSegment.isHidden = true
+        createDrinkButton.isHidden = true
         tableView.reloadData()
     }
     
@@ -178,6 +189,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         selectedTap = 2
         titleLabel.title = "My Shopping List"
         myDrinksSegment.isHidden = true
+        createDrinkButton.isHidden = true
         tableView.reloadData()
     }
 }

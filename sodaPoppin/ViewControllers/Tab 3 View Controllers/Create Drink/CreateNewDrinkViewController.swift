@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateNewDrinkViewController: UIViewController {
+class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var drinkNameTextField: UITextField!
     @IBOutlet weak var mainSodaNameTextField: UITextField!
@@ -22,6 +22,8 @@ class CreateNewDrinkViewController: UIViewController {
         self.title = "Create New Drink"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backTapped))
         self.navigationItem.leftBarButtonItem?.tintColor = .black
+        drinkNameTextField.delegate = self
+        mainSodaNameTextField.delegate = self
     }
     
     @objc func backTapped() {
@@ -38,6 +40,7 @@ class CreateNewDrinkViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
+        MyDrinksController.shared.ingredients = []
         guard let drinkName = drinkNameTextField.text,
               let mainSodaName = mainSodaNameTextField.text,
               let ingredients = ingredientLabel.text else {return}
@@ -50,6 +53,11 @@ class CreateNewDrinkViewController: UIViewController {
 
     @IBAction func addIngredientButtonTapped(_ sender: UIButton) {
         addAlert()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func addAlert() {
