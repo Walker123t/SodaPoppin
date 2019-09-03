@@ -17,7 +17,9 @@ class SearchAndFilterViewController {
         for soda in MyDrinksController.shared.drinks {
             if soda.name.contains(searchTerm){
                 let notFoundList = MyDrinksController.shared.selectedTags.filter{!soda.ingredients.contains($0)}
-                if notFoundList.count != MyDrinksController.shared.selectedTags.count{
+                print(notFoundList.count)
+                print(MyDrinksController.shared.selectedTags.count)
+                if notFoundList.count <= MyDrinksController.shared.selectedTags.count{
                     tempArray.append(soda)
                 }
             }
