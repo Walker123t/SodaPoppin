@@ -52,16 +52,19 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         drinks = MyDrinksController.shared.drinks
+        
         if string != ""{
             searchTerm += string
         } else {
             searchTerm.removeLast()
+        }
+        if searchTerm != "" {
             drinks = SearchAndFilterViewController.shared.search(searchTerm: searchTerm)
         }
         DispatchQueue.main.async {
             self.poppinTableView.reloadData()
         }
-        drinks = SearchAndFilterViewController.shared.search(searchTerm: searchTerm)
+        print(searchTerm)
         return true
     }
     

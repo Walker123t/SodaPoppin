@@ -23,18 +23,7 @@ class DrinklTableViewCell: UITableViewCell {
     
     func populate(drink: Drink){
         // Populating Soda Icon
-        sodaIcon.image = #imageLiteral(resourceName: "My Drinks Icon")
-        if drink.mainSodaName == "Sprite" {
-            sodaIcon.backgroundColor = UIColor.green
-        } else if drink.mainSodaName == "Coke" {
-            sodaIcon.backgroundColor = UIColor.red
-        } else if drink.mainSodaName == "Dr. Pepper" {
-            sodaIcon.backgroundColor = UIColor.darkViolet
-        } else {
-            sodaIcon.backgroundColor = UIColor.brown
-        }
-        
-        
+        sodaIcon.image = UIImage(named: "\(drink.mainSodaName)")
         
         // Populating Syrup Icon
         if drink.ingredients.count == 0 {
@@ -99,11 +88,21 @@ class DrinklTableViewCell: UITableViewCell {
             DispatchQueue.main.async {
                 self.likeButton.setImage(UIImage(named: "unlikedIcon"), for: .normal)
             }
+            for soda in MyDrinksController.shared.drinks {
+                if soda.name.contains(drinkName) {
+                    soda.isLiked = false
+                }
+            }
             sodaIsLiked = !sodaIsLiked
         } else {
             FirebaseController.sharedInstance.addUserToLikedBy(currentDrink: drinkName, uid: userUID!)
             DispatchQueue.main.async {
                 self.likeButton.setImage(UIImage(named: "liked"), for: .normal)
+            }
+            for soda in MyDrinksController.shared.drinks {
+                if soda.name.contains(drinkName) {
+                    soda.isLiked = true
+                }
             }
             sodaIsLiked = !sodaIsLiked
         }

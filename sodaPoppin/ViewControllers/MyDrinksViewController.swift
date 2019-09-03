@@ -115,10 +115,9 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
                 cell.populate(drink: drink[indexPath.section])
             case 1:
                 // Populate the table view with their created drinks
-                if MyDrinksController.shared.myDrinks.count > 0 {
-                    cell.populate(drink: MyDrinksController.shared.myDrinks[indexPath.row])
+                if MyDrinksController.shared.drinks.count > 0 {
+                    cell.populate(drink: MyDrinksController.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}[indexPath.section])
                 }
-            //                    cell.populate(drink: FakeData.shared.drinks.filter{$0.creator == MyDrinksController.shared.personId}[indexPath.section])
             default:
                 cell.populate(drink: MyDrinksController.shared.drinks[indexPath.section])
             }

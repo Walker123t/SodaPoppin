@@ -75,10 +75,8 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
         let createNew = UIAlertAction(title: "Create New", style: .default) { (action) in
             self.performSegue(withIdentifier: "toCreateIngredientVC", sender: self)
         }
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         notification.addAction(fromInventory)
         notification.addAction(createNew)
-//        notification.addAction(cancelAction)
         present(notification, animated: true)
     }
     
