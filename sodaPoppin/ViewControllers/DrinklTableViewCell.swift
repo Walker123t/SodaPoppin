@@ -99,11 +99,21 @@ class DrinklTableViewCell: UITableViewCell {
             DispatchQueue.main.async {
                 self.likeButton.setImage(UIImage(named: "unlikedIcon"), for: .normal)
             }
+            for soda in MyDrinksController.shared.drinks {
+                if soda.name.contains(drinkName) {
+                    soda.isLiked = false
+                }
+            }
             sodaIsLiked = !sodaIsLiked
         } else {
             FirebaseController.sharedInstance.addUserToLikedBy(currentDrink: drinkName, uid: userUID!)
             DispatchQueue.main.async {
                 self.likeButton.setImage(UIImage(named: "liked"), for: .normal)
+            }
+            for soda in MyDrinksController.shared.drinks {
+                if soda.name.contains(drinkName) {
+                    soda.isLiked = true
+                }
             }
             sodaIsLiked = !sodaIsLiked
         }
