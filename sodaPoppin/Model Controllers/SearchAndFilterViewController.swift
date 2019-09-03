@@ -41,7 +41,7 @@ class SearchAndFilterViewController {
     func likedDrinks(drinks: [Drink]) -> [Drink]{
         var filtered: [Drink] = []
         for drink in drinks {
-            if drink.isLiked ?? false {
+            if drink.isLiked {
                 filtered.append(drink)
             }
         }
