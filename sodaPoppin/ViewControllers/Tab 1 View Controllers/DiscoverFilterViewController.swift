@@ -13,7 +13,7 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
     var selectedCategory: [String] = []
     var selectedTags: [String] = []
     
-    var sodas: [String] = ["Sprite","Coke","Dr. Pepper","Root Beer"]
+    var sodas: [String] = ["Sprite","Root Beer","Dr. Pepper","Coke"]
     var syrups: [String] = ["Vanilla","Cherry","Raspberry","Blueberry","Watermelon"]
     var pureés: [String] = ["Raspberry Pureé","Cherry Pureé","Blackberry Pureé","Strawberry Pureé"]
     var other: [String] = ["Cream"]
@@ -102,7 +102,11 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
         } else {
             guard let cell = selectedTagsCollectionView.dequeueReusableCell(withReuseIdentifier: "selectedTagCell", for: indexPath) as? SelectedTagsCollectionViewCell else { return UICollectionViewCell() }
                 let tag = selectedTags[indexPath.row]
+            if selectedCategory == pureés {
+                cell.selectedTagLabel.text = tag + "pureé"
+            } else {
                 cell.selectedTagLabel.text = tag
+            }
                 cell.cellDelegate = self
                 return cell
         }

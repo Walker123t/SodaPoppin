@@ -23,18 +23,7 @@ class DrinklTableViewCell: UITableViewCell {
     
     func populate(drink: Drink){
         // Populating Soda Icon
-        sodaIcon.image = #imageLiteral(resourceName: "My Drinks Icon")
-        if drink.mainSodaName == "Sprite" {
-            sodaIcon.backgroundColor = UIColor.green
-        } else if drink.mainSodaName == "Coke" {
-            sodaIcon.backgroundColor = UIColor.red
-        } else if drink.mainSodaName == "Dr. Pepper" {
-            sodaIcon.backgroundColor = UIColor.darkViolet
-        } else {
-            sodaIcon.backgroundColor = UIColor.brown
-        }
-        
-        
+        sodaIcon.image = UIImage(named: "\(drink.mainSodaName)")
         
         // Populating Syrup Icon
         if drink.ingredients.count == 0 {
