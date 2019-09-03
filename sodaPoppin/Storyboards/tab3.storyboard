@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kfC-kZ-fsW">
-                                <rect key="frame" x="0.0" y="98.5" width="414" height="626.5"/>
+                                <rect key="frame" x="0.0" y="115.5" width="414" height="609.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shoppingListCell" rowHeight="65" id="8Ux-0q-lUH" customClass="ShoppingItemTableViewCell" customModule="sodaPoppin" customModuleProvider="target">
@@ -116,16 +116,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hos-sW-ePN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="98.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="115.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIK-Lt-bdc">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FEm-su-vr1">
-                                        <rect key="frame" x="0.0" y="30" width="414" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="40.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyH-Pp-CWT">
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="40.5"/>
@@ -162,18 +156,41 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="onf-2C-aMv">
-                                        <rect key="frame" x="0.0" y="70.5" width="414" height="29"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <segments>
-                                            <segment title="Liked Drinks"/>
-                                            <segment title="My Creations"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.42352941179999998" green="0.32549019610000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="segmentController:" destination="5Nk-U0-zqk" eventType="valueChanged" id="pBZ-Ui-Lkm"/>
-                                        </connections>
-                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYd-0a-Myx">
+                                        <rect key="frame" x="0.0" y="40.5" width="414" height="75"/>
+                                        <subviews>
+                                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIK-Lt-bdc">
+                                                <rect key="frame" x="41.5" y="22.5" width="331" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="onf-2C-aMv">
+                                                <rect key="frame" x="20.5" y="9.5" width="373" height="57"/>
+                                                <color key="backgroundColor" name="darkerPurp"/>
+                                                <segments>
+                                                    <segment title="Liked Drinks"/>
+                                                    <segment title="My Creations"/>
+                                                </segments>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="segmentController:" destination="5Nk-U0-zqk" eventType="valueChanged" id="pBZ-Ui-Lkm"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <color key="backgroundColor" name="darkerPurp"/>
+                                        <constraints>
+                                            <constraint firstItem="onf-2C-aMv" firstAttribute="centerX" secondItem="KYd-0a-Myx" secondAttribute="centerX" id="1d2-hn-yNW"/>
+                                            <constraint firstItem="onf-2C-aMv" firstAttribute="centerY" secondItem="KYd-0a-Myx" secondAttribute="centerY" id="LQo-D7-P6f"/>
+                                            <constraint firstItem="eIK-Lt-bdc" firstAttribute="height" secondItem="KYd-0a-Myx" secondAttribute="height" multiplier="0.4" id="MNN-7Y-JbS"/>
+                                            <constraint firstItem="eIK-Lt-bdc" firstAttribute="centerY" secondItem="KYd-0a-Myx" secondAttribute="centerY" id="P3D-2l-8nx"/>
+                                            <constraint firstItem="eIK-Lt-bdc" firstAttribute="centerX" secondItem="KYd-0a-Myx" secondAttribute="centerX" id="Qcg-QY-Dj4"/>
+                                            <constraint firstItem="eIK-Lt-bdc" firstAttribute="width" secondItem="KYd-0a-Myx" secondAttribute="width" multiplier="0.8" id="bJ6-6u-1z0"/>
+                                            <constraint firstItem="onf-2C-aMv" firstAttribute="height" secondItem="KYd-0a-Myx" secondAttribute="height" multiplier="0.75" id="fMY-t5-1uD"/>
+                                            <constraint firstAttribute="height" constant="75" id="nmt-xz-PSh"/>
+                                            <constraint firstItem="onf-2C-aMv" firstAttribute="width" secondItem="KYd-0a-Myx" secondAttribute="width" multiplier="0.9" id="vRo-6T-9Ps"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -490,6 +507,7 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="darkerPurp"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>

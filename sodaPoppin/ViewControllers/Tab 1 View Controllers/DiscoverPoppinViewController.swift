@@ -77,7 +77,8 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
             return true
         }
         print(searchTerm)
-        return item.contains(searchTerm)
+        let lowercasedItem = item.lowercased()
+        return lowercasedItem.contains(searchTerm.lowercased())
     }
     
     @IBAction func poppinButtonTapped(_ sender: Any) {
@@ -86,13 +87,6 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func filterButtonTapped(_ sender: Any) {
         
-    }
-    
-    func populateDrinkArrays() {
-        FirebaseController.sharedInstance.fetchDrinks { (_) in
-            return
-        }
-        FirebaseController.sharedInstance.fetchDrinksMadeByUser()
     }
 }
 

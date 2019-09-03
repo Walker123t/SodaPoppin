@@ -40,15 +40,22 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
-        MyDrinksController.shared.ingredients = []
         guard let drinkName = drinkNameTextField.text,
               let mainSodaName = mainSodaNameTextField.text,
               let ingredients = ingredientLabel.text else {return}
         let drink = Drink(uuid: UUID().uuidString, name: drinkName, mainSodaName: mainSodaName, ingredients: MyDrinksController.shared.ingredients, isLikedBy: [], creator: UserDefaults.standard.string(forKey: "UID")!)
-        // Can force unwrap because we know they will have a UID
-        FirebaseController.saveData(type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in
-            self.navigationController?.popViewController(animated: true)
+        if !MyDrinksController.shared.drinks.contains(drink) {
+            MyDrinksController.shared.drinks.append(drink)
         }
+        MyDrinksController.shared.drinks.append(drink)
+        // Can force unwrap because we know they will have a UID
+        FirebaseController.saveDrink(drinkName: drinkName, type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in
+            self.navigationController?.popViewController(animated: true)
+            MyDrinksController.shared.ingredients = []
+        }
+//        FirebaseController.saveData(type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in
+//            self.navigationController?.popViewController(animated: true)
+//        }
     }
 
     @IBAction func addIngredientButtonTapped(_ sender: UIButton) {
