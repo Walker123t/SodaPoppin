@@ -21,6 +21,9 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.poppinTableView.reloadData()
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
