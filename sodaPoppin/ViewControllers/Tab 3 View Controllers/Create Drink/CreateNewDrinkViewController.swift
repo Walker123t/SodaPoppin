@@ -19,9 +19,23 @@ class CreateNewDrinkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(sodaNameReceived(notification:)), name: Notification.Name(rawValue: "Soda"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(sodaNameReceived), name: Notification.Name("Soda"))
+        MyDrinksController.shared.ingredients = []
         self.title = "Create New Drink"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backTapped))
         self.navigationItem.leftBarButtonItem?.tintColor = .black
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        arrayToString()
+    }
+    
+    @objc func sodaNameReceived(notification: Notification) {
+        if let sodaName = notification.object {
+            mainSodaNameTextField.text = sodaName as? String
+        }
     }
     
     @objc func backTapped() {
@@ -32,10 +46,6 @@ class CreateNewDrinkViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        arrayToString()
-    }
     
     @IBAction func createButtonTapped(_ sender: Any) {
         guard let drinkName = drinkNameTextField.text,
@@ -45,15 +55,11 @@ class CreateNewDrinkViewController: UIViewController {
         if !MyDrinksController.shared.drinks.contains(drink) {
             MyDrinksController.shared.drinks.append(drink)
         }
-        MyDrinksController.shared.drinks.append(drink)
         // Can force unwrap because we know they will have a UID
         FirebaseController.saveDrink(drinkName: drinkName, type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in
             self.navigationController?.popViewController(animated: true)
             MyDrinksController.shared.ingredients = []
         }
-//        FirebaseController.saveData(type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in
-//            self.navigationController?.popViewController(animated: true)
-//        }
     }
 
     @IBAction func addIngredientButtonTapped(_ sender: UIButton) {
@@ -84,7 +90,7 @@ class CreateNewDrinkViewController: UIViewController {
                 stringFromArray = ""
             }
             else if ingredients.count == 1 {
-                stringFromArray += "\(ingredients[i])"
+                stringFromArray += "\(ingredients[0])"
                 i += 1
             } else {
                 stringFromArray += ", \(ingredients[i])"
@@ -105,4 +111,13 @@ class CreateNewDrinkViewController: UIViewController {
     }
     */
 
+    @IBAction func sodaNameTextField(_ sender: UITextField) {
+        guard let vc = UIStoryboard(name: "tab3", bundle: nil).instantiateViewController(withIdentifier: "PresentSodas") as? PresentSodasViewController else { return }
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true) {
+            
+        }
+        
+    }
 }
+

@@ -17,6 +17,8 @@ class MyDrinksController {
     var myDrinks: [Drink] = []
     var shoppingList: [(String, Bool)] = [("one", true), ("two", false)]
     var drinks: [Drink] = []
+    var sodas: [String] = ["Coke","Dr. Pepper","Fanta","Mtn. Dew","Root Beer","Sprite"]
+    var mainSodaName: String = ""
     
     func createDrink(name: String, mainSodaName: String, ingredients: [String], creator: String) {
         let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients, isLikedBy: [], creator: creator)
