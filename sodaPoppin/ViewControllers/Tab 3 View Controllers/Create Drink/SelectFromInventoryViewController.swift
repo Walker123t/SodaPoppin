@@ -21,8 +21,10 @@ class SelectFromInventoryViewController: UIViewController, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.inventoryTableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath)
-        let inventoryItem = MyDrinksController.shared.inventory[indexPath.row]
-        cell.textLabel?.text = inventoryItem
+        if MyDrinksController.shared.inventory.count != 0 {
+            let inventoryItem = MyDrinksController.shared.inventory[indexPath.row]
+            cell.textLabel?.text = inventoryItem
+        }
         return cell
     }
 
