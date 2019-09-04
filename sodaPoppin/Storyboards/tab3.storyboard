@@ -16,7 +16,7 @@
             <objects>
                 <viewController id="5Nk-U0-zqk" customClass="MyDrinksViewController" customModule="sodaPoppin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oez-2G-CV6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kfC-kZ-fsW">
@@ -104,6 +104,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QA-3H-4dY">
+
                                 <rect key="frame" x="329.5" y="651" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3QA-3H-4dY" secondAttribute="height" multiplier="1:1" id="1x2-hN-QJD"/>
@@ -216,6 +217,7 @@
                     <navigationItem key="navigationItem" title="My Drinks" id="9Rl-Wy-Km3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="createDrinkButton" destination="3QA-3H-4dY" id="Ei5-Rt-3kQ"/>
                         <outlet property="drinksTableView" destination="kfC-kZ-fsW" id="vhU-F5-4Ov"/>
                         <outlet property="myDrinksButton" destination="zyH-Pp-CWT" id="ZdT-HF-o8p"/>
                         <outlet property="myDrinksSegment" destination="onf-2C-aMv" id="nsl-dM-Nd6"/>
@@ -235,7 +237,7 @@
             <objects>
                 <viewController id="9Gq-bG-2Vd" customClass="SelectFromInventoryViewController" customModule="sodaPoppin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="awk-uM-zIa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWx-6u-jDE">
@@ -320,7 +322,7 @@
             <objects>
                 <viewController id="Wtj-e4-Xua" customClass="CreateIngredientViewController" customModule="sodaPoppin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fwc-Xa-XeG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Ingredient Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9pv-Mj-dd2">
@@ -381,7 +383,7 @@
             <objects>
                 <viewController id="bwo-PF-Sne" customClass="CreateNewDrinkViewController" customModule="sodaPoppin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hpR-gw-NdW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-5T-E4E">

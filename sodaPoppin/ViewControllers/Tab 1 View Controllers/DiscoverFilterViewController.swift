@@ -11,7 +11,6 @@ import UIKit
 class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var selectedCategory: [String] = []
-    var selectedTags: [String] = []
     
     var sodas: [String] = ["Sprite","Root Beer","Dr. Pepper","Coke","Mtn. Dew","Fanta"]
     var syrups: [String] = ["Vanilla","Cherry","Raspberry","Blueberry","Watermelon"]
@@ -72,8 +71,8 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
             cell?.toggleIsChosen()
 //             collectionView.reloadItems(at: [indexPath])
             let selectedItem = selectedCategory[indexPath.row]
-            if !selectedTags.contains(selectedItem) {
-                selectedTags.append(selectedItem)
+            if !MyDrinksController.shared.selectedTags.contains(selectedItem) {
+                MyDrinksController.shared.selectedTags.append(selectedItem)
                  selectedTagsCollectionView.reloadData()
             } else {
                 return
@@ -89,7 +88,7 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
         if collectionView == tagsCollectionView {
             return selectedCategory.count
         } else {
-            return selectedTags.count
+            return MyDrinksController.shared.selectedTags.count
         }
     }
     
@@ -97,11 +96,11 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
         if collectionView == tagsCollectionView {
             guard let cell = tagsCollectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as? TagsCollectionViewCell else { return UICollectionViewCell() }
             let object = selectedCategory[indexPath.row]
-            cell.updateViews(with: object, isChosen: selectedTags.contains(object))
+            cell.updateViews(with: object, isChosen: MyDrinksController.shared.selectedTags.contains(object))
             return cell
         } else {
             guard let cell = selectedTagsCollectionView.dequeueReusableCell(withReuseIdentifier: "selectedTagCell", for: indexPath) as? SelectedTagsCollectionViewCell else { return UICollectionViewCell() }
-                let tag = selectedTags[indexPath.row]
+                let tag = MyDrinksController.shared.selectedTags[indexPath.row]
             if selectedCategory == pureés {
                 cell.selectedTagLabel.text = tag + "pureé"
             } else {
@@ -135,7 +134,7 @@ extension DiscoverFilterViewController: UICollectionViewDelegateFlowLayout {
                 return CGSize(width: (10 * charCount), height: 23)
             }
         } else if collectionView == selectedTagsCollectionView {
-            let item = selectedTags[indexPath.row]
+            let item = MyDrinksController.shared.selectedTags[indexPath.row]
             let charCount = item.count
             if charCount < 10 {
                 return CGSize(width: (15 * charCount), height: 23)
@@ -175,8 +174,8 @@ extension DiscoverFilterViewController: SelectedTagsCellDelegate {
     
     func selectedTagsCellDelegate(for cell: SelectedTagsCollectionViewCell) {
         guard let index = selectedTagsCollectionView.indexPath(for: cell) else {return}
-        let item = selectedTags[index.row]
-        selectedTags.remove(at: index.row)
+        //let item = MyDrinksController.shared.selectedTags[index.row]
+        MyDrinksController.shared.selectedTags.remove(at: index.row)
         selectedTagsCollectionView.reloadData()
         tagsCollectionView.reloadData()
     }

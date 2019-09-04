@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateNewDrinkViewController: UIViewController {
+class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var drinkNameTextField: UITextField!
     @IBOutlet weak var ingredientLabel: UILabel!
@@ -24,6 +24,8 @@ class CreateNewDrinkViewController: UIViewController {
         self.title = "Create New Drink"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backTapped))
         self.navigationItem.leftBarButtonItem?.tintColor = .black
+        drinkNameTextField.delegate = self
+        mainSodaNameTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,8 +69,11 @@ class CreateNewDrinkViewController: UIViewController {
     @IBAction func addIngredientButtonTapped(_ sender: UIButton) {
         addAlert()
     }
-    
-    
+  
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     func addAlert() {
         let notification = UIAlertController(title: "Choose Ingredient", message: nil, preferredStyle: .alert)

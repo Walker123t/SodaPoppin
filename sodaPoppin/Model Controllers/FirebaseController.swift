@@ -29,38 +29,6 @@ class FirebaseController {
         completion(true);return
     }
     
-    func signIn(email: String, password: String, completion: @escaping (String) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if let error = error {
-                print("There was an error in \(#function) : \(error) : \(error.localizedDescription)")
-                completion("")
-                return
-            }
-        }
-    }
-    
-    func signOut() {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("Error signing out")
-        }
-    }
-    
-    func createUser(email: String, password: String, completion: @escaping (String) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (data, error) in
-            if let error = error {
-                print("There was an error in \(#function) : \(error) : \(error.localizedDescription)")
-                completion("")
-                return
-            }
-            guard let userID = data?.user.uid else {completion("");return}
-            self.currentUser = data?.user
-            print("User authenticated successfully")
-            completion(userID)
-        }
-    }
-    
     func fetchDrinksMadeByUser() {
         docRef.whereField("creator", isEqualTo: UserDefaults.standard.string(forKey: "UID") as Any)
             .getDocuments { (snapshot, error) in

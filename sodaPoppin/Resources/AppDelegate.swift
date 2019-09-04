@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             MyDrinksController.shared.personId = "\(UserDefaults.standard.set(UUID().uuidString, forKey: "UID"))"
         }
-        
         return true
     }
 

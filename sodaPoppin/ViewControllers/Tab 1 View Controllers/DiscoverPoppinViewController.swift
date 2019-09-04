@@ -19,6 +19,8 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     
     var searchTerm: String = ""
     
+    var drinks: [Drink] = []
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         DispatchQueue.main.async {
@@ -31,6 +33,7 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
         FirebaseController.sharedInstance.fetchDrinks { (complete) in
             if complete {
                 DispatchQueue.main.async {
+                    self.drinks = MyDrinksController.shared.drinks
                     self.poppinTableView.reloadData()
                 }
             }
@@ -52,10 +55,15 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        drinks = MyDrinksController.shared.drinks
+        
         if string != ""{
             searchTerm += string
         } else {
             searchTerm.removeLast()
+        }
+        if searchTerm != "" {
+            drinks = SearchAndFilterViewController.shared.search(searchTerm: searchTerm)
         }
         DispatchQueue.main.async {
             self.poppinTableView.reloadData()
@@ -67,9 +75,6 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-//        searchBar.text = ""
-//        searchBar.placeholder = "Search By Drink Name..."
-//        searchTerm = ""
         return true
     }
     
@@ -77,7 +82,6 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
         if searchTerm == ""{
             return true
         }
-        print(searchTerm)
         let lowercasedItem = item.lowercased()
         return lowercasedItem.contains(searchTerm.lowercased())
     }
@@ -103,7 +107,7 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         return UITableView.automaticDimension
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return MyDrinksController.shared.drinks.filter({searchTerm(item: $0.name)}).count
+        return drinks.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -131,7 +135,7 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         cell.selectionStyle = .none
         cell.layer.cornerRadius = 5
         cell.clipsToBounds = true
-        cell.populate(drink: MyDrinksController.shared.drinks.filter({searchTerm(item: $0.name)})[indexPath.section])
+        cell.populate(drink: drinks[indexPath.section])
         return cell
     }
 }
