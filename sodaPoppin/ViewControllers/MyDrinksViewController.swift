@@ -142,12 +142,14 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
                 return
             case 1:
                 MyDrinksController.shared.inventory.remove(at: MyDrinksController.shared.inventory.firstIndex(of: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])!)
+                tableView.deleteRows(at: [indexPath], with: .fade)
             case 2:
                 MyDrinksController.shared.shoppingList.remove(at: findShoppingListIndex(index: indexPath.section)!)
+                tableView.reloadData()
             default:
                 return
             }
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
