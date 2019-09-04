@@ -25,7 +25,6 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backTapped))
         self.navigationItem.leftBarButtonItem?.tintColor = .black
         drinkNameTextField.delegate = self
-        mainSodaNameTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
