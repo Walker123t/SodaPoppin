@@ -395,10 +395,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="QRk-H3-eZl">
-                                <rect key="frame" x="25" y="26" width="197" height="244"/>
+                                <rect key="frame" x="25" y="26" width="235.5" height="244"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="od7-Gp-cOn">
-                                        <rect key="frame" x="0.0" y="0.0" width="197" height="61.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235.5" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Drink Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zR-ih-DBG">
                                                 <rect key="frame" x="0.0" y="0.0" width="107" height="25.5"/>
@@ -415,7 +415,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZYp-vr-Mch">
-                                        <rect key="frame" x="0.0" y="91.5" width="197" height="61.5"/>
+                                        <rect key="frame" x="0.0" y="91.5" width="235.5" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Main Soda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmI-8B-rTn">
                                                 <rect key="frame" x="0.0" y="0.0" width="96.5" height="25.5"/>
@@ -423,20 +423,24 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select soda name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mwF-7h-wqa">
-                                                <rect key="frame" x="0.0" y="35.5" width="183" height="26"/>
-                                                <nil key="textColor"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yd5-n1-KTu">
+                                                <rect key="frame" x="0.0" y="35.5" width="179" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="26" id="xbz-VL-FtA"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <state key="normal" title="Select soda name...">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="sodaNameTextField:" destination="bwo-PF-Sne" eventType="editingDidBegin" id="j8B-Rh-sy8"/>
+                                                    <action selector="sodaNameButtonTapped:" destination="bwo-PF-Sne" eventType="touchUpInside" id="E1r-4L-LD2"/>
                                                 </connections>
-                                            </textField>
+                                            </button>
                                         </subviews>
                                         <viewLayoutGuide key="safeArea" id="UyE-hS-MIc"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cEA-Wk-Rhm">
-                                        <rect key="frame" x="0.0" y="183" width="197" height="61"/>
+                                        <rect key="frame" x="0.0" y="183" width="235.5" height="61"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5A-Ct-cpj">
                                                 <rect key="frame" x="0.0" y="0.0" width="102" height="25.5"/>
@@ -444,8 +448,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Select an ingredient..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mb-ek-FQv">
-                                                <rect key="frame" x="0.0" y="35.5" width="197" height="25.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Add an ingredient below..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mb-ek-FQv">
+                                                <rect key="frame" x="0.0" y="35.5" width="235.5" height="25.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -488,7 +492,7 @@
                     <connections>
                         <outlet property="drinkNameTextField" destination="xBm-cE-4q9" id="vTj-ht-Elh"/>
                         <outlet property="ingredientLabel" destination="9mb-ek-FQv" id="fo0-b6-uND"/>
-                        <outlet property="mainSodaNameTextField" destination="mwF-7h-wqa" id="ULw-gC-iUv"/>
+                        <outlet property="mainSodaNameButton" destination="Yd5-n1-KTu" id="699-K7-RmF"/>
                         <segue destination="9Gq-bG-2Vd" kind="show" identifier="toSelectFromInventoryVC" id="lRG-1J-3a3"/>
                         <segue destination="Wtj-e4-Xua" kind="show" identifier="toCreateIngredientVC" id="bmk-ci-DGn"/>
                     </connections>

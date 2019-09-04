@@ -112,4 +112,8 @@ class FirebaseController {
         let drinkRef = docRef.document(currentDrink)
         drinkRef.updateData(["isLikedBy" : FieldValue.arrayRemove([uid])])
     }
+    
+    func removeDrinkFromDB(currentDrink: String) {
+        docRef.document(currentDrink).delete()
+    }
 }
