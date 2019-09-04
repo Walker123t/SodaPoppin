@@ -736,13 +736,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = sodaPoppin/sodaPoppin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UCL5625TDG;
+				DEVELOPMENT_TEAM = 2HLC2FMZN4;
 				INFOPLIST_FILE = "$(SRCROOT)/sodaPoppin/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yeet.net;
+				PRODUCT_BUNDLE_IDENTIFIER = com.interactivesportsapps.sodaPoppin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -756,13 +756,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = sodaPoppin/sodaPoppin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UCL5625TDG;
+				DEVELOPMENT_TEAM = 2HLC2FMZN4;
 				INFOPLIST_FILE = "$(SRCROOT)/sodaPoppin/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yeet.net;
+				PRODUCT_BUNDLE_IDENTIFIER = com.interactivesportsapps.sodaPoppin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
