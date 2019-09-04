@@ -30,6 +30,7 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         LocalJSONDataController.shared.loadShoppingList()
+        LocalJSONDataController.shared.loadInventory()
         FirebaseController.sharedInstance.fetchDrinks { (complete) in
             if complete {
                 DispatchQueue.main.async {

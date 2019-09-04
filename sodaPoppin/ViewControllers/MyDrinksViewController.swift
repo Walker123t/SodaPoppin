@@ -142,7 +142,10 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)  as? ShoppingItemTableViewCell else {return UITableViewCell()}
             guard let shoppingListItemIcon = UIImage(named: "\(MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].0)") else { return UITableViewCell() }
-            cell.populate(icon: shoppingListItemIcon, name: MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].0, doesHaveIcon: (MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].1 ? #imageLiteral(resourceName: "selectedIcon"): #imageLiteral(resourceName: "unSelectedIcon")))
+            cell.populate(icon: shoppingListItemIcon, name: MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].0)
+            
+            //doesHaveIcon: (MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].1 ? #imageLiteral(resourceName: "selectedIcon"): #imageLiteral(resourceName: "unSelectedIcon")))
+            
             return cell
         default:
             return UITableViewCell()
@@ -157,16 +160,22 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             case 1:
                 guard let index = MyDrinksController.shared.inventory.firstIndex(of: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section]) else {return}
                 MyDrinksController.shared.shoppingList.append((MyDrinksController.shared.inventory[index], false))
+                
                 MyDrinksController.shared.inventory.remove(at: index)
                 self.tableView.reloadData()
             case 2:
                 guard let index = findShoppingListIndex(index: indexPath.section) else {return}
+                if !MyDrinksController.shared.inventory.contains(MyDrinksController.shared.shoppingList[index].0) {
                 MyDrinksController.shared.inventory.append(MyDrinksController.shared.shoppingList[index].0)
+                }
                 MyDrinksController.shared.shoppingList.remove(at: index)
+                let shoppingListDictionaries = MyDrinksController.shared.shoppingList.reduce(into: [:]) { $0[$1.0] = $1.1 }
                 self.tableView.reloadData()
+                LocalJSONDataController.shared.saveShoppingList(shoppingList: shoppingListDictionaries)
             default:
                 return
             }
+            LocalJSONDataController.shared.saveInventory(inventory: MyDrinksController.shared.inventory)
         }
     }
     

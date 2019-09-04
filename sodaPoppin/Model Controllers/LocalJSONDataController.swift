@@ -21,34 +21,58 @@ class LocalJSONDataController {
         let je = JSONEncoder()
         do {
             let data = try je.encode(shoppingList)
-            try data.write(to: fileURL())
+            try data.write(to: fileURL(named: "shoppingList"))
         } catch let e {
             print("Error saving loves \(e)")
         }
     }
     
-    func loadShoppingList() -> [String:Bool]? {
+    func saveInventory(inventory: [String]?) {
+        let je = JSONEncoder()
         do {
-            let data = try Data(contentsOf: fileURL())
+            let data = try je.encode(inventory)
+            try data.write(to: fileURL(named: "inventory"))
+        } catch let e {
+            print("Error saving loves \(e)")
+        }
+    }
+    
+    func loadInventory() -> [String]? {
+        do {
+            let data = try Data(contentsOf: fileURL(named: "inventory"))
             let jd = JSONDecoder()
+            let inventory = try jd.decode([String]?.self, from: data)
+            guard let decodedInventory = inventory else {return nil}
+            MyDrinksController.shared.inventory = decodedInventory
+        } catch let e {
+            print("Error loading json from disk \(e)")
+        }
+        return nil
+    }
+    
+    func loadShoppingList() -> [(String,Bool)]? {
+        do {
+            let data = try Data(contentsOf: fileURL(named: "shoppingList"))
+            let jd = JSONDecoder()
+            
             let shoppingList = try jd.decode([String:Bool]?.self, from: data)
-            return shoppingList
-            let tupleArray : [(String,Bool)]
-            guard let guardedShoppingList = shoppingList else {return [:]}
+            var tupleArray : [(String,Bool)] = [("",false)]
+            guard let guardedShoppingList = shoppingList else {return nil}
             for item in guardedShoppingList {
                 tupleArray.append((item.key, item.value))
             }
+            tupleArray.remove(at: 0)
             MyDrinksController.shared.shoppingList = tupleArray
         } catch let e {
             print("Error loading json from disk \(e)")
         }
-        return [:]
+        return nil
     }
     
-    func fileURL() -> URL {
+    func fileURL(named name: String) -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
-        let filename = "loves.json"
+        let filename = "\(name).json"
         let fullURL = documentsDirectory.appendingPathComponent(filename)
         return fullURL
     }
