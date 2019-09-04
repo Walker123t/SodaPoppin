@@ -17,7 +17,7 @@ class LocalJSONDataController {
         var count : Int
     }
     
-    func saveShoppingList(shoppingList: [[String:Bool]?]) {
+    func saveShoppingList(shoppingList: [String:Bool]?) {
         let je = JSONEncoder()
         do {
             let data = try je.encode(shoppingList)
@@ -27,16 +27,22 @@ class LocalJSONDataController {
         }
     }
     
-    func loadShoppingList() -> [[String:Bool]?] {
+    func loadShoppingList() -> [String:Bool]? {
         do {
             let data = try Data(contentsOf: fileURL())
             let jd = JSONDecoder()
-            let inventoryAndShoppingList = try jd.decode([[String:Bool]?].self, from: data)
-            return inventoryAndShoppingList
+            let shoppingList = try jd.decode([String:Bool]?.self, from: data)
+            return shoppingList
+            let tupleArray : [(String,Bool)]
+            guard let guardedShoppingList = shoppingList else {return [:]}
+            for item in guardedShoppingList {
+                tupleArray.append((item.key, item.value))
+            }
+            MyDrinksController.shared.shoppingList = tupleArray
         } catch let e {
             print("Error loading json from disk \(e)")
         }
-        return []
+        return [:]
     }
     
     func fileURL() -> URL {

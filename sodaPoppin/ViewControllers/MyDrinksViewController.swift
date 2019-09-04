@@ -134,7 +134,7 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             } else {
                 cell.itemName.adjustsFontSizeToFitWidth = true
                 cell.itemName.font = UIFont(name: "System", size: 15)
-                cell.populate(icon: #imageLiteral(resourceName: "Error Icon"), itemName: "Nothing has been added to your inventory! Please visit the shopping list.")
+                cell.populate(icon: #imageLiteral(resourceName: "Error Icon"), itemName: "Nothing has been added to your inventory! Please delete some items from the shopping list.")
             }
             return cell
         case 2:
@@ -151,13 +151,13 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             switch selectedTap {
             case 0:
                 return
-            case 1:
+            case 1: MyDrinksController.shared.shoppingList.append(((MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section]), false))
                 MyDrinksController.shared.inventory.remove(at: MyDrinksController.shared.inventory.firstIndex(of: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])!)
-                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
             case 2: MyDrinksController.shared.inventory.append("\(MyDrinksController.shared.shoppingList.filter({self.searchTerm(item: $0.0)})[indexPath.section].0)")
                 MyDrinksController.shared.shoppingList.remove(at: findShoppingListIndex(index: indexPath.section)!)
             let shoppingListDictionaries = MyDrinksController.shared.shoppingList.reduce(into: [:]) {$0[$1.0] = $1.1 }
-            LocalJSONDataController.shared.saveShoppingList(shoppingList: [shoppingListDictionaries])
+            LocalJSONDataController.shared.saveShoppingList(shoppingList: shoppingListDictionaries)
                 tableView.reloadData()
             default:
                 return
