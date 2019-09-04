@@ -12,10 +12,10 @@ class MyDrinksController {
     
     static let shared = MyDrinksController()
 
-    var inventory: [String] = ["Pineapple","Blueberry","Coconut","Guava","Lavendar","Rasberry"]
+    var inventory: [String] = []
     var ingredients: [String] = []
     var myDrinks: [Drink] = []
-    var shoppingList: [(String, Bool)] = [("one", true), ("two", false)]
+    var shoppingList: [(String, Bool)] = [("Apple", false), ("Blackberry", false), ("Blood Orange", false), ("Blueberry",false),("Cherry",false),("Coconut",false),("Cotton Candy",false),("Guava",false),("Kiwi",false),("Lavendar",false),("Orange",false),("Passion Fruit",false),("Peach",false),("Pineapple",false),("Raspberry",false),("Strawberry",false),("Watermelon",false)]
     var drinks: [Drink] = []
     var sodas: [String] = ["Coke","Dr. Pepper","Fanta","Mtn. Dew","Root Beer","Sprite"]
     var mainSodaName: String = ""

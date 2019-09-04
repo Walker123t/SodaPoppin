@@ -239,6 +239,10 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWx-6u-jDE">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="barTintColor" name="darkerPurp"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Select from Inventory" id="dUJ-TT-ES1"/>
                                 </items>
