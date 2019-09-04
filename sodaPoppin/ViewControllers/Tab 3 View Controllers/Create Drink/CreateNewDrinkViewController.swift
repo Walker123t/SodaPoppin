@@ -11,8 +11,8 @@ import UIKit
 class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var drinkNameTextField: UITextField!
-    @IBOutlet weak var mainSodaNameTextField: UITextField!
     @IBOutlet weak var ingredientLabel: UILabel!
+    @IBOutlet weak var mainSodaNameButton: UIButton!
     
     var stringFromArray: String = ""
     var i = 0
@@ -20,7 +20,6 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(sodaNameReceived(notification:)), name: Notification.Name(rawValue: "Soda"), object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(sodaNameReceived), name: Notification.Name("Soda"))
         MyDrinksController.shared.ingredients = []
         self.title = "Create New Drink"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backTapped))
@@ -31,12 +30,16 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if mainSodaNameButton.currentTitle != "Select soda name..." {
+            mainSodaNameButton.isUserInteractionEnabled = false
+        }
         arrayToString()
     }
     
     @objc func sodaNameReceived(notification: Notification) {
         if let sodaName = notification.object {
-            mainSodaNameTextField.text = sodaName as? String
+            mainSodaNameButton.setTitle("\(sodaName)", for: .normal)
+            mainSodaNameButton.setTitleColor(.black, for: .normal)
         }
     }
     
@@ -48,10 +51,9 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    
     @IBAction func createButtonTapped(_ sender: Any) {
         guard let drinkName = drinkNameTextField.text,
-              let mainSodaName = mainSodaNameTextField.text,
+              let mainSodaName = mainSodaNameButton.title(for: .normal),
               let ingredients = ingredientLabel.text else {return}
         let drink = Drink(uuid: UUID().uuidString, name: drinkName, mainSodaName: mainSodaName, ingredients: MyDrinksController.shared.ingredients, isLikedBy: [], creator: UserDefaults.standard.string(forKey: "UID")!)
         if !MyDrinksController.shared.drinks.contains(drink) {
@@ -67,7 +69,7 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     @IBAction func addIngredientButtonTapped(_ sender: UIButton) {
         addAlert()
     }
-    
+  
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -106,6 +108,7 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     }
 
     
+    
     /*
     // MARK: - Navigation
 
@@ -116,7 +119,7 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
-    @IBAction func sodaNameTextField(_ sender: UITextField) {
+    @IBAction func sodaNameButtonTapped(_ sender: UIButton) {
         guard let vc = UIStoryboard(name: "tab3", bundle: nil).instantiateViewController(withIdentifier: "PresentSodas") as? PresentSodasViewController else { return }
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true) {

@@ -29,6 +29,7 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        LocalJSONDataController.shared.loadShoppingList()
         FirebaseController.sharedInstance.fetchDrinks { (complete) in
             if complete {
                 DispatchQueue.main.async {
@@ -112,6 +113,21 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editAction = UITableViewRowAction(style: .destructive, title: "Report") { (rowAction, indexPath) in
+            self.poppinTableView.deleteRows(at: [indexPath], with: .fade)
+            FirebaseController.sharedInstance.removeDrinkFromDB(currentDrink: MyDrinksController.shared.drinks.filter({self.searchTerm(item: $0.name)})[indexPath.row].name)
+            MyDrinksController.shared.drinks.remove(at: indexPath.row)
+        }
+        return [editAction]
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
