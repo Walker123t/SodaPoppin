@@ -13,6 +13,9 @@ class SelectFromInventoryViewController: UIViewController, UITableViewDataSource
     @IBOutlet weak var inventoryTableView: UITableView!
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if MyDrinksController.shared.inventory.count == 0 {
+            return 1
+        }
         return MyDrinksController.shared.inventory.count
     }
     
@@ -22,6 +25,7 @@ class SelectFromInventoryViewController: UIViewController, UITableViewDataSource
         cell.textLabel?.text = inventoryItem
         return cell
     }
+
     
 
     

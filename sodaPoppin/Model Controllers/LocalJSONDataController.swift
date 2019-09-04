@@ -10,33 +10,33 @@ import Foundation
 
 class LocalJSONDataController {
     
+    static let shared = LocalJSONDataController()
+    
     struct Loves : Codable {
         var text : String
         var count : Int
     }
     
-    var loves = Loves(text: "Lova Ya", count: 2)
-    
-    func saveLoves(loves : Loves) {
+    func saveShoppingList(shoppingList: [[String:Bool]?]) {
         let je = JSONEncoder()
         do {
-            let data = try je.encode(loves)
+            let data = try je.encode(shoppingList)
             try data.write(to: fileURL())
         } catch let e {
             print("Error saving loves \(e)")
         }
     }
     
-    func loadLoves() -> Loves? {
+    func loadShoppingList() -> [[String:Bool]?] {
         do {
             let data = try Data(contentsOf: fileURL())
             let jd = JSONDecoder()
-            let loves = try jd.decode(Loves.self, from: data)
-            return loves
+            let inventoryAndShoppingList = try jd.decode([[String:Bool]?].self, from: data)
+            return inventoryAndShoppingList
         } catch let e {
             print("Error loading json from disk \(e)")
         }
-        return nil
+        return []
     }
     
     func fileURL() -> URL {
