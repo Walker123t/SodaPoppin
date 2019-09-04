@@ -13,19 +13,22 @@ class SearchAndFilterViewController {
     static let shared = SearchAndFilterViewController()
     
     func search(searchTerm: String) -> [Drink] {
-        var searchedArray: [Drink] = MyDrinksController.shared.drinks
+        let searchedArray: [Drink] = MyDrinksController.shared.drinks
         var tempArray: [Drink] = []
         for soda in searchedArray {
-            soda.ingredients.append(soda.mainSodaName)
+            print("Ingredients Before: \(soda.ingredients)")
+            if !soda.ingredients.contains(soda.mainSodaName) {
+                soda.ingredients.append(soda.mainSodaName)
+            }
+            print("Ingredients After: \(soda.ingredients)")
             if soda.name.contains(searchTerm){
                 let notFoundList = MyDrinksController.shared.selectedTags.filter{!soda.ingredients.contains($0)}
-                print(notFoundList)
-                print(MyDrinksController.shared.selectedTags)
-                if notFoundList.count == 0{
+                if notFoundList.count < MyDrinksController.shared.selectedTags.count || MyDrinksController.shared.selectedTags.count == 0{
                     tempArray.append(soda)
                 }
             }
         }
+        print(tempArray)
         return tempArray
     }
     

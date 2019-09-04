@@ -23,6 +23,9 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.poppinTableView.reloadData()
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +67,6 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             self.poppinTableView.reloadData()
         }
-        print(searchTerm)
         return true
     }
     
@@ -79,7 +81,6 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
         if searchTerm == ""{
             return true
         }
-        print(searchTerm)
         let lowercasedItem = item.lowercased()
         return lowercasedItem.contains(searchTerm.lowercased())
     }
