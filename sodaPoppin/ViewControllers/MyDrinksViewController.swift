@@ -82,7 +82,11 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
                 return MyDrinksController.shared.drinks.filter({searchTerm(item: $0.name)}).count
             }
         case 1:
-            return MyDrinksController.shared.inventory.filter({searchTerm(item: $0)}).count
+            if MyDrinksController.shared.inventory.count == 0 {
+                return 1
+            } else {
+                return MyDrinksController.shared.inventory.filter({searchTerm(item: $0)}).count
+            }
         case 2:
             return MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)}).count
         default:
@@ -124,12 +128,19 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as? InventoryTableViewCell else {return UITableViewCell()}
-            guard let inventoryIcon = UIImage(named: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section]) else {return UITableViewCell()}
-            cell.populate(icon: inventoryIcon, itemName: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])
+            if MyDrinksController.shared.inventory.count != 0 {
+                guard let inventoryIcon = UIImage(named: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section]) else {return UITableViewCell()}
+                cell.populate(icon: inventoryIcon, itemName: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])
+            } else {
+                cell.itemName.adjustsFontSizeToFitWidth = true
+                cell.itemName.font = UIFont(name: "System", size: 15)
+                cell.populate(icon: #imageLiteral(resourceName: "Error Icon"), itemName: "Nothing has been added to your inventory! Please delete some items from the shopping list.")
+            }
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)  as? ShoppingItemTableViewCell else {return UITableViewCell()}
-            cell.populate(icon: #imageLiteral(resourceName: "Rasberry"), name: MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].0, doesHaveIcon: (MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].1 ? #imageLiteral(resourceName: "unlikedIcon"): #imageLiteral(resourceName: "Blood Orange")))
+            guard let shoppingListItemIcon = UIImage(named: "\(MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].0)") else { return UITableViewCell() }
+            cell.populate(icon: shoppingListItemIcon, name: MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].0, doesHaveIcon: (MyDrinksController.shared.shoppingList.filter({searchTerm(item: $0.0)})[indexPath.section].1 ? #imageLiteral(resourceName: "selectedIcon"): #imageLiteral(resourceName: "unSelectedIcon")))
             return cell
         default:
             return UITableViewCell()
@@ -140,11 +151,13 @@ class MyDrinksViewController: UIViewController, UITableViewDataSource, UITableVi
             switch selectedTap {
             case 0:
                 return
-            case 1:
+            case 1: MyDrinksController.shared.shoppingList.append(((MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section]), false))
                 MyDrinksController.shared.inventory.remove(at: MyDrinksController.shared.inventory.firstIndex(of: MyDrinksController.shared.inventory.filter({searchTerm(item: $0)})[indexPath.section])!)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            case 2:
+                tableView.reloadData()
+            case 2: MyDrinksController.shared.inventory.append("\(MyDrinksController.shared.shoppingList.filter({self.searchTerm(item: $0.0)})[indexPath.section].0)")
                 MyDrinksController.shared.shoppingList.remove(at: findShoppingListIndex(index: indexPath.section)!)
+            let shoppingListDictionaries = MyDrinksController.shared.shoppingList.reduce(into: [:]) {$0[$1.0] = $1.1 }
+            LocalJSONDataController.shared.saveShoppingList(shoppingList: shoppingListDictionaries)
                 tableView.reloadData()
             default:
                 return
