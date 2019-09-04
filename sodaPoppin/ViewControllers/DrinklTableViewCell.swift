@@ -23,7 +23,7 @@ class DrinklTableViewCell: UITableViewCell {
     
     func populate(drink: Drink){
         // Populating Soda Icon
-        sodaIcon.image = UIImage(named: "\(drink.mainSodaName)")
+        sodaIcon.image = UIImage(named: "\(drink.mainSodaName) Icon")
         
         // Populating Syrup Icon
         if drink.ingredients.count == 0 {
