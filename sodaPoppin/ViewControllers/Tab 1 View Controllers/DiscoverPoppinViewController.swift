@@ -110,6 +110,21 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         return 1
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editAction = UITableViewRowAction(style: .destructive, title: "Report") { (rowAction, indexPath) in
+            self.poppinTableView.deleteRows(at: [indexPath], with: .fade)
+            FirebaseController.sharedInstance.removeDrinkFromDB(currentDrink: MyDrinksController.shared.drinks.filter({self.searchTerm(item: $0.name)})[indexPath.row].name)
+            MyDrinksController.shared.drinks.remove(at: indexPath.row)
+        }
+        return [editAction]
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as? DrinklTableViewCell else {return UITableViewCell()}
         cell.selectionStyle = .none
