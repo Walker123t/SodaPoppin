@@ -128,6 +128,9 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         }
         return [editAction]
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDrink", sender: nil)
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
