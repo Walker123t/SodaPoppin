@@ -388,7 +388,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-5T-E4E">
-                                <rect key="frame" x="255.5" y="386" width="69" height="41"/>
+                                <rect key="frame" x="255.5" y="523.5" width="69" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Create">
                                     <color key="titleColor" name="darkerPurp"/>
@@ -480,15 +480,37 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C9R-Yv-7Ud">
+                                <rect key="frame" x="71" y="374.5" width="124.5" height="121"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RC6-of-tP3">
+                                <rect key="frame" x="71" y="374.5" width="124.5" height="121"/>
+                                <state key="normal" title="Select an image">
+                                    <color key="titleColor" red="0.02732768096" green="0.031319856639999998" blue="0.03549222648" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectDrinkImageButtonTapped:" destination="bwo-PF-Sne" eventType="touchUpInside" id="Nc9-RQ-6tV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="RC6-of-tP3" firstAttribute="centerX" secondItem="C9R-Yv-7Ud" secondAttribute="centerX" id="0dd-wJ-jf9"/>
+                            <constraint firstItem="RC6-of-tP3" firstAttribute="height" secondItem="C9R-Yv-7Ud" secondAttribute="height" id="24c-E1-fwU"/>
+                            <constraint firstItem="C9R-Yv-7Ud" firstAttribute="centerY" secondItem="IsG-L9-hEy" secondAttribute="centerY" multiplier="1.2" id="B5j-A2-hFl"/>
+                            <constraint firstItem="RC6-of-tP3" firstAttribute="centerY" secondItem="C9R-Yv-7Ud" secondAttribute="centerY" id="CNL-xe-Ar0"/>
                             <constraint firstItem="dO7-gL-JuO" firstAttribute="top" secondItem="QRk-H3-eZl" secondAttribute="bottom" constant="35" id="FN9-v4-cHB"/>
+                            <constraint firstItem="C9R-Yv-7Ud" firstAttribute="width" secondItem="hpR-gw-NdW" secondAttribute="width" multiplier="0.3" id="Fml-Y6-AQf"/>
                             <constraint firstItem="QRk-H3-eZl" firstAttribute="leading" secondItem="IsG-L9-hEy" secondAttribute="leading" constant="25" id="GYx-ZW-bhO"/>
+                            <constraint firstItem="C9R-Yv-7Ud" firstAttribute="centerX" secondItem="Hgd-yl-s89" secondAttribute="centerX" id="IWl-SN-glZ"/>
                             <constraint firstItem="7sH-5T-E4E" firstAttribute="centerX" secondItem="IsG-L9-hEy" secondAttribute="centerX" multiplier="1.4" id="JmV-9e-oj2"/>
+                            <constraint firstItem="7sH-5T-E4E" firstAttribute="centerY" secondItem="RC6-of-tP3" secondAttribute="centerY" multiplier="1.25" id="Kyn-1u-Cnf"/>
                             <constraint firstItem="dO7-gL-JuO" firstAttribute="leading" secondItem="QRk-H3-eZl" secondAttribute="leading" id="OIw-Pb-Ney"/>
                             <constraint firstItem="QRk-H3-eZl" firstAttribute="top" secondItem="IsG-L9-hEy" secondAttribute="top" constant="26" id="eLq-SU-YbW"/>
-                            <constraint firstItem="7sH-5T-E4E" firstAttribute="centerY" secondItem="Hgd-yl-s89" secondAttribute="centerY" multiplier="7" id="lre-JJ-Szt"/>
+                            <constraint firstItem="C9R-Yv-7Ud" firstAttribute="height" secondItem="hpR-gw-NdW" secondAttribute="height" multiplier="0.15" id="t35-wu-JdW"/>
+                            <constraint firstItem="RC6-of-tP3" firstAttribute="width" secondItem="C9R-Yv-7Ud" secondAttribute="width" id="xk9-0t-t2s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IsG-L9-hEy"/>
                     </view>
@@ -497,6 +519,8 @@
                         <outlet property="drinkNameTextField" destination="xBm-cE-4q9" id="vTj-ht-Elh"/>
                         <outlet property="ingredientLabel" destination="9mb-ek-FQv" id="fo0-b6-uND"/>
                         <outlet property="mainSodaNameButton" destination="Yd5-n1-KTu" id="699-K7-RmF"/>
+                        <outlet property="selectImageButton" destination="RC6-of-tP3" id="EHn-V4-z0h"/>
+                        <outlet property="selectedImageView" destination="C9R-Yv-7Ud" id="vJK-EJ-Ozv"/>
                         <segue destination="9Gq-bG-2Vd" kind="show" identifier="toSelectFromInventoryVC" id="lRG-1J-3a3"/>
                         <segue destination="Wtj-e4-Xua" kind="show" identifier="toCreateIngredientVC" id="bmk-ci-DGn"/>
                     </connections>

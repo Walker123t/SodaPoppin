@@ -15,6 +15,7 @@ class Drink {
     var name: String
     var mainSodaName: String
     var ingredients: [String]
+    var arrayOfImageStrings: [String]
     var isLiked: Bool = false
     var isLikedBy: [String] = []
     var creator: String
@@ -22,6 +23,7 @@ class Drink {
         return [
         DrinkConstants.uuidKey : self.uuid,
         DrinkConstants.nameKey : self.name,
+        DrinkConstants.arrayOfImageStringsKey : self.arrayOfImageStrings,
         DrinkConstants.mainSodaNameKey : self.mainSodaName,
         DrinkConstants.ingreidentsKey : self.ingredients,
         DrinkConstants.isLikedByKey : self.isLikedBy,
@@ -29,9 +31,10 @@ class Drink {
         ]
     }
     
-    init(uuid: String?, name: String, mainSodaName: String, ingredients: [String], isLikedBy: [String], creator: String) {
+    init(uuid: String?, name: String, arrayOfImageStrings: [String] ,mainSodaName: String, ingredients: [String], isLikedBy: [String], creator: String) {
         self.uuid = uuid ?? UUID().uuidString
         self.name = name
+        self.arrayOfImageStrings = arrayOfImageStrings
         self.mainSodaName = mainSodaName
         self.ingredients = ingredients
         self.isLikedBy = isLikedBy
@@ -42,6 +45,7 @@ class Drink {
         let snapshot = snapshot.data()
         guard let uuid = snapshot?[DrinkConstants.uuidKey] as? String,
               let name = snapshot?[DrinkConstants.nameKey] as? String,
+              let arrayOfImageStrings = snapshot?[DrinkConstants.arrayOfImageStringsKey] as? [String],
               let mainSodaName = snapshot?[DrinkConstants.mainSodaNameKey] as? String,
               let ingredients = snapshot?[DrinkConstants.ingreidentsKey] as? [String],
               let isLikedBy = snapshot?[DrinkConstants.isLikedByKey] as? [String],
@@ -50,6 +54,7 @@ class Drink {
         
         self.name = name
         self.mainSodaName = mainSodaName
+        self.arrayOfImageStrings = arrayOfImageStrings
         self.ingredients = ingredients
         self.creator = creator
         self.uuid = uuid
@@ -71,6 +76,7 @@ struct DrinkConstants {
     fileprivate static let uuidKey = "uuid"
     fileprivate static let nameKey = "name"
     fileprivate static let mainSodaNameKey = "mainSodaName"
+    fileprivate static let arrayOfImageStringsKey = "arrayOfImageStrings"
     fileprivate static let ingreidentsKey = "ingredients"
     fileprivate static let isLikedByKey = "isLikedBy"
     fileprivate static let creatorKey = "creator"

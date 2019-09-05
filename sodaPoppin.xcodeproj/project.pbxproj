@@ -30,6 +30,7 @@
 		3EC97D57230DF09600255F36 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D56230DF09600255F36 /* CustomSegmentedControl.swift */; };
 		7C4DDEC723184AA700C35EB5 /* LocalJSONDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */; };
 		7C5748B523049F4500253B86 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5748B423049F4500253B86 /* FirebaseController.swift */; };
+		7C6846F6232181CD0095C603 /* PhotoResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6846F5232181CD0095C603 /* PhotoResizer.swift */; };
 		7C761276230C515D0033C1B3 /* CreateNewDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */; };
 		7C76127C230C5EB40033C1B3 /* SelectFromInventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */; };
 		7C76127E230C612D0033C1B3 /* MyDrinksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76127D230C612D0033C1B3 /* MyDrinksController.swift */; };
@@ -94,6 +95,7 @@
 		7C4DDEC52318455E00C35EB5 /* sodaPoppin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sodaPoppin.entitlements; sourceTree = "<group>"; };
 		7C4DDEC623184AA700C35EB5 /* LocalJSONDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJSONDataController.swift; sourceTree = "<group>"; };
 		7C5748B423049F4500253B86 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		7C6846F5232181CD0095C603 /* PhotoResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResizer.swift; sourceTree = "<group>"; };
 		7C761275230C515D0033C1B3 /* CreateNewDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateNewDrinkViewController.swift; path = "Create Drink/CreateNewDrinkViewController.swift"; sourceTree = "<group>"; };
 		7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectFromInventoryViewController.swift; path = "Create Drink/SelectFromInventoryViewController.swift"; sourceTree = "<group>"; };
 		7C76127D230C612D0033C1B3 /* MyDrinksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrinksController.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				3EB0DDCE230472E000923E0D /* firebaseStuff.swift */,
 				7CD07E292315A32700B40206 /* ColorsExtension.swift */,
+				7C6846F5232181CD0095C603 /* PhotoResizer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				3EC97D57230DF09600255F36 /* CustomSegmentedControl.swift in Sources */,
 				3EB0DDCF230472E000923E0D /* firebaseStuff.swift in Sources */,
 				3E9EF1F223046F8E00F4DF37 /* ViewController.swift in Sources */,
+				7C6846F6232181CD0095C603 /* PhotoResizer.swift in Sources */,
 				3EB0DDD22304738A00923E0D /* Drink.swift in Sources */,
 				3EA80356230CA497002D99A5 /* DrinklTableViewCell.swift in Sources */,
 				7CEBEA1A230D99B900A5CEFB /* CreateIngredientViewController.swift in Sources */,
