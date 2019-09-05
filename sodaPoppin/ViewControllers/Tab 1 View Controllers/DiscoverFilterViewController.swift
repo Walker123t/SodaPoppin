@@ -19,11 +19,9 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet weak var selectedTagsCollectionView: UICollectionView!
     @IBOutlet weak var tagsCollectionView: UICollectionView!
-    @IBOutlet weak var searchButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSearchButton()
         selectedCategory = sodas
         
         // Do any additional setup after loading the view.
@@ -160,12 +158,6 @@ extension DiscoverFilterViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 5
-    }
-    
-    func setUpSearchButton() {
-        searchButton.layer.cornerRadius = searchButton.frame.height / 2
-        searchButton.layer.borderWidth = 1.5
-        searchButton.layer.borderColor = UIColor.purp?.cgColor
     }
     
 }
