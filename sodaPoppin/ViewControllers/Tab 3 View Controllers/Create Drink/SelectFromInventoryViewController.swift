@@ -13,15 +13,25 @@ class SelectFromInventoryViewController: UIViewController, UITableViewDataSource
     @IBOutlet weak var inventoryTableView: UITableView!
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if MyDrinksController.shared.inventory.count == 0 {
+            return 1
+        }
         return MyDrinksController.shared.inventory.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.inventoryTableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath)
-        let inventoryItem = MyDrinksController.shared.inventory[indexPath.row]
-        cell.textLabel?.text = inventoryItem
+        if MyDrinksController.shared.inventory.count != 0 {
+            let inventoryItem = MyDrinksController.shared.inventory[indexPath.row]
+            cell.textLabel?.text = inventoryItem
+        } else {
+            cell.textLabel?.adjustsFontSizeToFitWidth = true
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.text = "Please delete some items from your shopping list to add them to your inventory!"
+        }
         return cell
     }
+
     
 
     
@@ -29,6 +39,8 @@ class SelectFromInventoryViewController: UIViewController, UITableViewDataSource
         super.viewDidLoad()
         inventoryTableView.delegate = self
         inventoryTableView.dataSource = self
+        self.navigationController?.navigationBar.isTranslucent = false 
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "darkerPurp")
         // Do any additional setup after loading the view.
     }
     

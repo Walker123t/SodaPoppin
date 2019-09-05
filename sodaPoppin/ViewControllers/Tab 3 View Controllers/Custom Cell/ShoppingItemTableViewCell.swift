@@ -14,10 +14,11 @@ class ShoppingItemTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var doesHaveIcon: UIImageView!
     
-    func populate(icon: UIImage, name: String, doesHaveIcon: UIImage){
+    func populate(icon: UIImage, name: String) {
+    //doesHaveIcon: UIImage){
         iconImage.image = icon
         self.name.text = name
-        self.doesHaveIcon.image = doesHaveIcon
+    // self.doesHaveIcon.image = doesHaveIcon
     }
     
     override func prepareForReuse() {

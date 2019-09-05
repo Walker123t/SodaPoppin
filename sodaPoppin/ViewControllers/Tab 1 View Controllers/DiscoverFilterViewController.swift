@@ -12,18 +12,16 @@ class DiscoverFilterViewController: UIViewController, UICollectionViewDataSource
     
     var selectedCategory: [String] = []
     
-    var sodas: [String] = ["Sprite","Root Beer","Dr. Pepper","Coke"]
+    var sodas: [String] = ["Sprite","Root Beer","Dr. Pepper","Coke","Mtn. Dew","Fanta"]
     var syrups: [String] = ["Vanilla","Cherry","Raspberry","Blueberry","Watermelon"]
     var pureés: [String] = ["Raspberry Pureé","Cherry Pureé","Blackberry Pureé","Strawberry Pureé"]
     var other: [String] = ["Cream"]
     
     @IBOutlet weak var selectedTagsCollectionView: UICollectionView!
     @IBOutlet weak var tagsCollectionView: UICollectionView!
-    @IBOutlet weak var searchButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSearchButton()
         selectedCategory = sodas
         
         // Do any additional setup after loading the view.
@@ -160,12 +158,6 @@ extension DiscoverFilterViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 5
-    }
-    
-    func setUpSearchButton() {
-        searchButton.layer.cornerRadius = searchButton.frame.height / 2
-        searchButton.layer.borderWidth = 1.5
-        searchButton.layer.borderColor = UIColor.purp?.cgColor
     }
     
 }

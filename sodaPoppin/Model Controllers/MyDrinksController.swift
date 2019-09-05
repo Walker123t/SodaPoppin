@@ -11,12 +11,19 @@ import Foundation
 class MyDrinksController {
     
     static let shared = MyDrinksController()
+
     var selectedTags: [String] = []
-    var inventory: [String] = ["Pineapple","Blueberry","Coconut","Guava","Lavendar","Rasberry"]
+    var inventory: [String] = []
     var ingredients: [String] = []
     var myDrinks: [Drink] = []
-    var shoppingList: [(String, Bool)] = [("one", true), ("two", false)]
+    
+    var allIngredients: [String] = ["Apple","Blackberry","Blood Orange", "Blueberry","Cherry","Coconut","Cotton Candy","Guava","Kiwi","Lavendar","Orange","Passion Fruit","Peach","Pineapple","Rasberry","Strawberry","Watermelon"]
+    
+    var shoppingList: [(String,Bool)] = [("Apple", false), ("Blackberry", false), ("Blood Orange", false), ("Blueberry",false),("Cherry",false),("Coconut",false),("Cotton Candy",false),("Guava",false),("Kiwi",false),("Lavendar",false),("Orange",false),("Passion Fruit",false),("Peach",false),("Pineapple",false),("Rasberry",false),("Strawberry",false),("Watermelon",false)]
+    
     var drinks: [Drink] = []
+    var sodas: [String] = ["Coke","Dr. Pepper","Fanta","Mtn. Dew","Root Beer","Sprite"]
+    var mainSodaName: String = ""
     
     func createDrink(name: String, mainSodaName: String, ingredients: [String], creator: String) {
         let newDrink = Drink(uuid: nil, name: name, mainSodaName: mainSodaName, ingredients: ingredients, isLikedBy: [], creator: creator)

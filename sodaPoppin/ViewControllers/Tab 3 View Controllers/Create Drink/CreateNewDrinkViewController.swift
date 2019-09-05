@@ -11,19 +11,34 @@ import UIKit
 class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var drinkNameTextField: UITextField!
-    @IBOutlet weak var mainSodaNameTextField: UITextField!
     @IBOutlet weak var ingredientLabel: UILabel!
+    @IBOutlet weak var mainSodaNameButton: UIButton!
     
     var stringFromArray: String = ""
     var i = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Create New Drink"
+        NotificationCenter.default.addObserver(self, selector: #selector(sodaNameReceived(notification:)), name: Notification.Name(rawValue: "Soda"), object: nil)
+        MyDrinksController.shared.ingredients = []
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backTapped))
-        self.navigationItem.leftBarButtonItem?.tintColor = .black
+        self.navigationItem.leftBarButtonItem?.tintColor = .white
         drinkNameTextField.delegate = self
-        mainSodaNameTextField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if mainSodaNameButton.currentTitle != "Select soda name..." {
+            mainSodaNameButton.isUserInteractionEnabled = false
+        }
+        arrayToString()
+    }
+    
+    @objc func sodaNameReceived(notification: Notification) {
+        if let sodaName = notification.object {
+            mainSodaNameButton.setTitle("\(sodaName)", for: .normal)
+            mainSodaNameButton.setTitleColor(.black, for: .normal)
+        }
     }
     
     @objc func backTapped() {
@@ -34,34 +49,25 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        arrayToString()
-    }
-    
     @IBAction func createButtonTapped(_ sender: Any) {
         guard let drinkName = drinkNameTextField.text,
-              let mainSodaName = mainSodaNameTextField.text,
+              let mainSodaName = mainSodaNameButton.title(for: .normal),
               let ingredients = ingredientLabel.text else {return}
         let drink = Drink(uuid: UUID().uuidString, name: drinkName, mainSodaName: mainSodaName, ingredients: MyDrinksController.shared.ingredients, isLikedBy: [], creator: UserDefaults.standard.string(forKey: "UID")!)
         if !MyDrinksController.shared.drinks.contains(drink) {
             MyDrinksController.shared.drinks.append(drink)
         }
-        MyDrinksController.shared.drinks.append(drink)
         // Can force unwrap because we know they will have a UID
         FirebaseController.saveDrink(drinkName: drinkName, type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in
             self.navigationController?.popViewController(animated: true)
             MyDrinksController.shared.ingredients = []
         }
-//        FirebaseController.saveData(type: DrinkConstants.typeKey, dictionary: drink.dictionary) { (success) in
-//            self.navigationController?.popViewController(animated: true)
-//        }
     }
 
     @IBAction func addIngredientButtonTapped(_ sender: UIButton) {
         addAlert()
     }
-    
+  
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -72,11 +78,12 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
         let fromInventory = UIAlertAction(title: "From Inventory", style: .default) { (action) in
             self.performSegue(withIdentifier: "toSelectFromInventoryVC", sender: self)
         }
-        let createNew = UIAlertAction(title: "Create New", style: .default) { (action) in
-            self.performSegue(withIdentifier: "toCreateIngredientVC", sender: self)
-        }
+//        let createNew = UIAlertAction(title: "Create New", style: .default) { (action) in
+//            self.performSegue(withIdentifier: "toCreateIngredientVC", sender: self)
+//        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         notification.addAction(fromInventory)
-        notification.addAction(createNew)
+        notification.addAction(cancel)
         present(notification, animated: true)
     }
     
@@ -89,7 +96,7 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
                 stringFromArray = ""
             }
             else if ingredients.count == 1 {
-                stringFromArray += "\(ingredients[i])"
+                stringFromArray += "\(ingredients[0])"
                 i += 1
             } else {
                 stringFromArray += ", \(ingredients[i])"
@@ -99,6 +106,7 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    
     
     /*
     // MARK: - Navigation
@@ -110,4 +118,13 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
+    @IBAction func sodaNameButtonTapped(_ sender: UIButton) {
+        guard let vc = UIStoryboard(name: "tab3", bundle: nil).instantiateViewController(withIdentifier: "PresentSodas") as? PresentSodasViewController else { return }
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true) {
+            
+        }
+        
+    }
 }
+

@@ -23,9 +23,16 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.poppinTableView.reloadData()
+            self.drinks = MyDrinksController.shared.drinks
+            self.poppinTableView.reloadData()
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        LocalJSONDataController.shared.loadShoppingList()
+        LocalJSONDataController.shared.loadInventory()
         FirebaseController.sharedInstance.fetchDrinks { (complete) in
             if complete {
                 DispatchQueue.main.async {
@@ -64,7 +71,6 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             self.poppinTableView.reloadData()
         }
-        print(searchTerm)
         return true
     }
     
@@ -79,7 +85,6 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
         if searchTerm == ""{
             return true
         }
-        print(searchTerm)
         let lowercasedItem = item.lowercased()
         return lowercasedItem.contains(searchTerm.lowercased())
     }
@@ -111,6 +116,23 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editAction = UITableViewRowAction(style: .destructive, title: "Report") { (rowAction, indexPath) in
+//            self.poppinTableView.deleteRows(at: [indexPath], with: .fade)
+            FirebaseController.sharedInstance.removeDrinkFromDB(currentDrink: MyDrinksController.shared.drinks.filter({self.searchTerm(item: $0.name)})[indexPath.row].name)
+            MyDrinksController.shared.drinks.remove(at: indexPath.row)
+            self.drinks.remove(at: indexPath.row)
+            self.poppinTableView.reloadData()
+        }
+        return [editAction]
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
