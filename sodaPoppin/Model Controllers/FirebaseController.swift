@@ -19,10 +19,10 @@ class FirebaseController {
     
     static let sharedInstance = FirebaseController()
     
-//    static func saveData(type: String, dictionary: [String: Any], completion: @escaping (Bool) -> Void) {
-//        ref.collection(type).addDocument(data: dictionary)
-//        completion(true);return
-//    }
+    //    static func saveData(type: String, dictionary: [String: Any], completion: @escaping (Bool) -> Void) {
+    //        ref.collection(type).addDocument(data: dictionary)
+    //        completion(true);return
+    //    }
     
     static func saveDrink(drinkName: String, type: String, dictionary: [String: Any], completion: @escaping (Bool) -> Void) {
         ref.collection(type).document(drinkName).setData(dictionary)
@@ -44,6 +44,23 @@ class FirebaseController {
                         }
                     }
                 }
+        }
+    }
+    
+    func saveDrinkPictureToStorage(drinkName: String, drinkImage: UIImage?) {
+        if let image = drinkImage {
+            let resizedImage = PhotoResizer.ResizeImage(image: image, targetSize: CGSize(width: 400, height: 400))
+            let imageUUID = UUID().uuidString
+            let storage = Storage.storage().reference().child(imageUUID)
+            guard let uploadData = resizedImage.pngData() else { return }
+            print(resizedImage.size)
+            storage.putData(uploadData, metadata: nil) {(metaData, error) in
+                if let error = error {
+                    print("\(error.localizedDescription)")
+                    return
+                }
+                docRef.document(drinkName).updateData(["arrayOfImageStrings" : FieldValue.arrayUnion([imageUUID])])
+            }
         }
     }
     
@@ -84,4 +101,5 @@ class FirebaseController {
     func removeDrinkFromDB(currentDrink: String) {
         docRef.document(currentDrink).delete()
     }
+    
 }
