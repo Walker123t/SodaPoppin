@@ -24,6 +24,10 @@ class SelectFromInventoryViewController: UIViewController, UITableViewDataSource
         if MyDrinksController.shared.inventory.count != 0 {
             let inventoryItem = MyDrinksController.shared.inventory[indexPath.row]
             cell.textLabel?.text = inventoryItem
+        } else {
+            cell.textLabel?.adjustsFontSizeToFitWidth = true
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.text = "Please delete some items from your shopping list to add them to your inventory!"
         }
         return cell
     }
@@ -35,6 +39,8 @@ class SelectFromInventoryViewController: UIViewController, UITableViewDataSource
         super.viewDidLoad()
         inventoryTableView.delegate = self
         inventoryTableView.dataSource = self
+        self.navigationController?.navigationBar.isTranslucent = false 
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "darkerPurp")
         // Do any additional setup after loading the view.
     }
     

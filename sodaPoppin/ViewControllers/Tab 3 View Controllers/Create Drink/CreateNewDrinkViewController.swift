@@ -21,9 +21,8 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(sodaNameReceived(notification:)), name: Notification.Name(rawValue: "Soda"), object: nil)
         MyDrinksController.shared.ingredients = []
-        self.title = "Create New Drink"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backTapped))
-        self.navigationItem.leftBarButtonItem?.tintColor = .black
+        self.navigationItem.leftBarButtonItem?.tintColor = .white
         drinkNameTextField.delegate = self
     }
     
@@ -79,11 +78,12 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
         let fromInventory = UIAlertAction(title: "From Inventory", style: .default) { (action) in
             self.performSegue(withIdentifier: "toSelectFromInventoryVC", sender: self)
         }
-        let createNew = UIAlertAction(title: "Create New", style: .default) { (action) in
-            self.performSegue(withIdentifier: "toCreateIngredientVC", sender: self)
-        }
+//        let createNew = UIAlertAction(title: "Create New", style: .default) { (action) in
+//            self.performSegue(withIdentifier: "toCreateIngredientVC", sender: self)
+//        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         notification.addAction(fromInventory)
-        notification.addAction(createNew)
+        notification.addAction(cancel)
         present(notification, animated: true)
     }
     
