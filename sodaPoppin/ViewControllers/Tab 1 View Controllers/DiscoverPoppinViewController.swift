@@ -24,6 +24,7 @@ class DiscoverPoppinViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         DispatchQueue.main.async {
+            self.tabBarController?.tabBar.isHidden = false
             self.poppinTableView.reloadData()
             self.drinks = MyDrinksController.shared.drinks
             self.poppinTableView.reloadData()

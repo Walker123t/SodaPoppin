@@ -151,33 +151,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8r-Vg-igN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apple" translatesAutoresizingMaskIntoConstraints="NO" id="i8r-Vg-igN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="i8r-Vg-igN" secondAttribute="height" multiplier="414:199" id="GoA-dc-BXm"/>
+                                </constraints>
                                 <connections>
+                                    <outletCollection property="gestureRecognizers" destination="q0V-te-EIs" appends="YES" id="ByI-hj-uUJ"/>
                                     <outletCollection property="gestureRecognizers" destination="2Oo-dO-rnw" appends="YES" id="FnN-ae-pkk"/>
+                                    <outletCollection property="gestureRecognizers" destination="2Oo-dO-rnw" appends="YES" id="C6Y-xB-FCO"/>
+                                    <outletCollection property="gestureRecognizers" destination="2Oo-dO-rnw" appends="YES" id="gAJ-M6-r3a"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyg-sG-Fpq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyg-sG-Fpq">
                                 <rect key="frame" x="20" y="253" width="374" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1L-2i-KWY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1L-2i-KWY">
                                 <rect key="frame" x="20" y="207" width="374" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="darkerPurp"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Add Image">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addImage:" destination="f24-fO-qJN" eventType="touchUpInside" id="m7r-eu-yRT"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yrF-S1-qps">
-                                <rect key="frame" x="20" y="281" width="374" height="342"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yrF-S1-qps">
+                                <rect key="frame" x="20" y="283.5" width="374" height="524.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ingredientCell" id="ZX9-oU-TLU">
@@ -192,6 +197,21 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wyg-sG-Fpq" firstAttribute="top" secondItem="S1L-2i-KWY" secondAttribute="bottom" constant="8" id="3zQ-i9-N0v"/>
+                            <constraint firstItem="i8r-Vg-igN" firstAttribute="top" secondItem="dSr-Ko-VJ0" secondAttribute="bottom" id="7r5-vf-8Sv"/>
+                            <constraint firstItem="yrF-S1-qps" firstAttribute="top" secondItem="wyg-sG-Fpq" secondAttribute="bottom" constant="10" id="DwM-tB-QRT"/>
+                            <constraint firstItem="i8r-Vg-igN" firstAttribute="leading" secondItem="A8j-sT-Ded" secondAttribute="leading" id="KF1-qL-Kay"/>
+                            <constraint firstItem="yrF-S1-qps" firstAttribute="trailing" secondItem="A8j-sT-Ded" secondAttribute="trailingMargin" id="PW5-8t-ta2"/>
+                            <constraint firstAttribute="trailing" secondItem="i8r-Vg-igN" secondAttribute="trailing" id="QDR-zK-8nn"/>
+                            <constraint firstItem="wyg-sG-Fpq" firstAttribute="leading" secondItem="A8j-sT-Ded" secondAttribute="leadingMargin" id="YOA-kb-3GH"/>
+                            <constraint firstItem="yrF-S1-qps" firstAttribute="leading" secondItem="A8j-sT-Ded" secondAttribute="leadingMargin" id="kIi-av-Kuo"/>
+                            <constraint firstAttribute="bottom" secondItem="yrF-S1-qps" secondAttribute="bottom" id="kUT-B4-FtW"/>
+                            <constraint firstItem="wyg-sG-Fpq" firstAttribute="trailing" secondItem="A8j-sT-Ded" secondAttribute="trailingMargin" id="q6q-zc-erE"/>
+                            <constraint firstItem="S1L-2i-KWY" firstAttribute="leading" secondItem="A8j-sT-Ded" secondAttribute="leadingMargin" id="rXu-QN-1Ud"/>
+                            <constraint firstItem="S1L-2i-KWY" firstAttribute="trailing" secondItem="A8j-sT-Ded" secondAttribute="trailingMargin" id="tiJ-lv-qFH"/>
+                            <constraint firstItem="S1L-2i-KWY" firstAttribute="top" secondItem="i8r-Vg-igN" secondAttribute="bottom" constant="8" id="zEt-S7-xZn"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="addImageButton" destination="S1L-2i-KWY" id="SA6-JC-ldb"/>
@@ -201,7 +221,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFw-P2-rzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="2Oo-dO-rnw"/>
+                <swipeGestureRecognizer direction="left" id="q0V-te-EIs">
+                    <connections>
+                        <action selector="swipeLeft:" destination="f24-fO-qJN" id="Vni-cz-a85"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="2Oo-dO-rnw">
+                    <connections>
+                        <action selector="swipeDetected:" destination="f24-fO-qJN" id="F9c-72-OzH"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1037.68115942029" y="381.69642857142856"/>
         </scene>
@@ -547,6 +576,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Apple" width="128" height="170"/>
         <image name="Discover Icon" width="46" height="28"/>
         <namedColor name="darkerPurp">
             <color red="0.41568627450980394" green="0.31764705882352939" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
