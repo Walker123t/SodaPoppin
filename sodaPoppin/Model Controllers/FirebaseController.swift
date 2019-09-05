@@ -68,7 +68,7 @@ class FirebaseController {
         let urlReference = Storage.storage().reference().child(imageUUID)
         urlReference.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
             if let error = error {
-                print("Error fetching image from URL :: \(error.localizedDescription):hankey::hankey::hankey::hankey::hankey::hankey:")
+                print("Error fetching image from URL :: \(error.localizedDescription)")
                 completion(nil)
                 return
             }
