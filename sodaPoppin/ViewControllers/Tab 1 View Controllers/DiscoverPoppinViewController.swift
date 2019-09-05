@@ -128,6 +128,9 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         }
         return [editAction]
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDrink", sender: nil)
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -143,4 +146,11 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         cell.populate(drink: drinks[indexPath.section])
         return cell
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDrink" {
+            guard let destination = segue.destination as? DrinkViewerViewController, let indexPath = poppinTableView.indexPathForSelectedRow else {return}
+            destination.currentDrink = drinks[indexPath.row]
+        }
+    }
+    
 }

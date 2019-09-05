@@ -39,5 +39,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>To take photos of the soda</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>To grap photos of soda</string>
 </dict>
 </plist>
