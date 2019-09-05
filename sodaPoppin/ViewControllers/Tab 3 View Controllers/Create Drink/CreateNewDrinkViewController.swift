@@ -8,14 +8,22 @@
 
 import UIKit
 
-class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
+class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var selectImageButton: UIButton!
+    @IBOutlet weak var selectedImageView: UIImageView!
     @IBOutlet weak var drinkNameTextField: UITextField!
     @IBOutlet weak var ingredientLabel: UILabel!
     @IBOutlet weak var mainSodaNameButton: UIButton!
     
     var stringFromArray: String = ""
     var i = 0
+    
+    var selectedImage: UIImage? {
+        didSet {
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +40,10 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
             mainSodaNameButton.isUserInteractionEnabled = false
         }
         arrayToString()
+    }
+    
+    @IBAction func selectDrinkImageButtonTapped(_ sender: Any) {
+        presentImagePickerActionSheet()
     }
     
     @objc func sodaNameReceived(notification: Notification) {
@@ -53,7 +65,7 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
         guard let drinkName = drinkNameTextField.text,
               let mainSodaName = mainSodaNameButton.title(for: .normal),
               let ingredients = ingredientLabel.text else {return}
-        let drink = Drink(uuid: UUID().uuidString, name: drinkName, mainSodaName: mainSodaName, ingredients: MyDrinksController.shared.ingredients, isLikedBy: [], creator: UserDefaults.standard.string(forKey: "UID")!)
+        let drink = Drink(uuid: UUID().uuidString, name: drinkName, arrayOfImageStrings: [], mainSodaName: mainSodaName, ingredients: MyDrinksController.shared.ingredients, isLikedBy: [], creator: UserDefaults.standard.string(forKey: "UID")!)
         if !MyDrinksController.shared.drinks.contains(drink) {
             MyDrinksController.shared.drinks.append(drink)
         }
@@ -128,3 +140,37 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
+extension CreateNewDrinkViewController {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        if let photo = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImage = photo
+        }
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func presentImagePickerActionSheet() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        let actionSheet = UIAlertController(title: "Select a Photo", message: nil, preferredStyle: .actionSheet)
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            actionSheet.popoverPresentationController?.sourceView = self.view
+            actionSheet.popoverPresentationController?.sourceRect = CGRect(x: 50, y: self.view.frame.height - 100, width: self.view.frame.width - 100, height: 100)
+            actionSheet.addAction(UIAlertAction(title: "Photos", style: .default, handler: { (_) in
+                imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
+                self.present(imagePickerController, animated: true, completion: nil)
+            }))
+        }
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            actionSheet.popoverPresentationController?.sourceView = self.view
+            actionSheet.popoverPresentationController?.sourceRect = CGRect(x: 50, y: self.view.frame.height - 100, width: self.view.frame.width - 100, height: 100)
+            actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+                imagePickerController.sourceType = UIImagePickerController.SourceType.camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            }))
+        }
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(actionSheet, animated: true)
+    }
+}
