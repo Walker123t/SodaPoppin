@@ -299,7 +299,6 @@
 				7C76127B230C5EB40033C1B3 /* SelectFromInventoryViewController.swift */,
 				7CEBEA19230D99B900A5CEFB /* CreateIngredientViewController.swift */,
 				7CCCA095231EC76900BE1252 /* PresentSodasViewController.swift */,
-				3EE8A66823218B24003DBB7D /* DrinkViewerViewController.swift */,
 			);
 			path = "Tab 3 View Controllers";
 			sourceTree = "<group>";
@@ -321,6 +320,7 @@
 				7CD07E202314707300B40206 /* DiscoverFilterViewController.swift */,
 				7CD07E232314785900B40206 /* DiscoverPoppinContainerViewController.swift */,
 				7CD07E2523147A9200B40206 /* DiscoverContainerViewController.swift */,
+				3EE8A66823218B24003DBB7D /* DrinkViewerViewController.swift */,
 			);
 			path = "Tab 1 View Controllers";
 			sourceTree = "<group>";

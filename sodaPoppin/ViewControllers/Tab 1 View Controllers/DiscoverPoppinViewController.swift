@@ -146,4 +146,11 @@ extension DiscoverPoppinViewController: UITableViewDataSource, UITableViewDelega
         cell.populate(drink: drinks[indexPath.section])
         return cell
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDrink" {
+            guard let destination = segue.destination as? DrinkViewerViewController, let indexPath = poppinTableView.indexPathForSelectedRow else {return}
+            destination.currentDrink = drinks[indexPath.row]
+        }
+    }
+    
 }

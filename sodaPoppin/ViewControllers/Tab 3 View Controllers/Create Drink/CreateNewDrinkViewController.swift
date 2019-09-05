@@ -21,7 +21,8 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate, UIIma
     
     var selectedImage: UIImage? {
         didSet {
-            
+            selectedImageView.image = selectedImage
+            selectImageButton.setTitle("", for: .normal)
         }
     }
     
@@ -74,6 +75,9 @@ class CreateNewDrinkViewController: UIViewController, UITextFieldDelegate, UIIma
             self.navigationController?.popViewController(animated: true)
             MyDrinksController.shared.ingredients = []
         }
+        selectImageButton.setTitle("", for: .normal)
+        guard let sodaName = drinkNameTextField.text else {return}
+        FirebaseController.sharedInstance.saveDrinkPictureToStorage(drinkName: sodaName, drinkImage: selectedImage)
     }
 
     @IBAction func addIngredientButtonTapped(_ sender: UIButton) {

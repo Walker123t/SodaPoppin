@@ -64,6 +64,21 @@ class FirebaseController {
         }
     }
     
+    func loadProfileImageView(imageUUID: String, completion: @escaping (UIImage?) -> Void) {
+        let urlReference = Storage.storage().reference().child(imageUUID)
+        urlReference.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+            if let error = error {
+                print("Error fetching image from URL :: \(error.localizedDescription):hankey::hankey::hankey::hankey::hankey::hankey:")
+                completion(nil)
+                return
+            }
+            guard let data = data else { return }
+            let image = UIImage(data: data)
+            completion(image)
+            return
+        }
+    }
+    
     func fetchDrinks(completion: @escaping (Bool) -> Void) {
         docRef.getDocuments { (snapshot, error) in
             if let error = error {
