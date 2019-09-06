@@ -22,7 +22,6 @@
 		3EA80356230CA497002D99A5 /* DrinklTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA80354230CA497002D99A5 /* DrinklTableViewCell.swift */; };
 		3EA80357230CA497002D99A5 /* DrinklTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EA80355230CA497002D99A5 /* DrinklTableViewCell.xib */; };
 		3EA80359230DB015002D99A5 /* SearchDrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA80358230DB015002D99A5 /* SearchDrinksTableViewController.swift */; };
-		3EB0DDCF230472E000923E0D /* firebaseStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0DDCE230472E000923E0D /* firebaseStuff.swift */; };
 		3EB0DDD22304738A00923E0D /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0DDD12304738A00923E0D /* Drink.swift */; };
 		3EB0DDD42304A70E00923E0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0DDD32304A70E00923E0D /* GoogleService-Info.plist */; };
 		3EC97D53230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D51230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift */; };
@@ -87,7 +86,6 @@
 		3EA80354230CA497002D99A5 /* DrinklTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrinklTableViewCell.swift; path = sodaPoppin/ViewControllers/DrinklTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3EA80355230CA497002D99A5 /* DrinklTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DrinklTableViewCell.xib; path = sodaPoppin/ViewControllers/DrinklTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		3EA80358230DB015002D99A5 /* SearchDrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchDrinksTableViewController.swift; path = ../SearchDrinksTableViewController.swift; sourceTree = "<group>"; };
-		3EB0DDCE230472E000923E0D /* firebaseStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebaseStuff.swift; sourceTree = "<group>"; };
 		3EB0DDD12304738A00923E0D /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		3EB0DDD32304A70E00923E0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3EC97D51230DD9BE00255F36 /* ExpandedDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDrinkTableViewCell.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 		3EB0DDCD230472D100923E0D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				3EB0DDCE230472E000923E0D /* firebaseStuff.swift */,
 				7CD07E292315A32700B40206 /* ColorsExtension.swift */,
 				7C6846F5232181CD0095C603 /* PhotoResizer.swift */,
 			);
@@ -555,7 +552,6 @@
 				7CD07E1D231459BB00B40206 /* TagsCollectionViewCell.swift in Sources */,
 				7CE926DF230B222E00BAC78E /* MyDrinksViewController.swift in Sources */,
 				3EC97D57230DF09600255F36 /* CustomSegmentedControl.swift in Sources */,
-				3EB0DDCF230472E000923E0D /* firebaseStuff.swift in Sources */,
 				3E9EF1F223046F8E00F4DF37 /* ViewController.swift in Sources */,
 				7C6846F6232181CD0095C603 /* PhotoResizer.swift in Sources */,
 				3EB0DDD22304738A00923E0D /* Drink.swift in Sources */,

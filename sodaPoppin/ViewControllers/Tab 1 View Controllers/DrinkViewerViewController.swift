@@ -10,36 +10,74 @@ import UIKit
 
 class DrinkViewerViewController: UIViewController {
 
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var drinkName: UILabel!
     @IBOutlet weak var drinkImage: UIImageView!
     
     var currentDrink: Drink? = nil
-    let drinkImages: [UIImage] = []
+    var selectedImage: UIImage? {
+        didSet {
+            guard let image = selectedImage else {return}
+            drinkImages.append(image)
+        }
+    }
+    var drinkImages: [UIImage] = []
     var currentImageIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addImageButton.layer.cornerRadius = addImageButton.frame.height / 2
+        nextButton.layer.cornerRadius = addImageButton.frame.height / 2
+        backButton.layer.cornerRadius = backButton.frame.height / 2
         setupTableView()
         tabBarController?.tabBar.isHidden = true
         guard let drink = currentDrink else {return}
         drinkName.text = drink.name
-        
-        if drinkImages.count > 0 {
-            drinkImage.image = drinkImages[0]
+        backButton.isEnabled = false
+        for name in drink.arrayOfImageStrings{
+            FirebaseController.sharedInstance.loadProfileImageView(imageUUID: name) { (image) in
+                if let image = image{
+                    self.drinkImages.append(image)
+                    if self.drinkImages.count > 0 {
+                        self.drinkImage.image = self.drinkImages[0]
+                    }
+                }
+            }
         }
-        
     }
     @IBAction func addImage(_ sender: Any) {
+        guard let drink = currentDrink else {return}
         presentImagePickerActionSheet()
+        FirebaseController.sharedInstance.saveDrinkPictureToStorage(drinkName: drink.name, drinkImage: selectedImage)
+        setImage()
     }
-    @IBAction func swipeDetected(_ sender: UISwipeGestureRecognizer) {
-        print("SwippedRight")
+    @IBAction func nextButton(_ sender: Any) {
+        currentImageIndex += 1
+        setImage()
     }
-    @IBAction func swipeLeft(_ sender: Any) {
-        print("Swipped Left")
+    @IBAction func backButton(_ sender: Any) {
+        currentImageIndex -= 1
+        setImage()
+    }
+    
+    func setImage() {
+        if currentImageIndex == 0 {
+            backButton.isEnabled = false
+            nextButton.isEnabled = true
+            drinkImage.image = drinkImages[currentImageIndex]
+        } else if currentImageIndex == drinkImages.count - 1{
+            nextButton.isEnabled = false
+            backButton.isEnabled = true
+            drinkImage.image = drinkImages[currentImageIndex]
+        } else {
+            backButton.isEnabled = true
+            nextButton.isEnabled = true
+            drinkImage.image = drinkImages[currentImageIndex]
+        }
+        print(currentImageIndex)
     }
 }
 
@@ -55,18 +93,19 @@ extension DrinkViewerViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let drink = currentDrink else {return UITableViewCell()}
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
-        cell.textLabel?.text = drink.ingredients[indexPath.row]
+        guard let drink = currentDrink, let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath) as? InventoryTableViewCell, let icon = UIImage(named: drink.ingredients[indexPath.row]) else {return UITableViewCell()}
+        let ingredient =  drink.ingredients[indexPath.row]
+        cell.populate(icon: icon, itemName: ingredient)
         return cell
     }
     
     
 }
-extension DrinkViewerViewController: UIImagePickerControllerDelegate {
+extension DrinkViewerViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let photo = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImage = photo
         }
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -74,7 +113,7 @@ extension DrinkViewerViewController: UIImagePickerControllerDelegate {
     }
     func presentImagePickerActionSheet() {
         let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePickerController.delegate = self
         let actionSheet = UIAlertController(title: "Select a Photo", message: nil, preferredStyle: .actionSheet)
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             actionSheet.popoverPresentationController?.sourceView = self.view
